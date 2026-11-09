@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 500 570" role="img" aria-label="Un camino de longitud L prima se parte en su punto medio S prima">
+  <path d="M90 120 C 170 140, 150 230, 240 250 S 330 360, 410 420" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" />
+  <g fill="#fff">
+    <circle cx="128" cy="134" r="8" /><circle cx="160" cy="180" r="8" /><circle cx="190" cy="226" r="8" />
+    <circle cx="290" cy="290" r="8" /><circle cx="324" cy="338" r="8" /><circle cx="364" cy="384" r="8" />
+  </g>
+  <path d="M84 96 C 120 40, 230 120, 236 220" fill="none" stroke="#1f4a7d" stroke-width="2.4" stroke-dasharray="5 7" />
+  <path d="M262 236 C 350 230, 440 300, 430 394" fill="none" stroke="#1f4a7d" stroke-width="2.4" stroke-dasharray="5 7" />
+  <rect class="glass" x="132" y="44" width="130" height="44" rx="14" />
+  <foreignObject x="-63.0" y="49.7" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:17px;font-weight:650;justify-content:center;height:32.3px">\(\le \lceil L/2 \rceil\)</div></foreignObject>
+  <rect class="glass" x="330" y="218" width="130" height="44" rx="14" />
+  <foreignObject x="135.0" y="223.7" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:17px;font-weight:650;justify-content:center;height:32.3px">\(\le \lceil L/2 \rceil\)</div></foreignObject>
+  <rect class="glass" x="42" y="98" width="70" height="46" rx="14" />
+  <foreignObject x="-183.0" y="103.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(S_1\)</div></foreignObject>
+  <rect x="200" y="226" width="80" height="50" rx="15" fill="url(#g-blue)" filter="url(#ds)" />
+  <foreignObject x="-20.0" y="231.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:20px;font-weight:700;justify-content:center;height:38.0px">\(S'\)</div></foreignObject>
+  <rect x="372" y="398" width="76" height="48" rx="15" fill="url(#g-ink)" filter="url(#ds)" />
+  <foreignObject x="150.0" y="404.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(S_2\)</div></foreignObject>
+  <rect class="glass" x="40" y="380" width="200" height="80" rx="18" />
+  <foreignObject x="62.0" y="391.7" width="520" height="26.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:14px;font-weight:400;justify-content:flex-start;height:26.6px">inducción sobre \(L\)</div></foreignObject>
+  <foreignObject x="62.0" y="414.4" width="520" height="34.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:18px;font-weight:650;justify-content:flex-start;height:34.2px">\(L = 1\) → caso base</div></foreignObject>
+</svg>

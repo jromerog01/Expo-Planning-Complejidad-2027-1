@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-11-09T23:15:27.697Z",
+        "reason": "Claude: the user asked to follow a reference deck in detail whose typography is an Inter-style grotesk; the user said they love the result"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 500 570" role="img" aria-label="Dependencias de una operación de socorro">
+  <path d="M30 330 L150 170 L230 260 L320 120 L470 330 Z" fill="#fff" fill-opacity=".35" />
+  <path d="M290 165 L320 120 L350 165 L335 158 L320 170 L305 158 Z" fill="#fff" fill-opacity=".9" />
+  <g font-size="17" font-weight="650">
+    <rect class="glass" x="60" y="60" width="190" height="56" rx="16" />
+    <circle cx="88" cy="88" r="10" fill="#1f7a4d" /><text x="108" y="94">combustible</text>
+    <rect class="glass" x="190" y="196" width="220" height="56" rx="16" />
+    <circle cx="218" cy="224" r="10" fill="url(#g-blue)" /><foreignObject x="238.0" y="207.7" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:17px;font-weight:650;justify-content:flex-start;height:32.3px">\(10\) quitanieves</div></foreignObject>
+    <rect class="glass" x="70" y="320" width="200" height="56" rx="16" />
+    <circle cx="98" cy="348" r="10" fill="url(#g-blue)" /><text x="118" y="354">camino libre</text>
+    <rect x="200" y="432" width="250" height="60" rx="18" fill="url(#g-ink)" filter="url(#ds)" />
+    <foreignObject x="226.0" y="445.7" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:17px;font-weight:650;justify-content:flex-start;height:32.3px">\(20\) ambulancias · meta</div></foreignObject>
+  </g>
+  <g fill="none" stroke="#1f4a7d" stroke-width="2.6">
+    <path d="M200 120 C 220 150, 260 170, 280 190" marker-end="url(#arrow)" />
+    <path d="M280 256 C 250 290, 210 300, 190 316" marker-end="url(#arrow)" />
+    <path d="M190 380 C 210 410, 250 420, 280 428" marker-end="url(#arrow)" />
+  </g>
+  <path d="M110 120 C 40 240, 80 420, 196 460" fill="none" stroke="#b0413e" stroke-width="2.2" stroke-dasharray="4 7" />
+  <text x="30" y="250" font-size="14" font-weight="600" fill="#b0413e">¿alcanza?</text>
+</svg>

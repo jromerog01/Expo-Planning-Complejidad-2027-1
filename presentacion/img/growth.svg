@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 640 200" role="img" aria-label="Las llamadas a Path crecen como 2 a la O de n cuadrada">
+  <path d="M40 168 C 260 166, 420 150, 520 90 S 600 26, 612 22 L612 176 L40 176 Z" fill="#fff" fill-opacity=".45" />
+  <path d="M40 168 C 260 166, 420 150, 520 90 S 600 26, 612 22" fill="none" stroke="#1f4a7d" stroke-width="3.5" stroke-linecap="round" />
+  <path d="M40 160 L612 138" fill="none" stroke="#1f7a4d" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round" />
+  <g><circle cx="120" cy="167" r="7" fill="#1f4a7d" stroke="#fff" stroke-width="3" /><circle cx="300" cy="164" r="7" fill="#1f4a7d" stroke="#fff" stroke-width="3" /><circle cx="470" cy="118" r="7" fill="#1f4a7d" stroke="#fff" stroke-width="3" /><circle cx="600" cy="28" r="8" fill="#1f4a7d" stroke="#fff" stroke-width="3" /></g>
+  <rect class="glass" x="356" y="24" width="170" height="54" rx="16" />
+  <text x="441" y="57" font-size="18" font-weight="700" text-anchor="middle">2<tspan baseline-shift="super" font-size="12">O(n²)</tspan> llamadas</text>
+  <rect class="glass" x="70" y="96" width="150" height="46" rx="14" />
+  <foreignObject x="-115.0" y="104.0" width="520" height="30.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:16px;font-weight:650;justify-content:center;height:30.4px;color:#1f7a4d">\(n + 1\) marcos</div></foreignObject>
+</svg>

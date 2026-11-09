@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 640 200" role="img" aria-label="Todo problema de PSPACE se reduce a Planning">
+  <rect class="glass" x="24" y="58" width="168" height="84" rx="20" />
+  <text x="108" y="94" font-size="14" font-weight="600" text-anchor="middle" class="t-muted">cualquier</text>
+  <foreignObject x="-152.0" y="92.5" width="520" height="39.9"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:21px;font-weight:700;justify-content:center;height:39.9px">\(A \in \mathsf{PSPACE}\)</div></foreignObject>
+  <path class="edge" d="M200 100 H262" />
+  <foreignObject x="-29.0" y="65.7" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:17px;font-weight:700;justify-content:center;height:32.3px;color:#1f4a7d">\(\le_P\)</div></foreignObject>
+  <rect x="272" y="50" width="170" height="100" rx="22" fill="url(#g-ink)" filter="url(#ds)" />
+  <text x="357" y="108" font-size="24" font-weight="700" text-anchor="middle" class="t-white">Planning</text>
+  <path class="edge" d="M450 100 H500" />
+  <rect class="glass" x="510" y="58" width="108" height="84" rx="20" />
+  <text x="564" y="94" font-size="14" font-weight="600" text-anchor="middle" class="t-muted">Savitch</text>
+  <foreignObject x="304.0" y="95.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(\in \mathsf{PSPACE}\)</div></foreignObject>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 710 376" role="img" aria-label="Path divide la longitud L a la mitad en cada nivel">
+  <g font-weight="650">
+    <rect x="60" y="44" width="590" height="46" rx="14" fill="url(#g-ink)" filter="url(#ds)" />
+    <foreignObject x="95.0" y="50.4" width="520" height="34.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:18px;font-weight:650;justify-content:center;height:34.2px">\(\textsf{Path}(S_1, S_2, L)\)</div></foreignObject>
+    <rect class="glass" x="60" y="124" width="287" height="42" rx="13" />
+    <rect class="glass" x="363" y="124" width="287" height="42" rx="13" />
+    <foreignObject x="-57.0" y="128.7" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:17px;font-weight:650;justify-content:center;height:32.3px">\(S_1 \to S'\) · \(L/2\)</div></foreignObject>
+    <foreignObject x="246.0" y="128.7" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:17px;font-weight:650;justify-content:center;height:32.3px">\(S' \to S_2\) · \(L/2\)</div></foreignObject>
+    <g fill="#fff" fill-opacity=".8">
+      <rect x="60" y="198" width="138" height="36" rx="11" /><rect x="209" y="198" width="138" height="36" rx="11" />
+      <rect x="363" y="198" width="138" height="36" rx="11" /><rect x="512" y="198" width="138" height="36" rx="11" />
+    </g>
+    <g font-size="15" text-anchor="middle" class="t-muted">
+      <foreignObject x="-131.0" y="201.3" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:650;justify-content:center;height:28.5px">\(L/4\)</div></foreignObject><foreignObject x="18.0" y="201.3" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:650;justify-content:center;height:28.5px">\(L/4\)</div></foreignObject><foreignObject x="172.0" y="201.3" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:650;justify-content:center;height:28.5px">\(L/4\)</div></foreignObject><foreignObject x="321.0" y="201.3" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:650;justify-content:center;height:28.5px">\(L/4\)</div></foreignObject>
+    </g>
+    <g fill="#fff" fill-opacity=".55">
+      <rect x="60" y="266" width="64" height="28" rx="9" /><rect x="134" y="266" width="64" height="28" rx="9" />
+      <rect x="209" y="266" width="64" height="28" rx="9" /><rect x="283" y="266" width="64" height="28" rx="9" />
+      <rect x="363" y="266" width="64" height="28" rx="9" /><rect x="437" y="266" width="64" height="28" rx="9" />
+      <rect x="512" y="266" width="64" height="28" rx="9" /><rect x="586" y="266" width="64" height="28" rx="9" />
+    </g>
+  </g>
+  <g stroke="#1f4a7d" stroke-width="2" stroke-dasharray="3 5">
+    <path d="M355 96 V300" />
+  </g>
+  <circle cx="355" cy="107" r="11" fill="#4f8fd6" stroke="#fff" stroke-width="3" />
+  <foreignObject x="372.0" y="92.0" width="520" height="30.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:16px;font-weight:700;justify-content:flex-start;height:30.4px;color:#1f4a7d">\(S'\)</div></foreignObject>
+  <foreignObject x="95.0" y="317.0" width="520" height="30.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:16px;font-weight:600;justify-content:center;height:30.4px">profundidad \(\log L = n\) · cada nivel guarda solo un bit</div></foreignObject>
+</svg>

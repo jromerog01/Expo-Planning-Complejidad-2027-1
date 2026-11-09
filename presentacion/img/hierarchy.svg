@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 670 740" role="img" aria-label="P contenida en NP y co-NP, contenidas en PSPACE, contenida en EXPTIME">
+  <ellipse cx="335" cy="390" rx="292" ry="315" fill="#fff" fill-opacity=".22" stroke="#fff" stroke-opacity=".95" stroke-width="2.5" />
+  <ellipse cx="335" cy="420" rx="240" ry="250" fill="#fff" fill-opacity=".38" stroke="#fff" stroke-width="2.5" />
+  <ellipse cx="275" cy="480" rx="138" ry="112" fill="#fff" fill-opacity=".55" stroke="#2e5f97" stroke-opacity=".35" stroke-width="2" />
+  <ellipse cx="395" cy="480" rx="138" ry="112" fill="#fff" fill-opacity=".55" stroke="#2e5f97" stroke-opacity=".35" stroke-width="2" />
+  <ellipse cx="335" cy="492" rx="62" ry="48" fill="url(#g-ink)" filter="url(#ds)" />
+  <g font-weight="700" text-anchor="middle" letter-spacing="-.5">
+    <text x="335" y="118" font-size="26" class="t-muted">EXPTIME</text>
+    <text x="335" y="214" font-size="32">PSPACE</text>
+    <text x="196" y="470" font-size="26">NP</text>
+    <text x="474" y="470" font-size="26">co-NP</text>
+    <text x="335" y="502" font-size="28" class="t-white">P</text>
+  </g>
+  <rect class="glass" x="215" y="262" width="240" height="84" rx="20" />
+  <text x="335" y="294" font-size="14" font-weight="600" letter-spacing="1.4" text-anchor="middle" class="t-accent">PSPACE-COMPLETOS</text>
+  <text x="335" y="324" font-size="21" font-weight="650" text-anchor="middle">Planning · QSAT</text>
+  <rect class="glass" x="400" y="610" width="236" height="74" rx="18" />
+  <text x="422" y="640" font-size="14" class="t-muted">Savitch (1970)</text>
+  <foreignObject x="422.0" y="641.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:19px;font-weight:650;justify-content:flex-start;height:36.1px">\(\mathsf{NPSPACE} = \mathsf{PSPACE}\)</div></foreignObject>
+</svg>

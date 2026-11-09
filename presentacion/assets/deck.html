@@ -1,0 +1,82 @@
+<!-- Definiciones compartidas por todas las ilustraciones SVG en línea -->
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <defs>
+    <filter id="ds" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#1f4a7d" flood-opacity="0.22"/>
+    </filter>
+    <filter id="ds-sm" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#1f4a7d" flood-opacity="0.2"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M1 1.5 10 6 1 10.5" fill="none" stroke="#2e5f97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrow-w" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M1 1.5 10 6 1 10.5" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <linearGradient id="g-blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5b9be0"/>
+      <stop offset="1" stop-color="#86bdf0"/>
+    </linearGradient>
+    <linearGradient id="g-ink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b2430"/>
+      <stop offset="1" stop-color="#3d4f66"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<!-- Encabezado que se repite en cada diapositiva -->
+<template id="deck-header-tpl">
+  <header class="deck-header">
+    <img class="deck-logo" src="img/escudo-unam.svg" alt="UNAM">
+    <nav class="deck-meta">
+      <span>Complejidad Computacional</span>
+      <span>UNAM · Facultad de Ciencias</span>
+      <span>18 de noviembre de 2026</span>
+    </nav>
+    <button class="deck-burger" type="button" aria-label="Ver todas las diapositivas">
+      <i></i><i></i><i></i>
+    </button>
+  </header>
+</template>
+
+<script>
+(function () {
+  function prepararDiapositivas() {
+    var plantilla = document.getElementById("deck-header-tpl");
+    var diapositivas = document.querySelectorAll(".reveal .slides section.slide");
+
+    diapositivas.forEach(function (diapositiva) {
+      // 1. Mover el título (##) a la ranura .title-slot de la tarjeta
+      var titulo = diapositiva.querySelector(":scope > h2");
+      var ranura = diapositiva.querySelector(".title-slot");
+      if (titulo && ranura) {
+        ranura.innerHTML = "";
+        ranura.appendChild(titulo);
+      }
+
+      // 2. Insertar el encabezado fijo
+      if (plantilla && !diapositiva.querySelector(".deck-header")) {
+        diapositiva.insertBefore(plantilla.content.cloneNode(true), diapositiva.firstChild);
+      }
+    });
+
+    // 3. El menú (hamburguesa) abre la vista general
+    document.querySelectorAll(".deck-burger").forEach(function (boton) {
+      boton.addEventListener("click", function () { Reveal.toggleOverview(); });
+    });
+
+    // 4. Los botones flecha avanzan a la siguiente diapositiva
+    document.querySelectorAll(".btn-arrow").forEach(function (boton) {
+      boton.setAttribute("role", "button");
+      boton.setAttribute("aria-label", "Siguiente diapositiva");
+      boton.addEventListener("click", function () { Reveal.next(); });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", prepararDiapositivas);
+  } else {
+    prepararDiapositivas();
+  }
+})();
+</script>

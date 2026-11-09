@@ -1,0 +1,14 @@
+{
+  "name": "mapa-vuelos",
+  "private": true,
+  "type": "module",
+  "description": "Genera img/flights.svg (mapa real con rutas de gran círculo)",
+  "scripts": {
+    "mapa": "node generar-mapa.mjs ../../img/flights.svg"
+  },
+  "dependencies": {
+    "d3-geo": "3.1.1",
+    "topojson-client": "3.1.0",
+    "world-atlas": "2.0.2"
+  }
+}

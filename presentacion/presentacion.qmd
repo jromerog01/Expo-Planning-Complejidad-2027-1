@@ -1,0 +1,881 @@
+---
+# Cómo está armada cada diapositiva:
+#  * El título "##" se mueve con JS a la tarjeta que tenga ::: {.title-slot} :::
+#  * ::: {.stage .l-XXX} elige el layout (ver custom.scss, sección 8).
+#  * .a1 ... .a5 dicen en qué hueco de la retícula va cada tarjeta.
+#  * .card / .card.blue / .card.media son las tarjetas blanca, azul y de ilustración.
+#  * [Siguiente]{.btn-arrow} es la pastilla con flecha (avanza a la siguiente).
+#  * Todo lo matemático (variables, números, fórmulas) va en LaTeX: $...$
+pagetitle: "Planning · PSPACE-completo"
+lang: es
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    width: 1600
+    height: 900
+    margin: 0
+    min-scale: 0.2
+    max-scale: 2.0
+    center: false
+    controls: false
+    progress: false
+    slide-number: false
+    menu: false
+    hash: true
+    transition: fade
+    transition-speed: fast
+    auto-stretch: false
+    html-math-method: mathjax
+    include-after-body: assets/deck.html
+---
+
+## El problema de planeación {#portada}
+
+::: {.stage .l-hero}
+
+::: {.card .media .a1}
+```{=html}
+{{< include img/cover.svg >}}
+```
+:::
+
+::: {.card .blue .a2}
+::: {.title-slot .xl}
+:::
+
+::: {.lead}
+Planning: un problema PSPACE‑completo
+:::
+:::
+
+::: {.card .a3}
+::: {.avatars}
+[AG]{.avatar} [JR]{.avatar}
+:::
+
+::: {.mt-auto .names}
+[Presentado por]{.muted}
+
+**Alan Alexzander González Murga**
+
+**Jesús Antonio Romero Godoy**
+:::
+:::
+
+::: {.card .a4}
+![](img/icons/grid-plus.svg){.ico}
+
+::: {.mt-auto}
+Definimos el problema, probamos que está en PSPACE con el algoritmo de Savitch y explicamos por qué es PSPACE‑completo.
+:::
+:::
+
+:::
+
+## ¿Existe un plan? {#intro}
+
+::: {.stage .l-stats}
+::: {.card .blue .a1}
+
+::: {.left}
+::: {.title-slot .xl}
+:::
+
+::: {.lead}
+Partiendo de un estado inicial, ¿hay una secuencia de acciones permitidas que lleve a un estado objetivo?
+:::
+
+::: {.mt-l .muted}
+Es el modelo detrás de la logística de una operación de socorro, de un robot que acomoda cajas o del rompecabezas de quince (Kleinberg y Tardos, 2005).
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .inner}
+::: {.strip}
+```{=html}
+{{< include img/puzzle.svg >}}
+```
+:::
+
+::: {.stats2}
+::: {}
+[$2^n$]{.stat}
+
+[Configuraciones]{.stat-label}
+
+[posibles con $n$ condiciones verdaderas o falsas.]{.stat-text}
+:::
+
+::: {}
+[$2^n - 1$]{.stat}
+
+[Pasos]{.stat-label}
+
+[puede medir el plan más corto en algunas instancias.]{.stat-text}
+:::
+:::
+:::
+
+:::
+:::
+
+## La clase PSPACE {#pspace}
+
+::: {.stage .l-split}
+
+::: {.card .media .a1}
+```{=html}
+{{< include img/hierarchy.svg >}}
+```
+:::
+
+::: {.card .blue .a2}
+::: {.title-slot}
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a3}
+::: {.cols3}
+::: {}
+![](img/icons/chip.svg){.ico}
+
+[Memoria polinomial]{.h-card}
+
+[Problemas que se resuelven usando espacio polinomial en el tamaño de la entrada. Contiene a $\mathsf{P}$ y a $\mathsf{NP}$, y está contenida en $\mathsf{EXPTIME}.$]{.small}
+:::
+
+::: {}
+![](img/icons/target.svg){.ico}
+
+[PSPACE‑completo]{.h-card}
+
+[$X \in \mathsf{PSPACE}$ y todo $Y \in \mathsf{PSPACE}$ cumple $Y \le_P X.$ El problema raíz es QSAT (Stockmeyer y Meyer, 1973).]{.small}
+:::
+
+::: {}
+![](img/icons/swap.svg){.ico}
+
+[El espacio se reutiliza]{.h-card}
+
+[Un contador de $n$ bits recorre $2^n$ valores en espacio $O(n)$: el espacio se recicla; el tiempo, no.]{.small}
+:::
+:::
+:::
+
+:::
+
+## Condiciones y operadores {#modelo}
+
+::: {.stage .l-deep}
+
+::: {.card .media .a1}
+```{=html}
+{{< include img/operator.svg >}}
+```
+:::
+
+::: {.a2 .title-slot .xl}
+:::
+
+::: {.card .a3}
+[Modelo STRIPS proposicional]{.kicker}
+
+[$S' = (S \setminus D_i) \cup A_i$]{.formula}
+
+::: {.clean .mt-m}
+- **Condiciones**: $\mathcal{C} = \{c_1, \dots, c_n\}.$
+- **Configuración**: un subconjunto $S \subseteq \mathcal{C}$; hay $2^n$ posibles.
+- **Operador** $O_i = (P_i, A_i, D_i)$: prerrequisitos, adiciones y eliminaciones. Es aplicable en $S$ si $P_i \subseteq S.$
+:::
+
+[Fikes y Nilsson (1971); Kleinberg y Tardos (2005, p. 538).]{.cite}
+
+[Siguiente]{.btn-arrow}
+:::
+
+:::
+
+## El problema de decisión Planning {#decision}
+
+::: {.stage .l-stack}
+
+::: {.card .blue .a1}
+::: {.title-slot .md}
+:::
+
+::: {.lead}
+Equivale a buscar un camino en una grafica de $2^n$ configuraciones que está descrita de forma compacta y nunca se construye.
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a2}
+::: {.strip}
+```{=html}
+{{< include img/graph-implicit.svg >}}
+```
+:::
+
+::: {.txt}
+[Entrada]{.h-card}
+
+Condiciones $\mathcal{C}$, operadores $(P_i, A_i, D_i)$, una configuración inicial $S_0$ y una meta $S^*.$
+:::
+:::
+
+::: {.card .a3}
+[Pregunta]{.h-card}
+
+¿Existe una secuencia de operadores, cada uno aplicable, que lleve de $S_0$ **exactamente** a $S^*$?
+
+::: {.chips .mt-auto}
+[$S_0$]{.chip} [$\to$]{.to} [$O_{i_1}$]{.chip} [$\to$]{.to} [$O_{i_2}$]{.chip} [$\to$]{.to} [$\cdots$]{.chip} [$\to$]{.to} [$S^*$]{.chip .on}
+:::
+:::
+
+:::
+
+## Planes de longitud exponencial {#exponencial}
+
+::: {.stage .l-banner}
+
+::: {.card .blue .a1}
+::: {.title-slot .sm}
+:::
+
+::: {.strip}
+```{=html}
+{{< include img/counter.svg >}}
+```
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a2}
+[$2^n - 1$]{.stat}
+
+[Plan mínimo del contador]{.stat-label}
+
+[Con $n$ condiciones y $n$ operadores, el plan más corto mide $2^n - 1$ pasos: cuenta en binario (Teorema 9.6).]{.stat-text}
+:::
+
+::: {.card .a3}
+[$\le 2^n - 1$]{.stat}
+
+[Cota superior]{.stat-label}
+
+[Si hay solución, hay una con a lo más $2^n - 1$ pasos: un camino simple en una grafica de $2^n$ nodos (Teorema 9.7).]{.stat-text}
+:::
+
+::: {.card .a4}
+[¿$\mathsf{NP}$?]{.stat}
+
+[El plan no es certificado]{.stat-label}
+
+[Puede ser exponencial: ni siquiera cabe escribirlo en espacio polinomial. Hay que *decidir* sin verlo completo.]{.stat-text}
+:::
+
+:::
+
+## El procedimiento Path {#path}
+
+::: {.stage .l-mosaic}
+
+::: {.card .blue .a1}
+::: {.title-slot .md}
+:::
+
+::: {.lead}
+Savitch (1970): divide y vencerás sobre la **longitud** del camino.
+:::
+:::
+
+::: {.card .media .a2}
+```{=html}
+<div class="code-window">
+  <div class="bar"><i></i><i></i><i></i><span>Kleinberg y Tardos (2005, p. 542)</span></div>
+  <div class="algo">
+    <div class="ln"><b>procedimiento</b> \(\textsf{Path}(S_1, S_2, L)\)</div>
+    <div class="ln i1"><b>si</b> \(L = 1\) <b>entonces</b> devolver \(S_1 = S_2\) o \(\exists\, O : S_1 \xrightarrow{O} S_2\)</div>
+    <div class="ln i1"><b>para cada</b> \(S'\) <span class="cm">(contador de \(n\) bits)</span> <b>hacer</b></div>
+    <div class="ln i2">\(x \gets \textsf{Path}(S_1, S', \lceil L/2 \rceil)\) <span class="cm">— borrar todo salvo \(x\)</span></div>
+    <div class="ln i2">\(y \gets \textsf{Path}(S', S_2, \lceil L/2 \rceil)\) <span class="cm">— borrar todo salvo \(y\)</span></div>
+    <div class="ln i2"><b>si</b> \(x\) y \(y\) <b>entonces</b> devolver «sí»</div>
+    <div class="ln i1">devolver «no»</div>
+  </div>
+</div>
+```
+:::
+
+::: {.card .media .a3}
+```{=html}
+{{< include img/midpoint.svg >}}
+```
+:::
+
+::: {.card .a4}
+[¿Hay camino de $\le L$ pasos?]{.h-card}
+
+Prueba cada configuración $S'$ como punto medio, resuelve las dos mitades con $\lceil L/2 \rceil$ y borra el trabajo intermedio: de cada mitad solo sobrevive un bit. El problema original es $\textsf{Path}(S_0, S^*, 2^n).$
+:::
+
+:::
+
+## Planning está en PSPACE {#en-pspace}
+
+::: {.stage .l-stories}
+
+::: {.card .blue .a1}
+::: {.title-slot .md}
+:::
+
+::: {.lead}
+$\textsf{Path}(S_0, S^*, 2^n)$ decide la instancia: es correcto y usa memoria polinomial.
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.story .a2}
+::: {.card .media}
+```{=html}
+{{< include img/induction.svg >}}
+```
+:::
+
+::: {.card .caption}
+::: {.who}
+![](img/icons/shield.svg){.ico}
+[Correctitud · Teorema 9.8]{.pill .soft}
+:::
+
+[“Devuelve *sí* si y solo si existe una secuencia de a lo más $L$ operadores. Por inducción sobre $L$, partiendo el camino en su punto medio.”]{.quote}
+:::
+:::
+
+::: {.story .a3}
+::: {.card .media}
+```{=html}
+{{< include img/stack.svg >}}
+```
+:::
+
+::: {.card .caption}
+::: {.who}
+![](img/icons/layers.svg){.ico}
+[Espacio · Teorema 9.8]{.pill .soft}
+:::
+
+[“Solo hay una llamada activa por nivel: $n + 1$ marcos de $O(n + \log k)$ bits, en total $O\big(n(n + \log k)\big).$”]{.quote}
+:::
+:::
+
+:::
+
+## Espacio a costa de tiempo {#tiempo}
+
+::: {.stage .l-stats}
+::: {.card .blue .a1}
+
+::: {.left}
+::: {.title-slot}
+:::
+
+::: {.lead}
+Path no guarda nada: tira el trabajo intermedio y lo recalcula. Es lo opuesto a la programación dinámica.
+:::
+
+::: {.mt-l .muted}
+$N(1) = 1$ y $N(L) \le 1 + 2^{n+1}\, N(L/2)$, por lo que $N(2^n) \le 2 \cdot 2^{n(n+1)}.$
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .inner}
+::: {.strip}
+```{=html}
+{{< include img/tradeoff.svg >}}
+```
+:::
+
+::: {.stats2}
+::: {}
+[$2^{O(n^2)}$]{.stat}
+
+[Tiempo]{.stat-label}
+
+[Exponencial: cada llamada cuesta tiempo polinomial, pero hay $2^{O(n^2)}$ llamadas.]{.stat-text}
+:::
+
+::: {}
+[$n + 1$]{.stat}
+
+[Marcos de pila]{.stat-label}
+
+[Cada uno de $O(n + \log k)$ bits: el espacio total es polinomial.]{.stat-text}
+:::
+:::
+:::
+
+:::
+:::
+
+## Reducción desde máquinas de Turing {#reduccion}
+
+::: {.stage .l-split}
+
+::: {.card .media .a1}
+```{=html}
+{{< include img/turing.svg >}}
+```
+:::
+
+::: {.card .blue .a2}
+::: {.title-slot .sm}
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a3}
+::: {.cols3}
+::: {}
+![](img/icons/list.svg){.ico}
+
+[Condiciones]{.h-card}
+
+[$Q_q$ (estado), $H_i$ (cabeza en la celda $i$) y $S_{i,a}$ (la celda $i$ contiene $a$). Son $|Q| + s(1 + |\Gamma|).$]{.small}
+:::
+
+::: {}
+![](img/icons/bolt.svg){.ico}
+
+[Operadores]{.h-card}
+
+[Por cada transición $\delta(q, a) = (q', b, D)$ y cada celda $i$, un operador $O_{q,a,i}$ que cambia de estado, escribe $b$ y mueve la cabeza.]{.small}
+:::
+
+::: {}
+![](img/icons/shield.svg){.ico}
+
+[Invariante]{.h-card}
+
+[Siempre hay un estado, una cabeza y un símbolo por celda. $M$ acepta $w$ si y solo si existe un plan de $S_0$ a $S^*.$]{.small}
+:::
+:::
+:::
+
+:::
+
+## Planning es PSPACE‑completo {#completo}
+
+::: {.stage .l-banner}
+
+::: {.card .blue .a1}
+::: {.title-slot .sm}
+:::
+
+::: {.strip}
+```{=html}
+{{< include img/chain.svg >}}
+```
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a2}
+[$\in \mathsf{PSPACE}$]{.stat}
+
+[Pertenencia]{.stat-label}
+
+[Path decide cualquier instancia con $O\big(n(n + \log k)\big)$ bits de memoria.]{.stat-text}
+:::
+
+::: {.card .a3}
+[$\le_P$]{.stat}
+
+[Dificultad]{.stat-label}
+
+[Todo $A \in \mathsf{PSPACE}$ se reduce a Planning en tiempo polinomial (Bylander, 1994).]{.stat-text}
+:::
+
+::: {.card .a4}
+[¿$\mathsf{P}$?]{.stat}
+
+[Consecuencia]{.stat-label}
+
+[Un algoritmo de tiempo polinomial para Planning implicaría $\mathsf{P} = \mathsf{PSPACE}$, algo que se considera muy improbable.]{.stat-text}
+:::
+
+:::
+
+## Ejemplo: contador de 2 bits {#ejemplo}
+
+::: {.stage .l-stack}
+
+::: {.card .blue .a1}
+::: {.title-slot .md}
+:::
+
+::: {.lead}
+¿$\textsf{Path}(\varnothing, M, 4)$ devuelve *sí*?
+:::
+
+::: {.mt-m .muted}
+$O_1 = (\varnothing, \{c_1\}, \varnothing)$ y $O_2 = (\{c_1\}, \{c_2\}, \{c_1\})$, con $S_0 = \varnothing$ y $M = \{c_1, c_2\}.$
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a2}
+::: {.strip}
+```{=html}
+{{< include img/graph2bit.svg >}}
+```
+:::
+
+::: {.txt}
+[La grafica que el algoritmo nunca construye]{.h-card}
+
+Plan mínimo de $3$ pasos: $\varnothing \to \{c_1\} \to \{c_2\} \to \{c_1, c_2\}.$
+:::
+:::
+
+::: {.card .a3 .center}
+```{=html}
+<table class="tight">
+  <thead><tr><th>\(S'\)</th><th>\(x = \textsf{Path}(\varnothing, S', 2)\)</th><th>\(y = \textsf{Path}(S', M, 2)\)</th><th>Resultado</th></tr></thead>
+  <tbody>
+    <tr><td>\(\varnothing\)</td><td class="yes">sí</td><td class="no">no</td><td>se descarta</td></tr>
+    <tr><td>\(\{c_1\}\)</td><td class="yes">sí</td><td class="yes">sí</td><td><strong>sí ✓</strong></td></tr>
+  </tbody>
+</table>
+```
+
+[Se detiene en $\{c_1\}$: $20$ llamadas en total y nunca más de $3$ marcos en la pila.]{.cite}
+:::
+
+:::
+
+## ¿Y si $n$ crece? {#escala}
+
+::: {.stage .l-banner .four}
+
+::: {.card .blue .a1}
+::: {.title-slot .md}
+:::
+
+::: {.strip}
+```{=html}
+{{< include img/growth.svg >}}
+```
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a2}
+[$20$]{.stat}
+
+[$n = 2$]{.stat-label}
+
+[llamadas a Path · plan de $3$ pasos · $3$ marcos.]{.stat-text}
+:::
+
+::: {.card .a3}
+[$454$]{.stat}
+
+[$n = 3$]{.stat-label}
+
+[llamadas a Path · plan de $7$ pasos · $4$ marcos.]{.stat-text}
+:::
+
+::: {.card .a4}
+[$48\,795$]{.stat}
+
+[$n = 4$]{.stat-label}
+
+[llamadas a Path · plan de $15$ pasos · $5$ marcos.]{.stat-text}
+:::
+
+::: {.card .a5}
+[$23\,167\,425$]{.stat}
+
+[$n = 5$]{.stat-label}
+
+[llamadas · plan de $31$ pasos · $6$ marcos. Con $n = 60$ bastarían $61$ marcos.]{.stat-text}
+:::
+
+:::
+
+## Enfoques para resolverlo {#enfoques}
+
+::: {.stage .l-plans}
+::: {.card .blue .a1}
+
+::: {.plans}
+::: {.plan}
+[Búsqueda explícita]{.pill}
+
+[$2^{O(n)}$]{.stat}
+
+::: {.clean}
+- Construye la grafica y aplica BFS o DFS.
+- Es el más rápido: polinomial en el tamaño de la grafica.
+- Inviable en memoria para $n$ grande.
+:::
+:::
+
+::: {.plan .featured}
+[Savitch · Path]{.pill}
+
+[Polinomial]{.stat}
+
+::: {.clean}
+- $O\big(n(n + \log k)\big)$ bits de memoria.
+- Tiempo $2^{O(n^2)}$: recalcula todo.
+- Demuestra que $\textsf{Planning} \in \mathsf{PSPACE}.$
+:::
+:::
+
+::: {.plan}
+[Planificadores prácticos]{.pill}
+
+[Heurístico]{.stat}
+
+::: {.clean}
+- FF (Hoffmann y Nebel, 2001) y Fast Downward (Helmert, 2006).
+- Planeación como SAT (Kautz y Selman, 1992).
+- Sin garantía en el peor caso.
+:::
+:::
+:::
+
+::: {.bottom}
+::: {.title-slot .md}
+:::
+
+Explorar la grafica es rápido pero exige memoria exponencial; Path ahorra memoria a costa de tiempo; en la práctica se usan heurísticas y la estructura de cada dominio.
+
+[Siguiente]{.btn-arrow}
+:::
+
+:::
+:::
+
+## Vuelos con escalas y visas {#vuelos}
+
+::: {.stage .l-map}
+
+::: {.card .media .a1}
+```{=html}
+{{< include img/flights.svg >}}
+```
+:::
+
+::: {.card .blue .a2}
+[Aplicación · instancia ficticia]{.kicker}
+
+::: {.title-slot .sm}
+:::
+:::
+
+::: {.card .a3}
+[$S_0 = \{c_1, c_6\} \;\to\; S^* = \{c_5, c_6, c_7, c_8\}$]{.h-card}
+
+Para volar a Tokio hace falta la visa japonesa, que solo se tramita en París. El viajero pasa dos veces por Madrid, pero en **estados distintos**: en $S_3$ aún no tiene la visa y $O_7$ no es aplicable.
+
+[Plan mínimo de $7$ acciones. Path lo verifica con $L = 8$ y nunca más de $4$ marcos.]{.cite}
+
+[Siguiente]{.btn-arrow}
+:::
+
+:::
+
+## ¿Dónde aparece? {#aplicaciones}
+
+::: {.stage .l-stories}
+
+::: {.card .blue .a1}
+::: {.title-slot .md}
+:::
+
+::: {.lead}
+Problemas donde cada acción cambia las acciones disponibles.
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.story .a2}
+::: {.card .media}
+```{=html}
+{{< include img/corridor.svg >}}
+```
+:::
+
+::: {.card .caption}
+::: {.who}
+![](img/icons/box.svg){.ico}
+[Robots de almacén]{.pill .soft}
+:::
+
+[“Como Sokoban, PSPACE‑completo en general (Culberson, 1997). Con $4$ celdas: $n = 12$ condiciones $\mathsf{R@}c$, $\mathsf{B@}c$, $\mathsf{F@}c$ y $k = 10$ operadores $\mathsf{Move}$ y $\mathsf{Push}.$”]{.quote}
+:::
+:::
+
+::: {.story .a3}
+::: {.card .media}
+```{=html}
+{{< include img/logistics.svg >}}
+```
+:::
+
+::: {.card .caption}
+::: {.who}
+![](img/icons/plane.svg){.ico}
+[Logística y socorro]{.pill .soft}
+:::
+
+[“Ambulancias que necesitan quitanieves, que necesitan combustible… También rompecabezas y misiones espaciales como el Remote Agent de la NASA.”]{.quote}
+:::
+:::
+
+:::
+
+## Casos especiales {#variantes}
+
+::: {.stage .l-plans}
+::: {.card .blue .a1}
+
+::: {.plans}
+::: {.plan}
+[Longitud acotada]{.pill}
+
+[$\mathsf{NP}$]{.stat}
+
+::: {.clean}
+- Se pide un plan de a lo más $q(n)$ pasos.
+- El plan es un certificado polinomial.
+- Se verifica simulando los operadores.
+:::
+:::
+
+::: {.plan .featured}
+[Restricciones · Bylander]{.pill}
+
+[$\mathsf{PSPACE}$‑c]{.stat}
+
+::: {.clean}
+- Aun con $2$ prerrequisitos y $2$ postcondiciones.
+- Caso tratable: prerrequisitos positivos y $1$ postcondición.
+- Hacen falta restricciones muy severas.
+:::
+:::
+
+::: {.plan}
+[Primer orden]{.pill}
+
+[¿Decidible?]{.stat}
+
+::: {.clean}
+- Predicados y variables en lugar de proposiciones.
+- Depende de símbolos de función y eliminaciones.
+- Erol, Nau y Subrahmanian (1995).
+:::
+:::
+:::
+
+::: {.bottom}
+::: {.title-slot .md}
+:::
+
+QSAT y los juegos de dos jugadores comparten la idea: se resuelven en espacio polinomial reutilizando memoria y guardando un bit por subproblema.
+
+[Siguiente]{.btn-arrow}
+:::
+
+:::
+:::
+
+## Referencias {#referencias}
+
+::: {.stage .l-stack .single}
+
+::: {.card .blue .a1}
+::: {.title-slot .md}
+:::
+
+::: {.lead}
+Fuente principal: Kleinberg y Tardos, *Algorithm Design*, capítulo 9.
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a2 .refs}
+- Bylander, T. (1994). The computational complexity of propositional STRIPS planning. *Artificial Intelligence, 69*(1–2), 165–204.
+- Culberson, J. (1997). *Sokoban is PSPACE-complete* (TR 97-02). University of Alberta.
+- Edelkamp, S., Fink, J., Gregor, P., Jonsson, A. y Nebel, B. (2026). *Intermediate results on the complexity of* $\text{STRIPS}_1^1.$ arXiv:2602.08708.
+- Erol, K., Nau, D. S. y Subrahmanian, V. S. (1995). Complexity, decidability and undecidability results for domain-independent planning. *Artificial Intelligence, 76*, 75–88.
+- Fikes, R. E. y Nilsson, N. J. (1971). STRIPS: A new approach to the application of theorem proving to problem solving. *Artificial Intelligence, 2*, 189–208.
+- Ghallab, M., Nau, D. y Traverso, P. (2004). *Automated planning: Theory and practice*. Morgan Kaufmann.
+- Helmert, M. (2006). The Fast Downward planning system. *JAIR, 26*, 191–246.
+- Hoffmann, J. y Nebel, B. (2001). The FF planning system. *JAIR, 14*, 253–302.
+- Hopcroft, J. E., Schwartz, J. T. y Sharir, M. (1984). PSPACE-hardness of the “warehouseman's problem”. *IJRR, 3*(4), 76–88.
+- Kautz, H. y Selman, B. (1992). Planning as satisfiability. *ECAI-92*, 359–363.
+- Kleinberg, J. y Tardos, É. (2005). *Algorithm design*. Pearson.
+- Muscettola, N., Nayak, P. P., Pell, B. y Williams, B. C. (1998). Remote Agent: To boldly go where no AI system has gone before. *Artificial Intelligence, 103*, 5–47.
+- Savitch, W. J. (1970). Relationships between nondeterministic and deterministic tape complexities. *JCSS, 4*(2), 177–192.
+- Sipser, M. (2013). *Introduction to the theory of computation* (3.ª ed.). Cengage.
+- Stockmeyer, L. J. y Meyer, A. R. (1973). Word problems requiring exponential time. *STOC '73*, 1–9.
+:::
+
+:::
+
+## Gracias por su atención {#gracias}
+
+::: {.stage .l-contact}
+
+::: {.card .media .a1}
+```{=html}
+{{< include img/questions.svg >}}
+```
+:::
+
+::: {.card .blue .a2}
+::: {.title-slot .xl}
+:::
+
+::: {.lead}
+La memoria es el recurso que se recicla: Planning se decide en espacio polinomial aunque sus planes sean exponenciales.
+:::
+:::
+
+::: {.card .a3}
+::: {.photo}
+![](img/escudo-facultad.svg)
+:::
+
+::: {}
+[Equipo]{.h-card}
+
+::: {.contact}
+- Jesús Antonio Romero Godoy · 321144292
+- Alan Alexzander González Murga · 320079629
+- Complejidad Computacional · UNAM
+- 18 de noviembre de 2026
+:::
+:::
+:::
+
+:::

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 500 570" role="img" aria-label="La pila de Path tiene n más 1 marcos">
+  <g font-weight="650">
+    <rect x="70" y="56" width="330" height="74" rx="18" fill="url(#g-ink)" filter="url(#ds)" />
+    <foreignObject x="96.0" y="67.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:650;justify-content:flex-start;height:36.1px">\(\textsf{Path}(S_0, S^*, 2^n)\)</div></foreignObject>
+    <foreignObject x="96.0" y="97.7" width="520" height="26.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:14px;font-weight:650;justify-content:flex-start;height:26.6px;color:#9fb3c9">\(S_1\) · \(S_2\) · \(S'\) · contador · \(j\) · \(x\) · \(y\)</div></foreignObject>
+    <rect class="glass" x="84" y="146" width="302" height="62" rx="16" />
+    <foreignObject x="108.0" y="160.4" width="520" height="34.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:18px;font-weight:650;justify-content:flex-start;height:34.2px">\(\textsf{Path}(\cdot, \cdot, 2^{n-1})\)</div></foreignObject>
+    <rect class="glass" x="98" y="224" width="274" height="58" rx="16" />
+    <foreignObject x="122.0" y="236.4" width="520" height="34.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:18px;font-weight:650;justify-content:flex-start;height:34.2px">\(\textsf{Path}(\cdot, \cdot, 2^{n-2})\)</div></foreignObject>
+    <foreignObject x="-25.0" y="283.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:26px;font-weight:650;justify-content:center;height:49.4px">\(\vdots\)</div></foreignObject>
+    <rect class="glass" x="112" y="338" width="246" height="56" rx="16" />
+    <foreignObject x="136.0" y="349.4" width="520" height="34.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:18px;font-weight:650;justify-content:flex-start;height:34.2px">\(\textsf{Path}(\cdot, \cdot, 1)\)</div></foreignObject>
+  </g>
+  <path d="M424 60 h14 v330 h-14" fill="none" stroke="#1f4a7d" stroke-width="2.4" stroke-linejoin="round" />
+  <rect class="glass" x="370" y="196" width="112" height="70" rx="16" />
+  <foreignObject x="166.0" y="199.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:20px;font-weight:700;justify-content:center;height:38.0px">\(n + 1\)</div></foreignObject>
+  <text x="426" y="249" font-size="14" text-anchor="middle" class="t-muted">marcos</text>
+  <rect class="glass" x="70" y="420" width="250" height="56" rx="16" />
+  <foreignObject x="94.0" y="432.7" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:17px;font-weight:650;justify-content:flex-start;height:32.3px">\(O(n + \log k)\) bits c/u</div></foreignObject>
+</svg>

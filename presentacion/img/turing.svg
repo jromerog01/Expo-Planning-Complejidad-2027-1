@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 670 740" role="img" aria-label="La cinta de una máquina de Turing se codifica como condiciones">
+  <foreignObject x="75.0" y="78.3" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">MÁQUINA \(M\) · \(s\) CELDAS</div></foreignObject>
+  <g font-size="24" font-weight="650" text-anchor="middle">
+    <rect class="glass" x="85" y="120" width="80" height="80" rx="16" /><foreignObject x="-135.0" y="137.6" width="520" height="45.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:24px;font-weight:650;justify-content:center;height:45.6px">\(1\)</div></foreignObject>
+    <rect class="glass" x="185" y="120" width="80" height="80" rx="16" /><foreignObject x="-35.0" y="137.6" width="520" height="45.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:24px;font-weight:650;justify-content:center;height:45.6px">\(0\)</div></foreignObject>
+    <rect x="285" y="120" width="80" height="80" rx="16" fill="url(#g-blue)" filter="url(#ds)" /><foreignObject x="65.0" y="137.6" width="520" height="45.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:24px;font-weight:650;justify-content:center;height:45.6px">\(0\)</div></foreignObject>
+    <rect class="glass" x="385" y="120" width="80" height="80" rx="16" /><foreignObject x="165.0" y="137.6" width="520" height="45.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:24px;font-weight:650;justify-content:center;height:45.6px">\(1\)</div></foreignObject>
+    <rect class="glass" x="485" y="120" width="80" height="80" rx="16" /><foreignObject x="265.0" y="137.6" width="520" height="45.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:24px;font-weight:650;justify-content:center;height:45.6px">\(\sqcup\)</div></foreignObject>
+  </g>
+  <g font-size="14" font-weight="600" text-anchor="middle" class="t-muted">
+    <foreignObject x="-135.0" y="207.7" width="520" height="26.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:14px;font-weight:600;justify-content:center;height:26.6px">\(1\)</div></foreignObject><foreignObject x="-35.0" y="207.7" width="520" height="26.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:14px;font-weight:600;justify-content:center;height:26.6px">\(2\)</div></foreignObject><foreignObject x="65.0" y="207.7" width="520" height="26.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:14px;font-weight:600;justify-content:center;height:26.6px">\(3\)</div></foreignObject><foreignObject x="165.0" y="207.7" width="520" height="26.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:14px;font-weight:600;justify-content:center;height:26.6px">\(4\)</div></foreignObject><foreignObject x="265.0" y="207.7" width="520" height="26.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:14px;font-weight:600;justify-content:center;height:26.6px">\(s\)</div></foreignObject>
+  </g>
+  <path d="M325 240 l-26 34 h52 z" fill="url(#g-ink)" />
+  <rect x="268" y="276" width="114" height="52" rx="16" fill="url(#g-ink)" filter="url(#ds)" />
+  <foreignObject x="65.0" y="282.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:20px;font-weight:700;justify-content:center;height:38.0px">\(q_1\)</div></foreignObject>
+  <path class="edge" d="M325 340 V384" />
+  <rect class="glass" x="70" y="396" width="530" height="268" rx="28" />
+  <text x="104" y="440" font-size="15" font-weight="600" letter-spacing="1.4" class="t-muted">CONDICIONES VERDADERAS</text>
+  <g font-size="19" font-weight="650">
+    <rect x="104" y="462" width="140" height="48" rx="13" fill="url(#g-blue)" /><foreignObject x="-86.0" y="468.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(Q_{q_1}\)</div></foreignObject>
+    <rect x="258" y="462" width="140" height="48" rx="13" fill="url(#g-blue)" /><foreignObject x="68.0" y="468.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(H_3\)</div></foreignObject>
+    <rect x="412" y="462" width="154" height="48" rx="13" fill="url(#g-blue)" /><foreignObject x="229.0" y="468.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(S_{3,0}\)</div></foreignObject>
+  </g>
+  <text x="104" y="550" font-size="15" class="t-muted">una condición por estado, posición de cabeza y (celda, símbolo)</text>
+  <rect x="104" y="574" width="462" height="62" rx="16" fill="#eef4fb" />
+  <foreignObject x="128.0" y="587.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:19px;font-weight:650;justify-content:flex-start;height:36.1px">\(\delta(q_1, 0) = (q_2, 1, +1)\)</div></foreignObject>
+  <foreignObject x="26.0" y="587.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:19px;font-weight:700;justify-content:flex-end;height:36.1px;color:#2f6fb5">\(\to O_{q_1,0,3}\)</div></foreignObject>
+</svg>

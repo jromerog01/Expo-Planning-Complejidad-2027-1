@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 600 420" role="img" aria-label="Rompecabezas de quince">
+  <rect x="150" y="40" width="300" height="300" rx="26" fill="#ffffff" fill-opacity=".4" stroke="#fff" stroke-opacity=".9" stroke-width="2" />
+  <g font-size="26" font-weight="700" text-anchor="middle">
+    <rect class="glass" x="166" y="56" width="62" height="62" rx="14" /><foreignObject x="-63.0" y="62.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(1\)</div></foreignObject>
+    <rect class="glass" x="236" y="56" width="62" height="62" rx="14" /><foreignObject x="7.0" y="62.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(2\)</div></foreignObject>
+    <rect class="glass" x="306" y="56" width="62" height="62" rx="14" /><foreignObject x="77.0" y="62.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(3\)</div></foreignObject>
+    <rect class="glass" x="376" y="56" width="62" height="62" rx="14" /><foreignObject x="147.0" y="62.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(4\)</div></foreignObject>
+    <rect class="glass" x="166" y="126" width="62" height="62" rx="14" /><foreignObject x="-63.0" y="132.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(5\)</div></foreignObject>
+    <rect class="glass" x="236" y="126" width="62" height="62" rx="14" /><foreignObject x="7.0" y="132.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(6\)</div></foreignObject>
+    <rect class="glass" x="306" y="126" width="62" height="62" rx="14" /><foreignObject x="77.0" y="132.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(7\)</div></foreignObject>
+    <rect class="glass" x="376" y="126" width="62" height="62" rx="14" /><foreignObject x="147.0" y="132.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(8\)</div></foreignObject>
+    <rect class="glass" x="166" y="196" width="62" height="62" rx="14" /><foreignObject x="-63.0" y="202.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(9\)</div></foreignObject>
+    <rect class="glass" x="236" y="196" width="62" height="62" rx="14" /><foreignObject x="7.0" y="202.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(10\)</div></foreignObject>
+    <rect class="glass" x="306" y="196" width="62" height="62" rx="14" /><foreignObject x="77.0" y="202.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(11\)</div></foreignObject>
+    <rect x="376" y="196" width="62" height="62" rx="14" fill="url(#g-blue)" filter="url(#ds)" /><foreignObject x="147.0" y="202.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(12\)</div></foreignObject>
+    <rect class="glass" x="166" y="266" width="62" height="62" rx="14" /><foreignObject x="-63.0" y="272.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(13\)</div></foreignObject>
+    <rect class="glass" x="236" y="266" width="62" height="62" rx="14" /><foreignObject x="7.0" y="272.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(14\)</div></foreignObject>
+    <rect class="glass" x="306" y="266" width="62" height="62" rx="14" /><foreignObject x="77.0" y="272.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(15\)</div></foreignObject>
+    <rect x="376" y="266" width="62" height="62" rx="14" fill="none" stroke="#fff" stroke-width="2.4" stroke-dasharray="6 6" />
+  </g>
+  <path d="M407 262 v8" stroke="#2e5f97" stroke-width="2.6" marker-end="url(#arrow)" />
+  <rect class="glass" x="22" y="300" width="150" height="70" rx="16" />
+  <text x="42" y="328" font-size="14" class="t-muted">operador</text>
+  <text x="42" y="353" font-size="18" font-weight="650">mover ficha</text>
+  <rect class="glass" x="430" y="350" width="150" height="56" rx="16" />
+  <text x="450" y="384" font-size="17" font-weight="650">¿hay plan?</text>
+</svg>

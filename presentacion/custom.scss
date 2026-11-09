@@ -1,0 +1,1274 @@
+/*-- scss:defaults --*/
+
+// ---------------------------------------------------------------
+//  Tema "Glass Blue"
+//  Tarjetas redondeadas, degradados azul cielo, tipografía Inter
+//  muy apretada y un encabezado fijo en cada diapositiva.
+//  Lienzo de diseño: 1600 x 900 px.
+// ---------------------------------------------------------------
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+// Colores base
+$ink: #12161d; // títulos
+$text: #2a3039; // texto normal
+$muted: #5d6876; // texto secundario
+$line: rgba(18, 22, 29, 0.09);
+
+$blue-deep: #9cbbe1; // esquina saturada del degradado
+$blue-mid: #bcd5ef;
+$blue-light: #dcf0fb; // esquina clara del degradado
+$accent: #2f6fb5;
+$accent-soft: #e4effa;
+
+$page-1: #f6f8fb;
+$page-2: #e6ecf3;
+
+// Variables de reveal / Quarto
+$font-family-sans-serif: "Inter", "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace: "JetBrains Mono", ui-monospace, monospace;
+$presentation-font-size-root: 22px;
+$presentation-line-height: 1.45;
+$body-bg: $page-2;
+$body-color: $text;
+$link-color: $accent;
+$selection-bg: $accent-soft;
+
+$presentation-heading-font: $font-family-sans-serif;
+$presentation-heading-color: $ink;
+$presentation-heading-font-weight: 700;
+$presentation-heading-letter-spacing: -0.035em;
+$presentation-heading-line-height: 1.02;
+$presentation-heading-text-transform: none;
+
+$code-block-bg: transparent;
+$code-color: $ink;
+
+
+/*-- scss:rules --*/
+
+// ===============================================================
+//  1. Lienzo y fondo
+// ===============================================================
+
+:root {
+  --ink: #{$ink};
+  --text: #{$text};
+  --muted: #{$muted};
+  --accent: #{$accent};
+  --accent-soft: #{$accent-soft};
+  --radius: 26px;
+  --radius-sm: 18px;
+  --shadow:
+    0 30px 50px -30px rgba(26, 56, 97, 0.42),
+    0 10px 22px -12px rgba(26, 56, 97, 0.16),
+    0 1px 2px rgba(26, 56, 97, 0.06);
+  --shadow-sm:
+    0 12px 22px -14px rgba(26, 56, 97, 0.35),
+    0 1px 2px rgba(26, 56, 97, 0.08);
+  --grad-blue: linear-gradient(118deg, #{$blue-deep} 0%, #{$blue-mid} 46%, #{$blue-light} 100%);
+  --grad-media: linear-gradient(140deg, #9ab9e0 0%, #b7d2ee 48%, #d9effc 100%);
+}
+
+.reveal-viewport {
+  background:
+    radial-gradient(90% 80% at 55% 35%, $page-1 0%, transparent 70%),
+    linear-gradient(160deg, #eef2f7 0%, $page-2 60%, #dfe6ef 100%);
+}
+
+// Textura de puntos (halftone) en dos esquinas, igual que la referencia.
+.reveal .slides::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(140, 168, 202, 0.55) 1.5px, transparent 2px);
+  background-size: 17px 17px;
+  -webkit-mask-image:
+    radial-gradient(circle at 100% 0%, #000 0, transparent 26%),
+    radial-gradient(circle at 0% 100%, #000 0, transparent 24%),
+    radial-gradient(ellipse at 74% 72%, rgba(0, 0, 0, 0.55) 0, transparent 16%);
+  mask-image:
+    radial-gradient(circle at 100% 0%, #000 0, transparent 26%),
+    radial-gradient(circle at 0% 100%, #000 0, transparent 24%),
+    radial-gradient(ellipse at 74% 72%, rgba(0, 0, 0, 0.55) 0, transparent 16%);
+}
+
+.reveal .slides section.slide {
+  width: 1600px;
+  height: 900px;
+  padding: 0;
+  text-align: left;
+}
+
+// El título de cada diapositiva (##) se mueve con JS a su .title-slot.
+// Si alguna diapositiva no tiene ranura, el título se oculta.
+.reveal .slides section.slide > h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.reveal p,
+.reveal li {
+  font-size: 21px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.reveal p {
+  margin: 0;
+}
+
+.reveal strong {
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.reveal img {
+  margin: 0;
+}
+
+.reveal mjx-container {
+  font-size: 100%;
+}
+
+// ===============================================================
+//  2. Encabezado fijo (logo · datos · menú)
+// ===============================================================
+
+.deck-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 104px;
+  padding: 0 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 5;
+}
+
+.reveal .deck-header .deck-logo {
+  height: 50px;
+  width: auto;
+  max-height: none;
+  margin: 0;
+  display: block;
+}
+
+.deck-meta {
+  display: flex;
+  gap: 86px;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: #262c35;
+}
+
+.deck-burger {
+  width: 34px;
+  height: 28px;
+  padding: 2px 0;
+  border: 0;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+
+  i {
+    display: block;
+    height: 4.5px;
+    border-radius: 3px;
+    background: var(--ink);
+    transition: transform 0.2s ease;
+  }
+
+  &:hover i:nth-child(2) {
+    transform: translateX(5px);
+  }
+}
+
+// ===============================================================
+//  3. Escenario y retícula genérica
+// ===============================================================
+
+.stage {
+  position: absolute;
+  top: 110px;
+  left: 76px;
+  right: 76px;
+  bottom: 54px;
+  display: grid;
+  gap: 28px;
+}
+
+.a1 { grid-area: a1; }
+.a2 { grid-area: a2; }
+.a3 { grid-area: a3; }
+.a4 { grid-area: a4; }
+.a5 { grid-area: a5; }
+
+// ===============================================================
+//  4. Tarjetas
+// ===============================================================
+
+.card {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  padding: 38px 42px;
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+// Tarjeta azul "vidrio": degradado diagonal + brillo interior.
+.card.blue {
+  background: var(--grad-blue);
+  box-shadow:
+    var(--shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+}
+
+// Panel de ilustración (sustituye a las fotografías de la referencia).
+.card.media {
+  padding: 0;
+  overflow: hidden;
+  background: var(--grad-media);
+  box-shadow:
+    var(--shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  // brillo suave en la esquina inferior derecha
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(70% 60% at 85% 95%, rgba(255, 255, 255, 0.55), transparent 70%);
+  }
+
+  > svg,
+  > p > svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Franja de imagen dentro de una tarjeta (banners, tarjetas blancas).
+.strip {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--grad-media);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  > svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// ===============================================================
+//  5. Tipografía de las tarjetas
+// ===============================================================
+
+.reveal .title-slot h2 {
+  margin: 0;
+  font-size: 84px;
+  line-height: 1;
+  letter-spacing: -0.042em;
+  font-weight: 700;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.reveal .title-slot.xl h2 { font-size: 96px; }
+.reveal .title-slot.md h2 { font-size: 72px; }
+.reveal .title-slot.sm h2 { font-size: 62px; }
+
+.reveal .lead {
+  margin-top: 26px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #1d232c;
+  letter-spacing: -0.01em;
+}
+
+.reveal .kicker {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.reveal .h-card {
+  font-size: 26px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.reveal .small,
+.reveal .small p,
+.reveal .small li {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.reveal .muted {
+  color: var(--muted);
+}
+
+.reveal .cite {
+  font-size: 15px;
+  color: var(--muted);
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+// Números grandes
+.reveal .stat {
+  font-size: 66px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--ink);
+  white-space: nowrap;
+
+  mjx-container {
+    font-size: 88%;
+  }
+}
+
+.reveal .stat-label {
+  margin-top: 18px;
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.reveal .stat-text {
+  margin-top: 8px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+// ===============================================================
+//  6. Componentes pequeños
+// ===============================================================
+
+// Botón flecha (pastilla blanca). Avanza a la siguiente diapositiva.
+.reveal .btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 46px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  font-size: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &::before {
+    content: "";
+    width: 26px;
+    height: 16px;
+    background: var(--ink);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 16'%3E%3Cpath d='M1 8h22M16 1.5 23 8l-7 6.5' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 16'%3E%3Cpath d='M1 8h22M16 1.5 23 8l-7 6.5' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+
+  &:hover {
+    transform: translateX(4px);
+  }
+}
+
+.reveal .btn-arrow.dark {
+  background: var(--ink);
+
+  &::before {
+    background: #fff;
+  }
+}
+
+// Pastilla de texto
+.reveal .pill {
+  display: inline-block;
+  padding: 7px 18px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid $line;
+  box-shadow: 0 2px 6px rgba(26, 56, 97, 0.08);
+  font-size: 16px;
+  font-weight: 550;
+  line-height: 1.3;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.reveal .pill.soft {
+  background: var(--accent-soft);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+// Chips de configuraciones (S₀ → … → S*)
+.reveal .chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.reveal .chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  border-radius: 14px;
+  background: #f2f6fb;
+  border: 1px solid #dde7f2;
+  font-size: 19px;
+  font-weight: 550;
+  color: var(--ink);
+  white-space: nowrap;
+
+  &.on {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
+
+    mjx-container {
+      color: #fff;
+    }
+  }
+}
+
+.reveal .chips .to {
+  font-size: 20px;
+  color: var(--muted);
+}
+
+// Íconos (archivos SVG de trazo negro)
+.reveal .ico {
+  width: 44px;
+  height: 44px;
+  display: block;
+  margin: 0 0 22px;
+}
+
+.reveal .ico-row img.ico {
+  width: 48px;
+  height: 48px;
+  margin: 0;
+}
+
+// Avatar con iniciales
+.reveal .avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(140deg, #26303d, #4b5e75);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  box-shadow: 0 0 0 4px #fff, 0 6px 14px rgba(26, 56, 97, 0.25);
+}
+
+// Listas limpias
+.reveal ul.clean,
+.reveal .clean ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-left: 22px;
+    margin: 0 0 8px;
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 0.62em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--ink);
+  }
+}
+
+// Bloque de pseudocódigo
+.reveal .code-window {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+
+  .bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 20px;
+    border-bottom: 1px solid $line;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--muted);
+
+    i {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #cfdbe9;
+    }
+
+    span {
+      margin-left: 10px;
+    }
+  }
+
+  pre {
+    margin: 0;
+    padding: 18px 24px;
+    box-shadow: none;
+    width: auto;
+    font-size: 17px;
+    line-height: 1.62;
+  }
+
+  pre code {
+    max-height: none;
+    padding: 0;
+    background: none;
+    color: var(--ink);
+    font-family: $font-family-monospace;
+    white-space: pre;
+  }
+
+  .kw { color: var(--accent); font-weight: 600; }
+  .cm { color: #8a94a2; }
+}
+
+// Tabla compacta
+.reveal table.tight {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 18px;
+  margin: 0;
+
+  th {
+    text-align: left;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--muted);
+    padding: 0 10px 10px 0;
+    border-bottom: 1px solid $line;
+  }
+
+  td {
+    padding: 11px 10px 11px 0;
+    border-bottom: 1px solid $line;
+    color: var(--text);
+    vertical-align: middle;
+  }
+
+  tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .yes { color: #1f7a4d; font-weight: 650; }
+  .no { color: #b0413e; font-weight: 650; }
+}
+
+// ===============================================================
+//  7. Ilustraciones SVG en línea
+// ===============================================================
+
+.ill {
+  font-family: $font-family-sans-serif;
+  overflow: visible;
+  fill: var(--ink);
+  .t-muted { fill: #4c5a6b; }
+  .t-white { fill: #fff; }
+  .t-accent { fill: var(--accent); }
+
+  .glass {
+    fill: #fff;
+    fill-opacity: 0.9;
+    filter: url(#ds);
+  }
+
+  .glass-soft {
+    fill: #fff;
+    fill-opacity: 0.55;
+  }
+
+  .edge {
+    fill: none;
+    stroke: #2e5f97;
+    stroke-width: 2.6;
+    stroke-linecap: round;
+    marker-end: url(#arrow);
+  }
+
+  .edge-soft {
+    fill: none;
+    stroke: #ffffff;
+    stroke-opacity: 0.9;
+    stroke-width: 2.4;
+    stroke-dasharray: 2 9;
+    stroke-linecap: round;
+  }
+
+  .ink { fill: var(--ink); }
+  .accent { fill: #4f8fd6; }
+  .accent-2 { fill: #8bb9ea; }
+  .accent-3 { fill: #cfe3f7; }
+}
+
+// ===============================================================
+//  8. Layouts (uno por cada diseño de la referencia)
+// ===============================================================
+
+// L1 · Portada: ilustración | título + 2 tarjetas
+.l-hero {
+  grid-template-columns: 1fr 0.5fr 0.5fr;
+  grid-template-rows: 1.08fr 1fr;
+  grid-template-areas:
+    "a1 a2 a2"
+    "a1 a3 a4";
+
+  .a2 {
+    justify-content: center;
+    padding: 40px 54px;
+  }
+
+  .a3,
+  .a4 {
+    padding: 34px 40px;
+  }
+}
+
+// L2 · Panel azul con título + tarjeta blanca de estadísticas
+.l-stats {
+  grid-template-areas: "a1";
+
+  > .card.blue {
+    display: grid;
+    grid-template-columns: 1fr 0.98fr;
+    gap: 40px;
+    padding: 44px 34px 34px 54px;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    padding-top: 6px;
+  }
+
+  .left .btn-arrow {
+    margin-top: auto;
+  }
+
+  .inner {
+    padding: 24px 24px 30px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 28px;
+  }
+
+  .inner .strip {
+    min-height: 0;
+  }
+
+  .stats2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 0 12px;
+  }
+}
+
+// L3 · Ilustración | título azul (+ flecha) / tarjeta de 3 columnas
+.l-split {
+  grid-template-columns: 0.9fr 1fr;
+  grid-template-rows: 0.74fr 1fr;
+  grid-template-areas:
+    "a1 a2"
+    "a1 a3";
+
+  .a2 {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding: 34px 44px 34px 48px;
+  }
+
+  .cols3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 34px;
+    height: 100%;
+  }
+
+  .cols3 > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .a3 {
+    padding: 38px 40px;
+  }
+}
+
+// L4 · Ilustración grande | título libre / tarjeta con flecha
+.l-deep {
+  grid-template-columns: 1.1fr 1fr;
+  grid-template-rows: 1fr 1.08fr;
+  grid-template-areas:
+    "a1 a2"
+    "a1 a3";
+
+  .a2 {
+    justify-content: flex-end;
+    padding: 0 0 4px 6px;
+  }
+
+  .a3 {
+    padding: 38px 44px;
+  }
+
+  .a3 .btn-arrow {
+    position: absolute;
+    right: 34px;
+    bottom: 32px;
+  }
+}
+
+// L5 · Banner azul (título + franja + flecha) / 3 o 4 tarjetas
+.l-banner {
+  grid-template-rows: 0.82fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "a1 a1 a1"
+    "a2 a3 a4";
+
+  &.four {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "a1 a1 a1 a1"
+      "a2 a3 a4 a5";
+  }
+
+  > .a1 {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 40px;
+    padding: 34px 40px 34px 50px;
+  }
+
+  .a1 .strip {
+    height: 62%;
+    min-height: 120px;
+  }
+
+  > .card:not(.a1) {
+    padding: 38px 38px 34px;
+  }
+}
+
+// L6 · Título azul alto | tarjeta con franja / tarjeta con chips
+.l-stack {
+  grid-template-columns: 0.8fr 1fr;
+  grid-template-rows: 1.1fr 1fr;
+  grid-template-areas:
+    "a1 a2"
+    "a1 a3";
+
+  > .a1 {
+    padding: 50px 50px 44px;
+  }
+
+  > .a1 .btn-arrow {
+    margin-top: auto;
+  }
+
+  > .a2 {
+    padding: 22px 22px 30px;
+    gap: 22px;
+  }
+
+  > .a2 .strip {
+    flex: 1;
+    min-height: 0;
+  }
+
+  > .a2 .txt {
+    padding: 0 18px;
+  }
+
+  > .a3 {
+    padding: 32px 40px;
+  }
+}
+
+// L7 · Panel azul con 3 "planes" + título inferior
+.l-plans {
+  grid-template-areas: "a1";
+
+  > .card.blue {
+    padding: 34px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 34px;
+  }
+
+  .plans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .plan {
+    position: relative;
+    padding: 30px 34px 28px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.62);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 18px 34px -26px rgba(26, 56, 97, 0.5);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .plan.featured {
+    background: #fff;
+  }
+
+  .plan .stat {
+    margin: 22px 0 18px;
+    font-size: 56px;
+  }
+
+  .bottom {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: end;
+    gap: 50px;
+    padding: 0 18px 6px;
+  }
+
+  .bottom p {
+    max-width: 520px;
+    font-size: 19px;
+  }
+}
+
+// L8 · Mosaico: título azul + ilustración / ilustración alta + tarjeta
+.l-mosaic {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.92fr 0.36fr 0.78fr;
+  grid-template-areas:
+    "a1 a2"
+    "a3 a2"
+    "a3 a4";
+
+  > .a1 {
+    justify-content: center;
+    padding: 40px 50px;
+  }
+
+  > .a4 {
+    padding: 30px 40px;
+  }
+}
+
+// L9 · Título azul alto | 2 "historias" (ilustración + tarjeta)
+.l-stories {
+  grid-template-columns: 0.86fr 1fr 1fr;
+  grid-template-areas: "a1 a2 a3";
+
+  > .a1 {
+    padding: 50px 46px 44px;
+  }
+
+  > .a1 .btn-arrow {
+    margin-top: auto;
+  }
+
+  .story {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .story > .media {
+    flex: 1;
+  }
+
+  .story > .caption {
+    margin: -34px 14px 0;
+    padding: 24px 28px 26px;
+    z-index: 2;
+  }
+
+  .who {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .who img.ico {
+    width: 36px;
+    height: 36px;
+    margin: 0;
+  }
+
+  .quote {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}
+
+// L10 · Ilustración | título azul / tarjeta de contacto
+.l-contact {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 0.95fr;
+  grid-template-areas:
+    "a1 a2"
+    "a1 a3";
+
+  > .a2 {
+    justify-content: center;
+    padding: 40px 54px;
+  }
+
+  > .a3 {
+    flex-direction: row;
+    align-items: center;
+    gap: 36px;
+    padding: 32px 40px;
+  }
+
+  .photo {
+    flex: none;
+    width: 190px;
+    height: 190px;
+    border-radius: 20px;
+    background: linear-gradient(150deg, #eef4fb, #d7e7f7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .photo img {
+    width: 130px;
+    height: auto;
+  }
+
+  .contact ul {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    li::before {
+      content: "";
+      flex: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3 6.2 5.2 8.3 9 4' fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 12px no-repeat;
+    }
+  }
+}
+
+// ===============================================================
+//  9. Utilidades
+// ===============================================================
+
+.reveal .row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.reveal .between {
+  justify-content: space-between;
+}
+
+.reveal .mt-auto { margin-top: auto; }
+.reveal .mt-s { margin-top: 12px; }
+.reveal .mt-m { margin-top: 22px; }
+.reveal .mt-l { margin-top: 34px; }
+
+.reveal .formula {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+// Modo vista general: tarjetas un poco más ligeras
+.reveal.overview .slides section.slide {
+  outline: 1px solid rgba(26, 56, 97, 0.12);
+  background: $page-1;
+}
+
+// ===============================================================
+//  10. Ajustes finos
+// ===============================================================
+
+.reveal sup,
+.reveal sub {
+  line-height: 0;
+  font-size: 0.62em;
+}
+
+.reveal .stat sup {
+  font-size: 0.5em;
+  vertical-align: 0.95em;
+  letter-spacing: -0.02em;
+}
+
+.reveal .l-banner > .a1 .title-slot {
+  max-width: 560px;
+}
+
+.reveal .l-banner.four .stat {
+  font-size: 46px;
+}
+
+.reveal .l-plans .plan .clean {
+  margin-top: 4px;
+}
+
+.l-stack.single {
+  grid-template-areas:
+    "a1 a2"
+    "a1 a2";
+  grid-template-columns: 0.62fr 1fr;
+}
+
+.reveal .refs {
+  padding: 36px 40px;
+
+  ul {
+    columns: 2;
+    column-gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    break-inside: avoid;
+    margin: 0 0 12px;
+    padding-left: 16px;
+    text-indent: -16px;
+    font-size: 15px;
+    line-height: 1.42;
+    color: var(--text);
+  }
+}
+
+.reveal .l-contact .contact ul {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+}
+
+// ===============================================================
+//  11. Bloques de texto, flechas y LaTeX
+// ===============================================================
+
+// Las clases de texto van en <span> dentro de <p>: se vuelven bloque
+// para que respeten su propio tamaño de letra e interlineado.
+.reveal .stat,
+.reveal .stat-label,
+.reveal .stat-text,
+.reveal .h-card,
+.reveal .kicker,
+.reveal .formula,
+.reveal .quote,
+.reveal .cite,
+.reveal span.small {
+  display: block;
+}
+
+// Flecha al fondo de las tarjetas que son columnas
+.reveal .l-stats .left > p:has(> .btn-arrow),
+.reveal .l-stack > .a1 > p:has(> .btn-arrow),
+.reveal .l-stories > .a1 > p:has(> .btn-arrow) {
+  margin-top: auto;
+  padding-top: 24px;
+  line-height: 0;
+}
+
+.reveal .l-split .a2 > p:has(> .btn-arrow),
+.reveal .l-banner .a1 > p:has(> .btn-arrow),
+.reveal .l-plans .bottom > p:has(> .btn-arrow) {
+  line-height: 0;
+}
+
+// En las tarjetas de cifras: número arriba, texto abajo (como la referencia)
+.reveal .l-banner > .card:not(.a1) > p:has(> .stat-label) {
+  margin-top: auto;
+}
+
+.reveal .card.center {
+  justify-content: center;
+}
+
+.reveal .plan > p:has(> .stat) {
+  margin: 22px 0 18px;
+}
+
+.reveal .plan .stat {
+  margin: 0;
+}
+
+// Pseudocódigo con LaTeX (estilo algorithmic del reporte)
+.reveal .code-window .algo {
+  padding: 22px 28px 26px;
+  font-size: 21px;
+  line-height: 1.95;
+  color: var(--ink);
+
+  .ln { white-space: nowrap; }
+  .i1 { padding-left: 30px; }
+  .i2 { padding-left: 60px; }
+  b { color: var(--accent); font-weight: 650; }
+  .cm { color: #8a94a2; font-size: 0.9em; }
+}
+
+// LaTeX (MathJax) un poco más grande para equilibrar con Inter
+.reveal mjx-container,
+.reveal .MathJax {
+  font-size: 108% !important;
+}
+
+.reveal .stat mjx-container,
+.reveal .stat .MathJax {
+  font-size: 92% !important;
+}
+
+// Etiquetas LaTeX dentro de las ilustraciones (foreignObject)
+.ill foreignObject {
+  overflow: visible;
+}
+
+.ill .fo {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  white-space: nowrap;
+  line-height: 1;
+  color: var(--ink);
+  font-family: $font-family-sans-serif;
+
+  &.t-white { color: #fff; }
+  &.t-muted { color: #4c5a6b; }
+  &.t-accent { color: var(--accent); }
+
+  mjx-container {
+    font-size: 112% !important;
+    margin: 0 !important;
+  }
+}
+
+// Avatares superpuestos (portada con dos integrantes)
+.reveal .avatars {
+  display: flex;
+  align-items: center;
+
+  .avatar + .avatar {
+    margin-left: -14px;
+  }
+
+  .avatar:first-child {
+    background: linear-gradient(140deg, #3b6ea8, #6f9fd6);
+  }
+}
+
+.reveal .names p {
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+.reveal .names p + p {
+  margin-top: 10px;
+}
+
+.reveal .names p:first-child {
+  margin-bottom: 4px;
+}
+
+// L11 · Mapa ancho arriba | título azul + tarjeta de texto abajo
+.l-map {
+  grid-template-columns: 0.72fr 1.28fr;
+  grid-template-rows: 1.2fr 1fr;
+  grid-template-areas:
+    "a1 a1"
+    "a2 a3";
+
+  > .a2 {
+    justify-content: center;
+    padding: 34px 44px;
+  }
+
+  > .a3 {
+    padding: 30px 40px;
+  }
+
+  > .a3 .btn-arrow {
+    position: absolute;
+    right: 30px;
+    bottom: 28px;
+  }
+}
