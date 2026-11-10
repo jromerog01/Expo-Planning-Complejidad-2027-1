@@ -1,0 +1,7 @@
+{
+  "name": "exportar-pdf",
+  "private": true,
+  "type": "module",
+  "scripts": { "pdf": "node exportar-pdf.mjs" },
+  "dependencies": { "playwright": "1.49.1" }
+}

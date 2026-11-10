@@ -13,7 +13,10 @@ planning/
     ├── custom.scss              # Tema visual (colores, tarjetas, layouts)
     ├── assets/deck.html         # Encabezado fijo + script de navegación
     ├── img/                     # Ilustraciones SVG, íconos y escudos
-    └── herramientas/mapa/       # Script que genera el mapa real de vuelos (img/flights.svg)
+    ├── presentacion.pdf         # Versión PDF de la presentación
+    └── herramientas/
+        ├── mapa/                # Script que genera el mapa real de vuelos (img/flights.svg)
+        └── pdf/                 # Script que exporta el HTML a PDF
 ```
 
 ---
@@ -80,6 +83,22 @@ también necesita `img/` y `presentacion_files/`.
 > y las fórmulas se dibujan con MathJax desde un CDN.
 
 ## 4. Exportar a PDF
+
+Ya hay un PDF listo: `presentacion/presentacion.pdf` (19 páginas, vectorial, igual al HTML).
+Si cambias la presentación, vuelve a generarlo:
+
+**Opción A (recomendada, queda idéntico al HTML)** — necesita [Node.js](https://nodejs.org):
+
+```bash
+cd presentacion
+quarto render presentacion.qmd          # primero actualizar el HTML
+cd herramientas/pdf
+npm install
+npx playwright install chromium         # solo la primera vez
+npm run pdf                             # reescribe presentacion/presentacion.pdf
+```
+
+**Opción B (manual, desde Chrome):**
 
 1. Abre `presentacion.html` en **Chrome o Chromium**.
 2. Agrega `?print-pdf` al final de la URL, por ejemplo

@@ -72,6 +72,482 @@ Definimos el problema, probamos que está en PSPACE con el algoritmo de Savitch 
 
 :::
 
+## ¿Qué es PSPACE? {#que-es-pspace}
+
+::: {.stage .l-deep}
+
+::: {.card .media .a1}
+```{=html}
+{{< include img/hierarchy.svg >}}
+```
+:::
+
+::: {.a2 .title-slot .xl}
+:::
+
+::: {.card .a3}
+[Definición]{.kicker}
+
+[$\mathsf{P} \subseteq \mathsf{NP} \subseteq \mathsf{PSPACE} \subseteq \mathsf{EXPTIME}$]{.formula}
+
+::: {.clean .mt-m}
+- **PSPACE**: problemas que se resuelven usando memoria polinomial en el tamaño de la entrada.
+- **El tiempo no se limita**: puede ser exponencial.
+- **El espacio se reutiliza**; el tiempo, no.
+:::
+
+[Kleinberg y Tardos (2005, pp. 531–532).]{.cite}
+
+[Siguiente]{.btn-arrow}
+:::
+
+:::
+
+## Ejemplo: los vuelos {#ej-vuelos}
+
+::: {.stage .l-map}
+
+::: {.card .media .a1}
+```{=html}
+{{< include img/flights.svg >}}
+```
+:::
+
+::: {.card .blue .a2}
+[Ejemplo · la idea]{.kicker}
+
+::: {.title-slot .sm}
+:::
+:::
+
+::: {.card .a3}
+[De Ciudad de México a Tokio]{.h-card}
+
+No basta con encontrar conexiones entre ciudades: para volar a Tokio hace falta una visa que solo se tramita en París. Lo que importa es el **estado** del viajero: dónde está y qué documentos tiene.
+
+::: {.chips .mt-m}
+[CDMX]{.chip} [$\to$]{.to} [L. Á.]{.chip} [$\to$]{.to} [Madrid]{.chip} [$\to$]{.to} [París]{.chip} [$\to$]{.to} [Madrid]{.chip} [$\to$]{.to} [Tokio]{.chip .on}
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+:::
+
+## Ejemplo: 3 y 4 focos {#focos}
+
+::: {.stage .l-stories}
+
+::: {.card .blue .a1}
+::: {.title-slot .md}
+:::
+
+::: {.lead}
+Cada foco está encendido o apagado: es un bit de memoria.
+:::
+
+::: {.mt-l .muted}
+Un foco más duplica las configuraciones por recorrer, pero solo ocupa un foco más.
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.story .a2}
+::: {.card .media}
+```{=html}
+{{< include img/focos3.svg >}}
+```
+:::
+
+::: {.card .caption}
+::: {.who}
+![](img/icons/chip.svg){.ico}
+[$3$ focos]{.pill .soft}
+:::
+
+[“Hay $8$ configuraciones y $7$ pasos para recorrerlas, siempre con los mismos $3$ focos.”]{.quote}
+:::
+:::
+
+::: {.story .a3}
+::: {.card .media}
+```{=html}
+{{< include img/focos4.svg >}}
+```
+:::
+
+::: {.card .caption}
+::: {.who}
+![](img/icons/clock.svg){.ico}
+[$4$ focos]{.pill .soft}
+:::
+
+[“Hay $16$ configuraciones y $15$ pasos: el tiempo se duplicó; la memoria solo creció en un foco.”]{.quote}
+:::
+:::
+
+:::
+
+## ¿Qué es Planning? {#que-es-planning}
+
+::: {.stage .l-plans}
+::: {.card .blue .a1}
+
+::: {.plans}
+::: {.plan}
+[Punto de partida]{.pill}
+
+[$S_0$]{.stat}
+
+::: {.clean}
+- Un estado inicial: lo que es cierto al empezar.
+- Se describe con los hechos que se cumplen.
+- En el viaje: estoy en Ciudad de México y tengo pasaporte.
+:::
+:::
+
+::: {.plan .featured}
+[Acciones]{.pill}
+
+[$O_1, \dots, O_k$]{.stat}
+
+::: {.clean}
+- Cada acción exige ciertos requisitos y cambia el estado.
+- Al aplicarla, unos hechos se agregan y otros se eliminan.
+- Volar a Tokio exige estar en Madrid y tener la visa japonesa.
+:::
+:::
+
+::: {.plan}
+[Meta]{.pill}
+
+[$S^*$]{.stat}
+
+::: {.clean}
+- El estado objetivo al que se quiere llegar.
+- Hay que alcanzarlo exactamente.
+- En el viaje: estoy en Tokio con mis documentos.
+:::
+:::
+:::
+
+::: {.bottom}
+::: {.title-slot .md}
+:::
+
+¿Existe una secuencia de acciones permitidas que lleve del estado inicial al objetivo? Es un problema de decisión: se responde *sí* o *no*.
+
+[Siguiente]{.btn-arrow}
+:::
+
+:::
+:::
+
+## Hechos, estados y operadores {#definiciones}
+
+::: {.stage .l-split}
+
+::: {.card .media .a1}
+```{=html}
+{{< include img/operator.svg >}}
+```
+:::
+
+::: {.card .blue .a2}
+::: {.title-slot .sm}
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a3}
+::: {.cols3}
+::: {}
+![](img/icons/list.svg){.ico}
+
+[Hechos]{.h-card}
+
+[Las condiciones $\mathcal{C} = \{c_1, \dots, c_n\}.$ Cada una es verdadera o falsa: «estoy en Madrid», «tengo pasaporte».]{.small}
+:::
+
+::: {}
+![](img/icons/layers.svg){.ico}
+
+[Estados]{.h-card}
+
+[Un estado (o configuración) es el conjunto $S \subseteq \mathcal{C}$ de hechos que se cumplen. Hay $2^n$ estados posibles.]{.small}
+:::
+
+::: {}
+![](img/icons/bolt.svg){.ico}
+
+[Operadores]{.h-card}
+
+[$O_i = (P_i, A_i, D_i).$ Si $P_i \subseteq S$, agrega $A_i$ y elimina $D_i$: $S' = (S \setminus D_i) \cup A_i.$]{.small}
+:::
+:::
+:::
+
+:::
+
+## ¿Por qué es exponencial en tiempo? {#exp-tiempo}
+
+::: {.stage .l-banner}
+
+::: {.card .blue .a1}
+::: {.title-slot .sm}
+:::
+
+::: {.strip}
+```{=html}
+{{< include img/counter.svg >}}
+```
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a2}
+[$2^n$]{.stat}
+
+[Estados posibles]{.stat-label}
+
+[Cada uno de los $n$ hechos es verdadero o falso. Buscar un plan es buscar un camino entre $2^n$ estados.]{.stat-text}
+:::
+
+::: {.card .a3}
+[$2^n - 1$]{.stat}
+
+[Pasos del plan más corto]{.stat-label}
+
+[En el contador de $n$ bits no hay atajos: solo recorrer el plan ya toma un número exponencial de pasos.]{.stat-text}
+:::
+
+::: {.card .a4}
+[$2^{O(n^2)}$]{.stat}
+
+[Llamadas de Path]{.stat-label}
+
+[El algoritmo que veremos no guarda resultados: los recalcula. No se conoce ninguno de tiempo polinomial.]{.stat-text}
+:::
+
+:::
+
+## ¿Por qué es polinomial en espacio? {#poli-espacio}
+
+::: {.stage .l-stats}
+::: {.card .blue .a1}
+
+::: {.left}
+::: {.title-slot .md}
+:::
+
+::: {.lead}
+Nunca se guarda el plan ni la grafica de estados: solo lo que se está revisando en ese momento, y esa memoria se reutiliza.
+:::
+
+::: {.mt-l .muted}
+Es la idea de los focos: se recorren $2^n$ configuraciones usando siempre los mismos $n$ bits.
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .inner}
+::: {.strip}
+```{=html}
+{{< include img/tradeoff.svg >}}
+```
+:::
+
+::: {.stats2}
+::: {}
+[$n$ bits]{.stat}
+
+[Por estado]{.stat-label}
+
+[Un estado es un subconjunto de los $n$ hechos: basta un bit por hecho.]{.stat-text}
+:::
+
+::: {}
+[$n + 1$]{.stat}
+
+[Niveles de recursión]{.stat-label}
+
+[Path guarda unos cuantos estados por nivel y, de cada subproblema resuelto, un solo bit.]{.stat-text}
+:::
+:::
+:::
+
+:::
+:::
+
+## Cota superior sobre la longitud del plan {#cota}
+
+::: {.stage .l-stack}
+
+::: {.card .blue .a1}
+::: {.title-slot .sm}
+:::
+
+::: {.lead}
+Si una instancia con $n$ condiciones tiene solución, tiene una con a lo más $2^n - 1$ pasos (Teorema 9.7).
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a2}
+::: {.strip}
+```{=html}
+{{< include img/graph-implicit.svg >}}
+```
+:::
+
+::: {.txt}
+[Demostración]{.h-card}
+
+La grafica de estados tiene $2^n$ nodos. El camino más corto de $S_0$ a $S^*$ no repite nodos, así que tiene a lo más $2^n - 1$ aristas.
+:::
+:::
+
+::: {.card .a3}
+[¿Para qué sirve?]{.h-card}
+
+Basta preguntar por caminos de a lo más $2^n$ pasos: el problema completo es $\textsf{Path}(S_0, S^*, 2^n).$
+
+::: {.chips .mt-auto}
+[$2^n$&nbsp;estados]{.chip} [$\to$]{.to} [sin repetir]{.chip} [$\to$]{.to} [$\le 2^n - 1$&nbsp;pasos]{.chip .on}
+:::
+:::
+
+:::
+
+## Algoritmo Path {#algoritmo-path}
+
+::: {.stage .l-mosaic}
+
+::: {.card .blue .a1}
+::: {.title-slot .md}
+:::
+
+::: {.lead}
+¿Se puede llegar de $S_1$ a $S_2$ en a lo más $L$ pasos?
+:::
+:::
+
+::: {.card .media .a2}
+```{=html}
+<div class="code-window">
+  <div class="bar"><i></i><i></i><i></i><span>Kleinberg y Tardos (2005, p. 542)</span></div>
+  <div class="algo">
+    <div class="ln"><b>procedimiento</b> \(\textsf{Path}(S_1, S_2, L)\)</div>
+    <div class="ln i1"><b>si</b> \(L = 1\) <b>entonces</b> devolver \(S_1 = S_2\) o \(\exists\, O : S_1 \xrightarrow{O} S_2\)</div>
+    <div class="ln i1"><b>para cada</b> \(S'\) <span class="cm">(contador de \(n\) bits)</span> <b>hacer</b></div>
+    <div class="ln i2">\(x \gets \textsf{Path}(S_1, S', \lceil L/2 \rceil)\) <span class="cm">— borrar todo salvo \(x\)</span></div>
+    <div class="ln i2">\(y \gets \textsf{Path}(S', S_2, \lceil L/2 \rceil)\) <span class="cm">— borrar todo salvo \(y\)</span></div>
+    <div class="ln i2"><b>si</b> \(x\) y \(y\) <b>entonces</b> devolver «sí»</div>
+    <div class="ln i1">devolver «no»</div>
+  </div>
+</div>
+```
+:::
+
+::: {.card .media .a3}
+```{=html}
+{{< include img/midpoint.svg >}}
+```
+:::
+
+::: {.card .a4}
+::: {.clean}
+- **Caso base** ($L = 1$): los estados son iguales o un operador lleva de uno al otro.
+- **Punto medio**: prueba cada estado $S'$ y resuelve las dos mitades con $\lceil L/2 \rceil.$
+- **Memoria**: de cada mitad resuelta solo conserva un bit.
+:::
+:::
+
+:::
+
+## Demostración de correctitud {#correctitud}
+
+::: {.stage .l-split}
+
+::: {.card .media .a1}
+```{=html}
+{{< include img/induction.svg >}}
+```
+:::
+
+::: {.card .blue .a2}
+::: {.title-slot .sm}
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a3}
+::: {.cols3}
+::: {}
+![](img/icons/shield.svg){.ico}
+
+[Caso base]{.h-card}
+
+[Inducción sobre $L.$ Si $L = 1$, Path revisa directamente si $S_1 = S_2$ o si algún operador lleva de $S_1$ a $S_2.$]{.small}
+:::
+
+::: {}
+![](img/icons/target.svg){.ico}
+
+[Si hay camino]{.h-card}
+
+[Su punto medio $S'$ lo parte en dos tramos de a lo más $\lceil L/2 \rceil$ pasos: por hipótesis, ambas llamadas responden *sí*.]{.small}
+:::
+
+::: {}
+![](img/icons/swap.svg){.ico}
+
+[Si responde sí]{.h-card}
+
+[Existe $S'$ con ambas llamadas en *sí*. Al unir los dos caminos queda uno de a lo más $L$ pasos de $S_1$ a $S_2.$]{.small}
+:::
+:::
+:::
+
+:::
+
+## Demostración de la complejidad de memoria {#memoria}
+
+::: {.stage .l-deep}
+
+::: {.card .media .a1}
+```{=html}
+{{< include img/stack.svg >}}
+```
+:::
+
+::: {.a2 .title-slot .sm}
+:::
+
+::: {.card .a3}
+[Teorema 9.8 · espacio]{.kicker}
+
+[$O\big(n(n + \log k)\big)$ bits]{.formula}
+
+::: {.clean .mt-m}
+- **Una llamada activa por nivel**; de las terminadas solo queda un bit.
+- **Marco**: $S_1$, $S_2$, $S'$, contador, $x$, $y$ $\to$ $O(n + \log k)$ bits.
+- **Profundidad** $n + 1$: $L$ baja de $2^n$ a $1$ dividiéndose entre $2.$
+:::
+
+[$S(L) \le p(n, k, \log L) + S(\lceil L/2 \rceil).$]{.cite}
+
+[Siguiente]{.btn-arrow}
+:::
+
+:::
+
 ## ¿Existe un plan? {#intro}
 
 ::: {.stage .l-stats}
