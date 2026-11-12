@@ -4,7 +4,8 @@
   "type": "module",
   "description": "Genera img/flights.svg (mapa real con rutas de gran círculo)",
   "scripts": {
-    "mapa": "node generar-mapa.mjs ../../img/flights.svg"
+    "mapa": "node generar-mapa.mjs ../../img/flights.svg",
+    "mapa-directo": "node generar-mapa.mjs ../../img/flights-directo.svg directo"
   },
   "dependencies": {
     "d3-geo": "3.1.1",

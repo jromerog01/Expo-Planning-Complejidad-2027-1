@@ -1272,3 +1272,143 @@ $code-color: $ink;
     bottom: 28px;
   }
 }
+
+// Portada: datos de la materia (etiqueta arriba, valor abajo)
+.reveal .names.datos {
+  margin-top: auto;
+  margin-bottom: auto;
+
+  p {
+    font-size: 17px;
+    line-height: 1.25;
+  }
+
+  p:nth-child(odd) {
+    margin-top: 9px;
+  }
+
+  p:nth-child(even) {
+    margin-top: 0;
+  }
+
+  p:first-child {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+// Variante de .l-deep con la tarjeta de texto más alta y ancha (título en una línea)
+.l-deep.tall {
+  grid-template-columns: 0.74fr 1.26fr;
+  grid-template-rows: auto 1fr;
+  gap: 22px 28px;
+
+  .a2 {
+    padding: 0 0 0 6px;
+  }
+
+  .a3 {
+    padding: 28px 44px 22px;
+    justify-content: flex-start;
+  }
+
+  .a3 > p:not(.cite) {
+    font-size: 22px;
+  }
+
+  .a3 .formula {
+    font-size: 30px;
+  }
+
+  .a3 .clean li {
+    font-size: 19px;
+    margin-bottom: 7px;
+  }
+
+  // La tarjeta llena todo el alto y el contenido se reparte dentro de ella
+  .a3 .cite {
+    margin-top: auto;
+  }
+
+  .a3 .btn-arrow {
+    position: static;
+  }
+
+  .a3 > p:has(> .btn-arrow) {
+    margin-top: 6px;
+    text-align: right;
+    line-height: 0;
+  }
+}
+
+// Variante de .l-deep para los ejemplos de los focos: tarjeta de texto más alta
+.l-deep.ej {
+  grid-template-rows: auto 1fr;
+  gap: 20px 28px;
+
+  .a2 {
+    padding-bottom: 0;
+  }
+
+  // El texto se reparte a lo alto de toda la tarjeta
+  .a3 {
+    padding: 34px 44px 34px;
+    justify-content: space-evenly;
+  }
+
+  .a3 > p:not(.cite),
+  .a3 .grupo > p:not(.kicker) {
+    font-size: 23px;
+  }
+
+  .a3 .clean li {
+    font-size: 21px;
+  }
+}
+
+// Tabla de botones (botón · precondición · efecto) en los ejemplos de focos
+.reveal table.tight.acciones {
+  margin: 6px 0 12px;
+
+  th,
+  td {
+    padding-right: 12px;
+    font-size: 19px;
+    line-height: 1.35;
+  }
+
+  th:nth-child(-n + 2),
+  td:nth-child(-n + 2) {
+    white-space: nowrap;
+  }
+
+  // Divisiones verticales entre columnas
+  th,
+  td {
+    padding-left: 12px;
+  }
+
+  th:not(:last-child),
+  td:not(:last-child) {
+    border-right: 1px solid $line;
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 0;
+  }
+}
+
+
+// Diapositiva de 4 focos: menos contenido, letra más grande
+.l-deep.ej.grande {
+  .a3 > p:not(.cite),
+  .a3 .grupo > p:not(.kicker) {
+    font-size: 27px;
+  }
+
+  .a3 .clean li {
+    font-size: 25px;
+    margin-bottom: 12px;
+  }
+}

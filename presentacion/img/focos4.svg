@@ -1,86 +1,138 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 500 570" role="img" aria-label="Cuatro focos: las 16 configuraciones posibles, contadas en binario">
-  <rect class="glass" x="22" y="30" width="220" height="446" rx="22" />
-  <rect class="glass" x="258" y="30" width="220" height="446" rx="22" />
-  <foreignObject x="-210.0" y="57.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(0\)</div></foreignObject>
-  <rect x="87.0" y="78.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="92" cy="69" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="125.0" y="78.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="130" cy="69" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="163.0" y="78.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="168" cy="69" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="201.0" y="78.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="206" cy="69" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <foreignObject x="-210.0" y="107.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(1\)</div></foreignObject>
-  <rect x="87.0" y="128.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="92" cy="119" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="125.0" y="128.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="130" cy="119" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="163.0" y="128.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="168" cy="119" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="201.0" y="128.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="206" cy="119" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="206" cy="119" r="12" fill="url(#g-blue)" /><circle cx="202.2" cy="114.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <foreignObject x="-210.0" y="157.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(2\)</div></foreignObject>
-  <rect x="87.0" y="178.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="92" cy="169" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="125.0" y="178.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="130" cy="169" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="163.0" y="178.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="168" cy="169" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="168" cy="169" r="12" fill="url(#g-blue)" /><circle cx="164.2" cy="164.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="201.0" y="178.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="206" cy="169" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <foreignObject x="-210.0" y="207.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(3\)</div></foreignObject>
-  <rect x="87.0" y="228.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="92" cy="219" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="125.0" y="228.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="130" cy="219" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="163.0" y="228.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="168" cy="219" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="168" cy="219" r="12" fill="url(#g-blue)" /><circle cx="164.2" cy="214.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="201.0" y="228.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="206" cy="219" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="206" cy="219" r="12" fill="url(#g-blue)" /><circle cx="202.2" cy="214.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <foreignObject x="-210.0" y="257.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(4\)</div></foreignObject>
-  <rect x="87.0" y="278.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="92" cy="269" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="125.0" y="278.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="130" cy="269" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="130" cy="269" r="12" fill="url(#g-blue)" /><circle cx="126.2" cy="264.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="163.0" y="278.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="168" cy="269" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="201.0" y="278.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="206" cy="269" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <foreignObject x="-210.0" y="307.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(5\)</div></foreignObject>
-  <rect x="87.0" y="328.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="92" cy="319" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="125.0" y="328.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="130" cy="319" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="130" cy="319" r="12" fill="url(#g-blue)" /><circle cx="126.2" cy="314.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="163.0" y="328.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="168" cy="319" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="201.0" y="328.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="206" cy="319" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="206" cy="319" r="12" fill="url(#g-blue)" /><circle cx="202.2" cy="314.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <foreignObject x="-210.0" y="357.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(6\)</div></foreignObject>
-  <rect x="87.0" y="378.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="92" cy="369" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="125.0" y="378.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="130" cy="369" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="130" cy="369" r="12" fill="url(#g-blue)" /><circle cx="126.2" cy="364.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="163.0" y="378.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="168" cy="369" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="168" cy="369" r="12" fill="url(#g-blue)" /><circle cx="164.2" cy="364.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="201.0" y="378.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="206" cy="369" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <foreignObject x="-210.0" y="407.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(7\)</div></foreignObject>
-  <rect x="87.0" y="428.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="92" cy="419" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="125.0" y="428.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="130" cy="419" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="130" cy="419" r="12" fill="url(#g-blue)" /><circle cx="126.2" cy="414.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="163.0" y="428.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="168" cy="419" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="168" cy="419" r="12" fill="url(#g-blue)" /><circle cx="164.2" cy="414.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="201.0" y="428.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="206" cy="419" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="206" cy="419" r="12" fill="url(#g-blue)" /><circle cx="202.2" cy="414.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <foreignObject x="26.0" y="57.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(8\)</div></foreignObject>
-  <rect x="323.0" y="78.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="328" cy="69" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="328" cy="69" r="12" fill="url(#g-blue)" /><circle cx="324.2" cy="64.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="361.0" y="78.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="366" cy="69" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="399.0" y="78.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="404" cy="69" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="437.0" y="78.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="442" cy="69" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <foreignObject x="26.0" y="107.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(9\)</div></foreignObject>
-  <rect x="323.0" y="128.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="328" cy="119" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="328" cy="119" r="12" fill="url(#g-blue)" /><circle cx="324.2" cy="114.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="361.0" y="128.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="366" cy="119" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="399.0" y="128.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="404" cy="119" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="437.0" y="128.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="442" cy="119" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="442" cy="119" r="12" fill="url(#g-blue)" /><circle cx="438.2" cy="114.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <foreignObject x="26.0" y="157.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(10\)</div></foreignObject>
-  <rect x="323.0" y="178.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="328" cy="169" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="328" cy="169" r="12" fill="url(#g-blue)" /><circle cx="324.2" cy="164.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="361.0" y="178.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="366" cy="169" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="399.0" y="178.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="404" cy="169" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="404" cy="169" r="12" fill="url(#g-blue)" /><circle cx="400.2" cy="164.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="437.0" y="178.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="442" cy="169" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <foreignObject x="26.0" y="207.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(11\)</div></foreignObject>
-  <rect x="323.0" y="228.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="328" cy="219" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="328" cy="219" r="12" fill="url(#g-blue)" /><circle cx="324.2" cy="214.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="361.0" y="228.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="366" cy="219" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="399.0" y="228.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="404" cy="219" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="404" cy="219" r="12" fill="url(#g-blue)" /><circle cx="400.2" cy="214.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="437.0" y="228.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="442" cy="219" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="442" cy="219" r="12" fill="url(#g-blue)" /><circle cx="438.2" cy="214.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <foreignObject x="26.0" y="257.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(12\)</div></foreignObject>
-  <rect x="323.0" y="278.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="328" cy="269" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="328" cy="269" r="12" fill="url(#g-blue)" /><circle cx="324.2" cy="264.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="361.0" y="278.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="366" cy="269" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="366" cy="269" r="12" fill="url(#g-blue)" /><circle cx="362.2" cy="264.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="399.0" y="278.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="404" cy="269" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="437.0" y="278.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="442" cy="269" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <foreignObject x="26.0" y="307.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(13\)</div></foreignObject>
-  <rect x="323.0" y="328.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="328" cy="319" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="328" cy="319" r="12" fill="url(#g-blue)" /><circle cx="324.2" cy="314.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="361.0" y="328.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="366" cy="319" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="366" cy="319" r="12" fill="url(#g-blue)" /><circle cx="362.2" cy="314.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="399.0" y="328.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="404" cy="319" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <rect x="437.0" y="328.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="442" cy="319" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="442" cy="319" r="12" fill="url(#g-blue)" /><circle cx="438.2" cy="314.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <foreignObject x="26.0" y="357.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(14\)</div></foreignObject>
-  <rect x="323.0" y="378.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="328" cy="369" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="328" cy="369" r="12" fill="url(#g-blue)" /><circle cx="324.2" cy="364.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="361.0" y="378.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="366" cy="369" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="366" cy="369" r="12" fill="url(#g-blue)" /><circle cx="362.2" cy="364.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="399.0" y="378.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="404" cy="369" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="404" cy="369" r="12" fill="url(#g-blue)" /><circle cx="400.2" cy="364.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="437.0" y="378.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="442" cy="369" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
-  <foreignObject x="26.0" y="407.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(15\)</div></foreignObject>
-  <rect x="323.0" y="428.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="328" cy="419" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="328" cy="419" r="12" fill="url(#g-blue)" /><circle cx="324.2" cy="414.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="361.0" y="428.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="366" cy="419" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="366" cy="419" r="12" fill="url(#g-blue)" /><circle cx="362.2" cy="414.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="399.0" y="428.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="404" cy="419" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="404" cy="419" r="12" fill="url(#g-blue)" /><circle cx="400.2" cy="414.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="437.0" y="428.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="442" cy="419" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="442" cy="419" r="12" fill="url(#g-blue)" /><circle cx="438.2" cy="414.9" r="2.9" fill="#fff" fill-opacity=".8" />
-  <rect x="118.0" y="462" width="264" height="54" rx="16" fill="url(#g-ink)" filter="url(#ds)" />
-  <foreignObject x="-10.0" y="471.9" width="520" height="34.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:18px;font-weight:650;justify-content:center;height:34.2px">\(2^4 = 16\) configuraciones</div></foreignObject>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 600 620" role="img" aria-label="4 focos y 4 botones: cada fila muestra el botón presionado y los focos encendidos">
+  <rect x="35" y="28" width="122" height="58" rx="16" fill="#e1eefb" stroke="#fff" stroke-width="2.5" filter="url(#ds-sm)" />
+  <text x="96.0" y="65" font-size="19" font-weight="700" text-anchor="middle" class="ink">Botón 1</text>
+  <rect x="171" y="28" width="122" height="58" rx="16" fill="#cfe3f7" stroke="#fff" stroke-width="2.5" filter="url(#ds-sm)" />
+  <text x="232.0" y="65" font-size="19" font-weight="700" text-anchor="middle" class="ink">Botón 2</text>
+  <rect x="307" y="28" width="122" height="58" rx="16" fill="#8bb9ea" stroke="#fff" stroke-width="2.5" filter="url(#ds-sm)" />
+  <text x="368.0" y="65" font-size="19" font-weight="700" text-anchor="middle" class="ink">Botón 3</text>
+  <rect x="443" y="28" width="122" height="58" rx="16" fill="#6fa6e3" stroke="#fff" stroke-width="2.5" filter="url(#ds-sm)" />
+  <text x="504.0" y="65" font-size="19" font-weight="700" text-anchor="middle" class="ink">Botón 4</text>
+  <rect class="glass" x="20" y="108" width="272" height="418" rx="22" />
+  <text x="44" y="140" font-size="13" font-weight="600" text-anchor="middle" class="t-muted">paso</text>
+  <text x="103.0" y="140" font-size="13" font-weight="600" text-anchor="middle" class="t-muted">botón</text>
+  <text x="166" y="140" font-size="13" font-weight="600" text-anchor="middle" class="t-muted">F1</text>
+  <text x="200" y="140" font-size="13" font-weight="600" text-anchor="middle" class="t-muted">F2</text>
+  <text x="234" y="140" font-size="13" font-weight="600" text-anchor="middle" class="t-muted">F3</text>
+  <text x="268" y="140" font-size="13" font-weight="600" text-anchor="middle" class="t-muted">F4</text>
+  <text x="44" y="181" font-size="15" font-weight="600" text-anchor="middle" class="t-muted">0</text>
+  <rect x="64" y="161" width="78" height="30" rx="15" fill="#fff" fill-opacity=".55" />
+  <text x="103.0" y="181" font-size="14" font-weight="600" text-anchor="middle" class="t-muted">inicio</text>
+  <rect x="161.0" y="182.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="166" cy="173" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="195.0" y="182.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="200" cy="173" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="229.0" y="182.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="234" cy="173" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="263.0" y="182.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="268" cy="173" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <text x="44" y="227" font-size="15" font-weight="600" text-anchor="middle" class="t-muted">1</text>
+  <rect x="64" y="207" width="78" height="30" rx="15" fill="#e1eefb" stroke="#fff" stroke-width="1.5" />
+  <text x="103.0" y="227" font-size="14" font-weight="700" text-anchor="middle" class="ink">Botón 1</text>
+  <rect x="161.0" y="228.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="166" cy="219" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="166" cy="219" r="12" fill="url(#g-blue)" /><circle cx="162.2" cy="214.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="195.0" y="228.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="200" cy="219" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="229.0" y="228.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="234" cy="219" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="263.0" y="228.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="268" cy="219" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <text x="44" y="273" font-size="15" font-weight="600" text-anchor="middle" class="t-muted">2</text>
+  <rect x="64" y="253" width="78" height="30" rx="15" fill="#cfe3f7" stroke="#fff" stroke-width="1.5" />
+  <text x="103.0" y="273" font-size="14" font-weight="700" text-anchor="middle" class="ink">Botón 2</text>
+  <rect x="161.0" y="274.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="166" cy="265" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="195.0" y="274.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="200" cy="265" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="200" cy="265" r="12" fill="url(#g-blue)" /><circle cx="196.2" cy="260.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="229.0" y="274.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="234" cy="265" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="263.0" y="274.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="268" cy="265" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <text x="44" y="319" font-size="15" font-weight="600" text-anchor="middle" class="t-muted">3</text>
+  <rect x="64" y="299" width="78" height="30" rx="15" fill="#e1eefb" stroke="#fff" stroke-width="1.5" />
+  <text x="103.0" y="319" font-size="14" font-weight="700" text-anchor="middle" class="ink">Botón 1</text>
+  <rect x="161.0" y="320.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="166" cy="311" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="166" cy="311" r="12" fill="url(#g-blue)" /><circle cx="162.2" cy="306.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="195.0" y="320.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="200" cy="311" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="200" cy="311" r="12" fill="url(#g-blue)" /><circle cx="196.2" cy="306.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="229.0" y="320.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="234" cy="311" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="263.0" y="320.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="268" cy="311" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <text x="44" y="365" font-size="15" font-weight="600" text-anchor="middle" class="t-muted">4</text>
+  <rect x="64" y="345" width="78" height="30" rx="15" fill="#8bb9ea" stroke="#fff" stroke-width="1.5" />
+  <text x="103.0" y="365" font-size="14" font-weight="700" text-anchor="middle" class="ink">Botón 3</text>
+  <rect x="161.0" y="366.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="166" cy="357" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="195.0" y="366.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="200" cy="357" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="229.0" y="366.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="234" cy="357" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="234" cy="357" r="12" fill="url(#g-blue)" /><circle cx="230.2" cy="352.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="263.0" y="366.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="268" cy="357" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <text x="44" y="411" font-size="15" font-weight="600" text-anchor="middle" class="t-muted">5</text>
+  <rect x="64" y="391" width="78" height="30" rx="15" fill="#e1eefb" stroke="#fff" stroke-width="1.5" />
+  <text x="103.0" y="411" font-size="14" font-weight="700" text-anchor="middle" class="ink">Botón 1</text>
+  <rect x="161.0" y="412.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="166" cy="403" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="166" cy="403" r="12" fill="url(#g-blue)" /><circle cx="162.2" cy="398.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="195.0" y="412.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="200" cy="403" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="229.0" y="412.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="234" cy="403" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="234" cy="403" r="12" fill="url(#g-blue)" /><circle cx="230.2" cy="398.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="263.0" y="412.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="268" cy="403" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <text x="44" y="457" font-size="15" font-weight="600" text-anchor="middle" class="t-muted">6</text>
+  <rect x="64" y="437" width="78" height="30" rx="15" fill="#cfe3f7" stroke="#fff" stroke-width="1.5" />
+  <text x="103.0" y="457" font-size="14" font-weight="700" text-anchor="middle" class="ink">Botón 2</text>
+  <rect x="161.0" y="458.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="166" cy="449" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="195.0" y="458.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="200" cy="449" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="200" cy="449" r="12" fill="url(#g-blue)" /><circle cx="196.2" cy="444.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="229.0" y="458.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="234" cy="449" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="234" cy="449" r="12" fill="url(#g-blue)" /><circle cx="230.2" cy="444.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="263.0" y="458.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="268" cy="449" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <text x="44" y="503" font-size="15" font-weight="600" text-anchor="middle" class="t-muted">7</text>
+  <rect x="64" y="483" width="78" height="30" rx="15" fill="#e1eefb" stroke="#fff" stroke-width="1.5" />
+  <text x="103.0" y="503" font-size="14" font-weight="700" text-anchor="middle" class="ink">Botón 1</text>
+  <rect x="161.0" y="504.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="166" cy="495" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="166" cy="495" r="12" fill="url(#g-blue)" /><circle cx="162.2" cy="490.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="195.0" y="504.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="200" cy="495" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="200" cy="495" r="12" fill="url(#g-blue)" /><circle cx="196.2" cy="490.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="229.0" y="504.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="234" cy="495" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="234" cy="495" r="12" fill="url(#g-blue)" /><circle cx="230.2" cy="490.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="263.0" y="504.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="268" cy="495" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect class="glass" x="308" y="108" width="272" height="418" rx="22" />
+  <text x="332" y="140" font-size="13" font-weight="600" text-anchor="middle" class="t-muted">paso</text>
+  <text x="391.0" y="140" font-size="13" font-weight="600" text-anchor="middle" class="t-muted">botón</text>
+  <text x="454" y="140" font-size="13" font-weight="600" text-anchor="middle" class="t-muted">F1</text>
+  <text x="488" y="140" font-size="13" font-weight="600" text-anchor="middle" class="t-muted">F2</text>
+  <text x="522" y="140" font-size="13" font-weight="600" text-anchor="middle" class="t-muted">F3</text>
+  <text x="556" y="140" font-size="13" font-weight="600" text-anchor="middle" class="t-muted">F4</text>
+  <text x="332" y="181" font-size="15" font-weight="600" text-anchor="middle" class="t-muted">8</text>
+  <rect x="352" y="161" width="78" height="30" rx="15" fill="#6fa6e3" stroke="#fff" stroke-width="1.5" />
+  <text x="391.0" y="181" font-size="14" font-weight="700" text-anchor="middle" class="ink">Botón 4</text>
+  <rect x="449.0" y="182.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="454" cy="173" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="483.0" y="182.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="488" cy="173" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="517.0" y="182.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="522" cy="173" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="551.0" y="182.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="556" cy="173" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="556" cy="173" r="12" fill="url(#g-blue)" /><circle cx="552.2" cy="168.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <text x="332" y="227" font-size="15" font-weight="600" text-anchor="middle" class="t-muted">9</text>
+  <rect x="352" y="207" width="78" height="30" rx="15" fill="#e1eefb" stroke="#fff" stroke-width="1.5" />
+  <text x="391.0" y="227" font-size="14" font-weight="700" text-anchor="middle" class="ink">Botón 1</text>
+  <rect x="449.0" y="228.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="454" cy="219" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="454" cy="219" r="12" fill="url(#g-blue)" /><circle cx="450.2" cy="214.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="483.0" y="228.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="488" cy="219" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="517.0" y="228.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="522" cy="219" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="551.0" y="228.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="556" cy="219" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="556" cy="219" r="12" fill="url(#g-blue)" /><circle cx="552.2" cy="214.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <text x="332" y="273" font-size="15" font-weight="600" text-anchor="middle" class="t-muted">10</text>
+  <rect x="352" y="253" width="78" height="30" rx="15" fill="#cfe3f7" stroke="#fff" stroke-width="1.5" />
+  <text x="391.0" y="273" font-size="14" font-weight="700" text-anchor="middle" class="ink">Botón 2</text>
+  <rect x="449.0" y="274.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="454" cy="265" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="483.0" y="274.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="488" cy="265" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="488" cy="265" r="12" fill="url(#g-blue)" /><circle cx="484.2" cy="260.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="517.0" y="274.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="522" cy="265" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="551.0" y="274.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="556" cy="265" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="556" cy="265" r="12" fill="url(#g-blue)" /><circle cx="552.2" cy="260.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <text x="332" y="319" font-size="15" font-weight="600" text-anchor="middle" class="t-muted">11</text>
+  <rect x="352" y="299" width="78" height="30" rx="15" fill="#e1eefb" stroke="#fff" stroke-width="1.5" />
+  <text x="391.0" y="319" font-size="14" font-weight="700" text-anchor="middle" class="ink">Botón 1</text>
+  <rect x="449.0" y="320.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="454" cy="311" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="454" cy="311" r="12" fill="url(#g-blue)" /><circle cx="450.2" cy="306.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="483.0" y="320.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="488" cy="311" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="488" cy="311" r="12" fill="url(#g-blue)" /><circle cx="484.2" cy="306.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="517.0" y="320.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="522" cy="311" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="551.0" y="320.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="556" cy="311" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="556" cy="311" r="12" fill="url(#g-blue)" /><circle cx="552.2" cy="306.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <text x="332" y="365" font-size="15" font-weight="600" text-anchor="middle" class="t-muted">12</text>
+  <rect x="352" y="345" width="78" height="30" rx="15" fill="#8bb9ea" stroke="#fff" stroke-width="1.5" />
+  <text x="391.0" y="365" font-size="14" font-weight="700" text-anchor="middle" class="ink">Botón 3</text>
+  <rect x="449.0" y="366.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="454" cy="357" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="483.0" y="366.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="488" cy="357" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="517.0" y="366.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="522" cy="357" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="522" cy="357" r="12" fill="url(#g-blue)" /><circle cx="518.2" cy="352.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="551.0" y="366.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="556" cy="357" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="556" cy="357" r="12" fill="url(#g-blue)" /><circle cx="552.2" cy="352.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <text x="332" y="411" font-size="15" font-weight="600" text-anchor="middle" class="t-muted">13</text>
+  <rect x="352" y="391" width="78" height="30" rx="15" fill="#e1eefb" stroke="#fff" stroke-width="1.5" />
+  <text x="391.0" y="411" font-size="14" font-weight="700" text-anchor="middle" class="ink">Botón 1</text>
+  <rect x="449.0" y="412.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="454" cy="403" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="454" cy="403" r="12" fill="url(#g-blue)" /><circle cx="450.2" cy="398.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="483.0" y="412.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="488" cy="403" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="517.0" y="412.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="522" cy="403" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="522" cy="403" r="12" fill="url(#g-blue)" /><circle cx="518.2" cy="398.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="551.0" y="412.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="556" cy="403" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="556" cy="403" r="12" fill="url(#g-blue)" /><circle cx="552.2" cy="398.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <text x="332" y="457" font-size="15" font-weight="600" text-anchor="middle" class="t-muted">14</text>
+  <rect x="352" y="437" width="78" height="30" rx="15" fill="#cfe3f7" stroke="#fff" stroke-width="1.5" />
+  <text x="391.0" y="457" font-size="14" font-weight="700" text-anchor="middle" class="ink">Botón 2</text>
+  <rect x="449.0" y="458.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.28" /><circle cx="454" cy="449" r="12" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5" />
+  <rect x="483.0" y="458.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="488" cy="449" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="488" cy="449" r="12" fill="url(#g-blue)" /><circle cx="484.2" cy="444.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="517.0" y="458.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="522" cy="449" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="522" cy="449" r="12" fill="url(#g-blue)" /><circle cx="518.2" cy="444.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="551.0" y="458.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="556" cy="449" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="556" cy="449" r="12" fill="url(#g-blue)" /><circle cx="552.2" cy="444.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <text x="332" y="503" font-size="15" font-weight="600" text-anchor="middle" class="t-muted">15</text>
+  <rect x="352" y="483" width="78" height="30" rx="15" fill="#e1eefb" stroke="#fff" stroke-width="1.5" />
+  <text x="391.0" y="503" font-size="14" font-weight="700" text-anchor="middle" class="ink">Botón 1</text>
+  <rect x="449.0" y="504.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="454" cy="495" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="454" cy="495" r="12" fill="url(#g-blue)" /><circle cx="450.2" cy="490.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="483.0" y="504.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="488" cy="495" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="488" cy="495" r="12" fill="url(#g-blue)" /><circle cx="484.2" cy="490.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="517.0" y="504.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="522" cy="495" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="522" cy="495" r="12" fill="url(#g-blue)" /><circle cx="518.2" cy="490.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="551.0" y="504.4" width="10.1" height="7.4" rx="2.5" fill="#1f4a7d" fill-opacity="0.9" /><circle cx="556" cy="495" r="18" fill="#8bb9ea" fill-opacity=".38" /><circle cx="556" cy="495" r="12" fill="url(#g-blue)" /><circle cx="552.2" cy="490.9" r="2.9" fill="#fff" fill-opacity=".8" />
+  <rect x="155.0" y="548" width="290" height="54" rx="16" fill="url(#g-ink)" filter="url(#ds)" />
+  <foreignObject x="40.0" y="557.9" width="520" height="34.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:18px;font-weight:650;justify-content:center;height:34.2px">\(15 = 7 + 1 + 7\) pasos</div></foreignObject>
+  </svg>
