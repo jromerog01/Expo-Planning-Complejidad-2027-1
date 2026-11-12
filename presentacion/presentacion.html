@@ -6,20 +6,26 @@
 <script src="presentacion_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="presentacion_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="presentacion_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="presentacion_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+<link href="presentacion_files/libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.11.9">
 
   <title>Planning · PSPACE-completo</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="presentacion_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="presentacion_files/libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -28,7 +34,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="presentacion_files/libs/revealjs/dist/theme/quarto-bdd313184c64ed9d13f7060afca58fb5.css">
+  <link rel="stylesheet" href="presentacion_files/libs/revealjs/dist/theme/quarto-1c8e0d5bdcf287ff083a226d62163793.css">
   <link href="presentacion_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="presentacion_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="presentacion_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -2370,6 +2376,55 @@
 </div>
 </div>
 </section>
+<section id="dureza" class="slide level2">
+<h2>Dureza y QSAT</h2>
+<div class="stage l-plans">
+<div class="card blue a1">
+<div class="plans">
+<div class="plan">
+<p><span class="pill">Problema raíz</span></p>
+<p><span class="stat">QSAT</span></p>
+<div class="clean">
+<ul>
+<li><span class="math inline">\(\exists x_1\, \forall x_2 \cdots \exists x_n\; \Phi(x_1, \dots, x_n).\)</span></li>
+<li><span class="math inline">\(\Phi\)</span> es una conjunción de cláusulas de tres términos.</li>
+<li>PSPACE‑completo (Stockmeyer y Meyer, 1973).</li>
+</ul>
+</div>
+</div>
+<div class="plan featured">
+<p><span class="pill">Intuición</span></p>
+<p><span class="stat"><span class="math inline">\(\exists\,\forall\)</span></span></p>
+<div class="clean">
+<ul>
+<li>¿Hay una decisión tal que, para toda respuesta, hay otra decisión…?</li>
+<li>Es planeación de contingencias.</li>
+<li>Kleinberg y Tardos (2005, p.&nbsp;535).</li>
+</ul>
+</div>
+</div>
+<div class="plan">
+<p><span class="pill">Resultado</span></p>
+<p><span class="stat"><span class="math inline">\(\mathsf{PSPACE}\)</span>‑c</span></p>
+<div class="clean">
+<ul>
+<li>Decidir si hay plan en STRIPS proposicional es PSPACE‑completo.</li>
+<li>La dureza codifica una máquina de Turing con operadores (Bylander, 1994).</li>
+<li>Lo vemos a continuación.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="bottom">
+<div class="title-slot md">
+
+</div>
+<p>El libro sugiere reducir desde QSAT sin desarrollarlo; aquí usamos una reducción directa desde máquinas de Turing.</p>
+<p><span class="btn-arrow">Siguiente</span></p>
+</div>
+</div>
+</div>
+</section>
 <section id="reduccion" class="slide level2">
 <h2>Reducción desde máquinas de Turing</h2>
 <div class="stage l-split">
@@ -2431,6 +2486,59 @@
 </div>
 </div>
 </section>
+<section id="prueba-codificacion" class="slide level2">
+<h2>La codificación</h2>
+<div class="stage l-stack single">
+<div class="card blue a1">
+<p><span class="kicker">Demostración</span></p>
+<div class="title-slot md">
+
+</div>
+<div class="lead">
+<p>Lema 1: si <span class="math inline">\(S = \mathrm{enc}(c)\)</span> y un operador <span class="math inline">\(O\)</span> es aplicable, el resultado es <span class="math inline">\(\mathrm{enc}(c')\)</span>, la configuración siguiente de <span class="math inline">\(M.\)</span></p>
+</div>
+<p><span class="btn-arrow">Siguiente</span></p>
+</div>
+<div class="card a2 proof">
+<p><span class="proof-title"><em>Demostración</em>. </span><span class="kicker">Codificación</span></p>
+<p><span class="formula"><span class="math inline">\(\mathrm{enc}(c) = \{Q_q,\, H_h\} \cup \{S_{i,t_i} : 1 \le i \le s\}\)</span></span></p>
+<div class="clean mt-s">
+<ul>
+<li>Bien formado: exactamente un <span class="math inline">\(Q\)</span>, un <span class="math inline">\(H\)</span> y un <span class="math inline">\(S_{i,a}\)</span> por cada celda.</li>
+<li><span class="math inline">\(P \subseteq S\)</span> obliga a <span class="math inline">\(q_1 = q\)</span>, <span class="math inline">\(i = h\)</span> y <span class="math inline">\(a = t_h\)</span>: el único candidato es <span class="math inline">\(O_{q,t_h,h}.\)</span></li>
+<li>Elimina <span class="math inline">\(Q_q\)</span>, <span class="math inline">\(H_h\)</span> y <span class="math inline">\(S_{h,a}\)</span>, y agrega <span class="math inline">\(Q_{q'}\)</span>, <span class="math inline">\(H_{h+D}\)</span> y <span class="math inline">\(S_{h,b}\)</span>. Lo repetido se quita de ambas listas.</li>
+<li>Queda un solo estado, una sola cabeza (<span class="math inline">\(h + D \ne h\)</span>) y la celda <span class="math inline">\(h\)</span> con <span class="math inline">\(b\)</span>: es <span class="math inline">\(\mathrm{enc}(c').\)</span></li>
+</ul>
+</div>
+<p><span class="kicker">Lema 2 · determinismo</span></p>
+<p>En <span class="math inline">\(\mathrm{enc}(c)\)</span> hay a lo más un operador aplicable, <span class="math inline">\(O_{q,t_h,h}\)</span>, y solo si <span class="math inline">\(\delta(q, t_h)\)</span> está definida.</p>
+</div>
+</div>
+</section>
+<section id="prueba-reduccion" class="slide level2">
+<h2><span class="math inline">\(M\)</span> acepta si y solo si hay plan</h2>
+<div class="stage l-stack single">
+<div class="card blue a1">
+<p><span class="kicker">Demostración</span></p>
+<div class="title-slot md">
+
+</div>
+<div class="lead">
+<p>Teorema: <span class="math inline">\(M\)</span> acepta <span class="math inline">\(w\)</span> si y solo si existe un plan de <span class="math inline">\(S_0\)</span> a <span class="math inline">\(S^*.\)</span></p>
+</div>
+<p><span class="btn-arrow">Siguiente</span></p>
+</div>
+<div class="card a2 proof">
+<p><span class="proof-title"><em>Demostración</em>. </span><span class="kicker">(<span class="math inline">\(\Rightarrow\)</span>) Si <span class="math inline">\(M\)</span> acepta</span></p>
+<p>Su cómputo <span class="math inline">\(c_0, \dots, c_T = c_{\mathrm{acc}}\)</span> usa a lo más <span class="math inline">\(s\)</span> celdas. Por el Lema 1 y por inducción, el operador de cada transición es aplicable y lleva de <span class="math inline">\(\mathrm{enc}(c_t)\)</span> a <span class="math inline">\(\mathrm{enc}(c_{t+1})\)</span>: el plan llega a <span class="math inline">\(S^*.\)</span></p>
+<p><span class="kicker">(<span class="math inline">\(\Leftarrow\)</span>) Si hay plan</span></p>
+<p>Por el Lema 1 cada estado intermedio es <span class="math inline">\(\mathrm{enc}(c_t)\)</span>, y por el Lema 2 el plan está forzado: es el cómputo de <span class="math inline">\(M.\)</span> Como termina en <span class="math inline">\(S^* = \mathrm{enc}(c_{\mathrm{acc}})\)</span>, <span class="math inline">\(M\)</span> acepta.</p>
+<p><span class="kicker">Tiempo de construcción</span></p>
+<p><span class="formula"><span class="math inline">\(n = |Q| + s + s\,|\Gamma|\)</span> condiciones y a lo más <span class="math inline">\(|\delta| \cdot s\)</span> operadores</span></p>
+<p>Con <span class="math inline">\(M\)</span> fija, la salida mide <span class="math inline">\(O(s \log s)\)</span> bits y se escribe en tiempo polinomial: <span class="math inline">\(A \le_P \textsf{Planning}.\)</span></p>
+</div>
+</div>
+</section>
 <section id="completo" class="slide level2">
 <h2>Planning es PSPACE‑completo</h2>
 <div class="stage l-banner">
@@ -2470,6 +2578,30 @@
 <p><span class="stat">¿<span class="math inline">\(\mathsf{P}\)</span>?</span></p>
 <p><span class="stat-label">Consecuencia</span></p>
 <p><span class="stat-text">Un algoritmo de tiempo polinomial para Planning implicaría <span class="math inline">\(\mathsf{P} = \mathsf{PSPACE}\)</span>, algo que se considera muy improbable.</span></p>
+</div>
+</div>
+</section>
+<section id="prueba-completo" class="slide level2">
+<h2>Pertenencia y consecuencia</h2>
+<div class="stage l-stack single">
+<div class="card blue a1">
+<p><span class="kicker">Demostración</span></p>
+<div class="title-slot md">
+
+</div>
+<div class="lead">
+<p>Path es correcto y usa espacio polinomial; con la dureza, da la completitud.</p>
+</div>
+<p><span class="btn-arrow">Siguiente</span></p>
+</div>
+<div class="card a2 proof">
+<p><span class="proof-title"><em>Demostración</em>. </span><span class="kicker">Corrección de Path</span></p>
+<p>Por inducción sobre <span class="math inline">\(L\)</span>. Si devuelve <em>sí</em>, se concatenan las dos mitades. Si hay un plan de longitud <span class="math inline">\(L' \le L\)</span>, la configuración en la posición <span class="math inline">\(\lceil L'/2 \rceil\)</span> cumple ambas llamadas.</p>
+<p><span class="kicker">Espacio</span></p>
+<p><span class="formula"><span class="math inline">\(S(n,k,L) \le p(n,k,\log L) + S(n,k,\lceil L/2 \rceil)\)</span></span></p>
+<p><span class="math inline">\(n + 1\)</span> marcos de <span class="math inline">\(O(n + \log k)\)</span> bits: en total <span class="math inline">\(O\big(n(n + \log k)\big).\)</span></p>
+<p><span class="kicker">Consecuencia</span></p>
+<p>Si Planning tuviera un algoritmo de tiempo <span class="math inline">\(t(N)\)</span>, cada <span class="math inline">\(A \in \mathsf{PSPACE}\)</span> se resolvería en tiempo <span class="math inline">\(q(m) + t(q(m))\)</span>, un polinomio. Entonces <span class="math inline">\(\mathsf{PSPACE} \subseteq \mathsf{P}\)</span> y, como <span class="math inline">\(\mathsf{P} \subseteq \mathsf{PSPACE}\)</span>, <span class="math inline">\(\mathsf{P} = \mathsf{PSPACE}.\)</span></p>
 </div>
 </div>
 </section>
@@ -2544,6 +2676,36 @@
 </div>
 </div>
 </section>
+<section id="prueba-ejemplo" class="slide level2">
+<h2>Por qué da <span class="math inline">\(3\)</span> pasos y <span class="math inline">\(20\)</span> llamadas</h2>
+<div class="stage l-stack single">
+<div class="card blue a1">
+<p><span class="kicker">Demostración</span></p>
+<div class="title-slot md">
+
+</div>
+<div class="lead">
+<p>El plan más corto mide <span class="math inline">\(3\)</span>, así que <span class="math inline">\(\textsf{Path}(\varnothing, M, 2)\)</span> es <em>no</em> y <span class="math inline">\(\textsf{Path}(\varnothing, M, 4)\)</span> es <em>sí</em>.</p>
+</div>
+<p><span class="btn-arrow">Siguiente</span></p>
+</div>
+<div class="card a2 proof">
+<p><span class="proof-title"><em>Demostración</em>. </span><span class="kicker">Plan mínimo</span></p>
+<p>Desde <span class="math inline">\(\varnothing\)</span> solo aplica <span class="math inline">\(O_1\)</span>, que da <span class="math inline">\(\{c_1\}.\)</span> Desde <span class="math inline">\(\{c_1\}\)</span>, <span class="math inline">\(O_1\)</span> da <span class="math inline">\(\{c_1\}\)</span> y <span class="math inline">\(O_2\)</span> da <span class="math inline">\(\{c_2\}\)</span>: ninguna es <span class="math inline">\(M.\)</span> No hay plan de a lo más <span class="math inline">\(2\)</span> pasos.</p>
+<p><span class="kicker">Las 20 llamadas</span></p>
+<p><span class="formula"><span class="math inline">\(1 + 3 + 7 + 3 + 6 = 20\)</span></span></p>
+<div class="clean mt-s">
+<ul>
+<li><span class="math inline">\(1\)</span> la llamada principal.</li>
+<li><span class="math inline">\(S' = \varnothing\)</span>: <span class="math inline">\(x\)</span> cuesta <span class="math inline">\(3\)</span> llamadas y <span class="math inline">\(y\)</span> cuesta <span class="math inline">\(7.\)</span></li>
+<li><span class="math inline">\(S' = \{c_1\}\)</span>: <span class="math inline">\(x\)</span> cuesta <span class="math inline">\(3\)</span> llamadas y <span class="math inline">\(y\)</span> cuesta <span class="math inline">\(6.\)</span></li>
+</ul>
+</div>
+<p><span class="kicker">Marcos de pila</span></p>
+<p><span class="math inline">\(L\)</span> baja <span class="math inline">\(4, 2, 1\)</span>: nunca hay más de <span class="math inline">\(n + 1 = 3\)</span> marcos.</p>
+</div>
+</div>
+</section>
 <section id="escala" class="slide level2">
 <h2>¿Y si <span class="math inline">\(n\)</span> crece?</h2>
 <div class="stage l-banner four">
@@ -2585,6 +2747,30 @@
 <p><span class="stat"><span class="math inline">\(23\,167\,425\)</span></span></p>
 <p><span class="stat-label"><span class="math inline">\(n = 5\)</span></span></p>
 <p><span class="stat-text">llamadas · plan de <span class="math inline">\(31\)</span> pasos · <span class="math inline">\(6\)</span> marcos. Con <span class="math inline">\(n = 60\)</span> bastarían <span class="math inline">\(61\)</span> marcos.</span></p>
+</div>
+</div>
+</section>
+<section id="prueba-escala" class="slide level2">
+<h2>De dónde salen las cifras</h2>
+<div class="stage l-stack single">
+<div class="card blue a1">
+<p><span class="kicker">Demostración</span></p>
+<div class="title-slot md">
+
+</div>
+<div class="lead">
+<p>El plan mínimo es <span class="math inline">\(2^n - 1\)</span>, la pila tiene <span class="math inline">\(n + 1\)</span> marcos y las llamadas están acotadas por <span class="math inline">\(2^{n(n+1)+1}.\)</span></p>
+</div>
+<p><span class="btn-arrow">Siguiente</span></p>
+</div>
+<div class="card a2 proof">
+<p><span class="proof-title"><em>Demostración</em>. </span><span class="kicker">Plan mínimo · Teorema 9.6</span></p>
+<p>Por inducción sobre <span class="math inline">\(i\)</span>: para agregar <span class="math inline">\(c_i\)</span> hay que lograr <span class="math inline">\(c_1, \dots, c_{i-1}\)</span> (<span class="math inline">\(2^{i-1} - 1\)</span> pasos), <span class="math inline">\(O_i\)</span> los borra y hay que lograrlos otra vez: <span class="math inline">\(2(2^{i-1} - 1) + 1 = 2^i - 1.\)</span></p>
+<p><span class="kicker">Número de llamadas</span></p>
+<p><span class="formula"><span class="math inline">\(N(1) = 1,\quad N(L) \le 1 + 2^{n+1}\, N(L/2)\)</span></span></p>
+<p>Con <span class="math inline">\(a = 2^{n+1}\)</span>: <span class="math inline">\(N(2^n) \le 1 + a + \cdots + a^n \le 2a^n = 2^{n(n+1)+1}.\)</span> Para <span class="math inline">\(n = 5\)</span> la cota es <span class="math inline">\(\approx 2.1 \times 10^9\)</span> y se midieron <span class="math inline">\(23\,167\,425.\)</span></p>
+<p><span class="kicker">Pila</span></p>
+<p><span class="math inline">\(L\)</span> baja de <span class="math inline">\(2^n\)</span> a <span class="math inline">\(1\)</span>: son <span class="math inline">\(n + 1\)</span> niveles, con una sola llamada activa en cada uno.</p>
 </div>
 </div>
 </section>
@@ -2898,6 +3084,33 @@
 </div>
 </div>
 </section>
+<section id="prueba-vuelos" class="slide level2">
+<h2>El plan de vuelos es mínimo</h2>
+<div class="stage l-stack single">
+<div class="card blue a1">
+<p><span class="kicker">Demostración</span></p>
+<div class="title-slot md">
+
+</div>
+<div class="lead">
+<p>Los siete operadores aparecen en todo plan, así que hacen falta al menos <span class="math inline">\(7\)</span> acciones.</p>
+</div>
+<p><span class="btn-arrow">Siguiente</span></p>
+</div>
+<div class="card a2 proof">
+<p><span class="proof-title"><em>Demostración</em>. </span><span class="kicker">Cada operador es indispensable</span></p>
+<div class="clean">
+<ul>
+<li><span class="math inline">\(c_5\)</span> solo la agrega <span class="math inline">\(O_7\)</span>; <span class="math inline">\(O_7\)</span> exige <span class="math inline">\(c_8\)</span>, que solo agrega <span class="math inline">\(O_5\)</span>; <span class="math inline">\(O_5\)</span> exige <span class="math inline">\(c_4\)</span>, que solo agrega <span class="math inline">\(O_4.\)</span></li>
+<li><span class="math inline">\(O_4\)</span> exige <span class="math inline">\(c_3\)</span>. Antes de <span class="math inline">\(O_4\)</span> solo <span class="math inline">\(O_3\)</span> puede agregarla (a <span class="math inline">\(O_6\)</span> le falta <span class="math inline">\(c_4\)</span>); <span class="math inline">\(O_3\)</span> exige <span class="math inline">\(c_2\)</span>, que solo agrega <span class="math inline">\(O_2\)</span>, que exige <span class="math inline">\(c_7\)</span>, que solo agrega <span class="math inline">\(O_1.\)</span></li>
+<li><span class="math inline">\(O_4\)</span> borra <span class="math inline">\(c_3\)</span> y <span class="math inline">\(O_7\)</span> la necesita después. <span class="math inline">\(O_3\)</span> no se repite (<span class="math inline">\(c_1\)</span> nadie la agrega y <span class="math inline">\(O_2\)</span> la borra), así que <span class="math inline">\(c_3\)</span> vuelve por <span class="math inline">\(O_6.\)</span></li>
+</ul>
+</div>
+<p><span class="kicker">Conclusión</span></p>
+<p><span class="math inline">\(O_1, \dots, O_7\)</span> es un plan válido y de <span class="math inline">\(7\)</span> acciones: es mínimo.</p>
+</div>
+</div>
+</section>
 <section id="aplicaciones" class="slide level2">
 <h2>¿Dónde aparece?</h2>
 <div class="stage l-stories">
@@ -3146,7 +3359,7 @@
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"\u003ci class=\"fas fa-gear\">\u003c/i>","content":"\u003cul class=\"slide-menu-items\">\n\u003cli class=\"slide-tool-item active\" data-item=\"0\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\">\u003ckbd>f\u003c/kbd> Fullscreen\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"1\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\">\u003ckbd>s\u003c/kbd> Speaker View\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"2\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\">\u003ckbd>o\u003c/kbd> Slide Overview\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"3\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\">\u003ckbd>e\u003c/kbd> PDF Export Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"4\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\">\u003ckbd>r\u003c/kbd> Scroll View Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"5\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\">\u003ckbd>?\u003c/kbd> Keyboard Help\u003c/a>\u003c/li>\n\u003c/ul>"}],"openButton":false,"openButtonLabel":"Slide menu"},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -3305,7 +3518,7 @@
         maxScale: 2,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -3488,7 +3701,8 @@
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }
           // Inspect non-navigation links and adorn them if external
-         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          window.quartoDecorateExternalLinks = function (root) {
+         var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
           for (var i=0; i<links.length; i++) {
             const link = links[i];
             if (!isInternal(link.href)) {
@@ -3497,8 +3711,69 @@
               if (link.dataset.originalHref !== undefined) {
                 link.href = link.dataset.originalHref;
               }
+              if (!link.classList.contains('no-external-icon')) {
+              }
             }
           }
+          };
+          window.quartoDecorateExternalLinks(window.document);
+        // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+        // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+        const hideOnEscAndFocusOut = {
+          name: 'hideOnEscAndFocusOut',
+          defaultValue: true,
+          fn(instance) {
+            const dismiss = () => {
+              // A show scheduled by the trigger delay would otherwise reopen it
+              instance.clearDelayTimeouts();
+              instance.hide();
+            };
+            const onKeyDown = (event) => {
+              if (event.key !== 'Escape') {
+                return;
+              }
+              // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+              // except an open reveal.js slide menu, which Esc should close too.
+              // The menu handles keys only when its keyboard option is on.
+              const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+                window.Reveal.getConfig().menu?.keyboard !== false;
+              if (!menuHandlesEsc) {
+                event.stopPropagation();
+              }
+              if (instance.popper.contains(window.document.activeElement)) {
+                // Disabled while refocusing so the focus trigger does not reopen it
+                instance.disable();
+                instance.reference.focus();
+                instance.enable();
+              }
+              dismiss();
+            };
+            const onFocusOut = (event) => {
+              const target = event.relatedTarget;
+              if (target && !instance.reference.contains(target) &&
+                  !instance.popper.contains(target)) {
+                dismiss();
+              }
+            };
+            // On the trigger too: a click trigger (code-annotations: select) has no
+            // blur handling. Attached for the instance's lifetime so leaving the
+            // trigger also cancels a show still pending on the trigger delay.
+            instance.reference.addEventListener('focusout', onFocusOut);
+            return {
+              onShow() {
+                window.document.addEventListener('keydown', onKeyDown, true);
+                instance.popper.addEventListener('focusout', onFocusOut);
+              },
+              onHide() {
+                window.document.removeEventListener('keydown', onKeyDown, true);
+                instance.popper.removeEventListener('focusout', onFocusOut);
+              },
+              onDestroy() {
+                instance.reference.removeEventListener('focusout', onFocusOut);
+              },
+            };
+          },
+        };
         function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
           const config = {
             allowHTML: true,
@@ -3512,6 +3787,7 @@
             interactiveBorder: 10,
             theme: 'light-border',
             placement: 'bottom-start',
+            plugins: [hideOnEscAndFocusOut],
           };
           if (contentFn) {
             config.content = contentFn;

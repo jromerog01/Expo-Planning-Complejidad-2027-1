@@ -1103,6 +1103,61 @@ $N(1) = 1$ y $N(L) \le 1 + 2^{n+1}\, N(L/2)$, por lo que $N(2^n) \le 2 \cdot 2^{
 :::
 :::
 
+## Dureza y QSAT {#dureza}
+
+::: {.stage .l-plans}
+::: {.card .blue .a1}
+
+::: {.plans}
+::: {.plan}
+[Problema raíz]{.pill}
+
+[QSAT]{.stat}
+
+::: {.clean}
+- $\exists x_1\, \forall x_2 \cdots \exists x_n\; \Phi(x_1, \dots, x_n).$
+- $\Phi$ es una conjunción de cláusulas de tres términos.
+- PSPACE‑completo (Stockmeyer y Meyer, 1973).
+:::
+:::
+
+::: {.plan .featured}
+[Intuición]{.pill}
+
+[$\exists\,\forall$]{.stat}
+
+::: {.clean}
+- ¿Hay una decisión tal que, para toda respuesta, hay otra decisión…?
+- Es planeación de contingencias.
+- Kleinberg y Tardos (2005, p. 535).
+:::
+:::
+
+::: {.plan}
+[Resultado]{.pill}
+
+[$\mathsf{PSPACE}$‑c]{.stat}
+
+::: {.clean}
+- Decidir si hay plan en STRIPS proposicional es PSPACE‑completo.
+- La dureza codifica una máquina de Turing con operadores (Bylander, 1994).
+- Lo vemos a continuación.
+:::
+:::
+:::
+
+::: {.bottom}
+::: {.title-slot .md}
+:::
+
+El libro sugiere reducir desde QSAT sin desarrollarlo; aquí usamos una reducción directa desde máquinas de Turing.
+
+[Siguiente]{.btn-arrow}
+:::
+
+:::
+:::
+
 ## Reducción desde máquinas de Turing {#reduccion}
 
 ::: {.stage .l-split}
@@ -1150,6 +1205,77 @@ $N(1) = 1$ y $N(L) \le 1 + 2^{n+1}\, N(L/2)$, por lo que $N(2^n) \le 2 \cdot 2^{
 
 :::
 
+## La codificación {#prueba-codificacion}
+
+::: {.stage .l-stack .single}
+
+::: {.card .blue .a1}
+[Demostración]{.kicker}
+
+::: {.title-slot .md}
+:::
+
+::: {.lead}
+Lema 1: si $S = \mathrm{enc}(c)$ y un operador $O$ es aplicable, el resultado es $\mathrm{enc}(c')$, la configuración siguiente de $M.$
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a2 .proof}
+[Codificación]{.kicker}
+
+[$\mathrm{enc}(c) = \{Q_q,\, H_h\} \cup \{S_{i,t_i} : 1 \le i \le s\}$]{.formula}
+
+::: {.clean .mt-s}
+- Bien formado: exactamente un $Q$, un $H$ y un $S_{i,a}$ por cada celda.
+- $P \subseteq S$ obliga a $q_1 = q$, $i = h$ y $a = t_h$: el único candidato es $O_{q,t_h,h}.$
+- Elimina $Q_q$, $H_h$ y $S_{h,a}$, y agrega $Q_{q'}$, $H_{h+D}$ y $S_{h,b}$. Lo repetido se quita de ambas listas.
+- Queda un solo estado, una sola cabeza ($h + D \ne h$) y la celda $h$ con $b$: es $\mathrm{enc}(c').$
+:::
+
+[Lema 2 · determinismo]{.kicker}
+
+En $\mathrm{enc}(c)$ hay a lo más un operador aplicable, $O_{q,t_h,h}$, y solo si $\delta(q, t_h)$ está definida.
+:::
+
+:::
+
+## $M$ acepta si y solo si hay plan {#prueba-reduccion}
+
+::: {.stage .l-stack .single}
+
+::: {.card .blue .a1}
+[Demostración]{.kicker}
+
+::: {.title-slot .md}
+:::
+
+::: {.lead}
+Teorema: $M$ acepta $w$ si y solo si existe un plan de $S_0$ a $S^*.$
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a2 .proof}
+[($\Rightarrow$) Si $M$ acepta]{.kicker}
+
+Su cómputo $c_0, \dots, c_T = c_{\mathrm{acc}}$ usa a lo más $s$ celdas. Por el Lema 1 y por inducción, el operador de cada transición es aplicable y lleva de $\mathrm{enc}(c_t)$ a $\mathrm{enc}(c_{t+1})$: el plan llega a $S^*.$
+
+[($\Leftarrow$) Si hay plan]{.kicker}
+
+Por el Lema 1 cada estado intermedio es $\mathrm{enc}(c_t)$, y por el Lema 2 el plan está forzado: es el cómputo de $M.$ Como termina en $S^* = \mathrm{enc}(c_{\mathrm{acc}})$, $M$ acepta.
+
+[Tiempo de construcción]{.kicker}
+
+[$n = |Q| + s + s\,|\Gamma|$ condiciones y a lo más $|\delta| \cdot s$ operadores]{.formula}
+
+Con $M$ fija, la salida mide $O(s \log s)$ bits y se escribe en tiempo polinomial: $A \le_P \textsf{Planning}.$
+:::
+
+:::
+
 ## Planning es PSPACE‑completo {#completo}
 
 ::: {.stage .l-banner}
@@ -1189,6 +1315,41 @@ $N(1) = 1$ y $N(L) \le 1 + 2^{n+1}\, N(L/2)$, por lo que $N(2^n) \le 2 \cdot 2^{
 [Consecuencia]{.stat-label}
 
 [Un algoritmo de tiempo polinomial para Planning implicaría $\mathsf{P} = \mathsf{PSPACE}$, algo que se considera muy improbable.]{.stat-text}
+:::
+
+:::
+
+## Pertenencia y consecuencia {#prueba-completo}
+
+::: {.stage .l-stack .single}
+
+::: {.card .blue .a1}
+[Demostración]{.kicker}
+
+::: {.title-slot .md}
+:::
+
+::: {.lead}
+Path es correcto y usa espacio polinomial; con la dureza, da la completitud.
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a2 .proof}
+[Corrección de Path]{.kicker}
+
+Por inducción sobre $L$. Si devuelve *sí*, se concatenan las dos mitades. Si hay un plan de longitud $L' \le L$, la configuración en la posición $\lceil L'/2 \rceil$ cumple ambas llamadas.
+
+[Espacio]{.kicker}
+
+[$S(n,k,L) \le p(n,k,\log L) + S(n,k,\lceil L/2 \rceil)$]{.formula}
+
+$n + 1$ marcos de $O(n + \log k)$ bits: en total $O\big(n(n + \log k)\big).$
+
+[Consecuencia]{.kicker}
+
+Si Planning tuviera un algoritmo de tiempo $t(N)$, cada $A \in \mathsf{PSPACE}$ se resolvería en tiempo $q(m) + t(q(m))$, un polinomio. Entonces $\mathsf{PSPACE} \subseteq \mathsf{P}$ y, como $\mathsf{P} \subseteq \mathsf{PSPACE}$, $\mathsf{P} = \mathsf{PSPACE}.$
 :::
 
 :::
@@ -1242,6 +1403,45 @@ Plan mínimo de $3$ pasos: $\varnothing \to \{c_1\} \to \{c_2\} \to \{c_1, c_2\}
 
 :::
 
+## Por qué da $3$ pasos y $20$ llamadas {#prueba-ejemplo}
+
+::: {.stage .l-stack .single}
+
+::: {.card .blue .a1}
+[Demostración]{.kicker}
+
+::: {.title-slot .md}
+:::
+
+::: {.lead}
+El plan más corto mide $3$, así que $\textsf{Path}(\varnothing, M, 2)$ es *no* y $\textsf{Path}(\varnothing, M, 4)$ es *sí*.
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a2 .proof}
+[Plan mínimo]{.kicker}
+
+Desde $\varnothing$ solo aplica $O_1$, que da $\{c_1\}.$ Desde $\{c_1\}$, $O_1$ da $\{c_1\}$ y $O_2$ da $\{c_2\}$: ninguna es $M.$ No hay plan de a lo más $2$ pasos.
+
+[Las 20 llamadas]{.kicker}
+
+[$1 + 3 + 7 + 3 + 6 = 20$]{.formula}
+
+::: {.clean .mt-s}
+- $1$ la llamada principal.
+- $S' = \varnothing$: $x$ cuesta $3$ llamadas y $y$ cuesta $7.$
+- $S' = \{c_1\}$: $x$ cuesta $3$ llamadas y $y$ cuesta $6.$
+:::
+
+[Marcos de pila]{.kicker}
+
+$L$ baja $4, 2, 1$: nunca hay más de $n + 1 = 3$ marcos.
+:::
+
+:::
+
 ## ¿Y si $n$ crece? {#escala}
 
 ::: {.stage .l-banner .four}
@@ -1289,6 +1489,41 @@ Plan mínimo de $3$ pasos: $\varnothing \to \{c_1\} \to \{c_2\} \to \{c_1, c_2\}
 [$n = 5$]{.stat-label}
 
 [llamadas · plan de $31$ pasos · $6$ marcos. Con $n = 60$ bastarían $61$ marcos.]{.stat-text}
+:::
+
+:::
+
+## De dónde salen las cifras {#prueba-escala}
+
+::: {.stage .l-stack .single}
+
+::: {.card .blue .a1}
+[Demostración]{.kicker}
+
+::: {.title-slot .md}
+:::
+
+::: {.lead}
+El plan mínimo es $2^n - 1$, la pila tiene $n + 1$ marcos y las llamadas están acotadas por $2^{n(n+1)+1}.$
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a2 .proof}
+[Plan mínimo · Teorema 9.6]{.kicker}
+
+Por inducción sobre $i$: para agregar $c_i$ hay que lograr $c_1, \dots, c_{i-1}$ ($2^{i-1} - 1$ pasos), $O_i$ los borra y hay que lograrlos otra vez: $2(2^{i-1} - 1) + 1 = 2^i - 1.$
+
+[Número de llamadas]{.kicker}
+
+[$N(1) = 1,\quad N(L) \le 1 + 2^{n+1}\, N(L/2)$]{.formula}
+
+Con $a = 2^{n+1}$: $N(2^n) \le 1 + a + \cdots + a^n \le 2a^n = 2^{n(n+1)+1}.$ Para $n = 5$ la cota es $\approx 2.1 \times 10^9$ y se midieron $23\,167\,425.$
+
+[Pila]{.kicker}
+
+$L$ baja de $2^n$ a $1$: son $n + 1$ niveles, con una sola llamada activa en cada uno.
 :::
 
 :::
@@ -1373,6 +1608,39 @@ Para volar a Tokio hace falta la visa japonesa, que solo se tramita en París. E
 [Plan mínimo de $7$ acciones. Path lo verifica con $L = 8$ y nunca más de $4$ marcos.]{.cite}
 
 [Siguiente]{.btn-arrow}
+:::
+
+:::
+
+## El plan de vuelos es mínimo {#prueba-vuelos}
+
+::: {.stage .l-stack .single}
+
+::: {.card .blue .a1}
+[Demostración]{.kicker}
+
+::: {.title-slot .md}
+:::
+
+::: {.lead}
+Los siete operadores aparecen en todo plan, así que hacen falta al menos $7$ acciones.
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a2 .proof}
+[Cada operador es indispensable]{.kicker}
+
+::: {.clean}
+- $c_5$ solo la agrega $O_7$; $O_7$ exige $c_8$, que solo agrega $O_5$; $O_5$ exige $c_4$, que solo agrega $O_4.$
+- $O_4$ exige $c_3$. Antes de $O_4$ solo $O_3$ puede agregarla (a $O_6$ le falta $c_4$); $O_3$ exige $c_2$, que solo agrega $O_2$, que exige $c_7$, que solo agrega $O_1.$
+- $O_4$ borra $c_3$ y $O_7$ la necesita después. $O_3$ no se repite ($c_1$ nadie la agrega y $O_2$ la borra), así que $c_3$ vuelve por $O_6.$
+:::
+
+[Conclusión]{.kicker}
+
+$O_1, \dots, O_7$ es un plan válido y de $7$ acciones: es mínimo.
 :::
 
 :::

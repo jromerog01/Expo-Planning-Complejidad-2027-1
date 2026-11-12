@@ -1589,3 +1589,37 @@ $code-color: $ink;
     line-height: 1.2;
   }
 }
+
+// ===============================================================
+//  Diapositivas de demostración
+// ===============================================================
+.reveal .proof {
+  padding: 34px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+
+  .kicker {
+    margin: 16px 0 6px;
+  }
+
+  .kicker:first-child {
+    margin-top: 0;
+  }
+
+  p {
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.5;
+  }
+
+  .clean li {
+    font-size: 19px;
+  }
+
+  .formula {
+    font-size: 26px;
+    margin: 4px 0 6px;
+  }
+}
