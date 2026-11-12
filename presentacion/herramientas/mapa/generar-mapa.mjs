@@ -1,16 +1,18 @@
 // Genera mapas reales (Natural Earth 1:50m, world-atlas):
 //   node generar-mapa.mjs ../../img/flights.svg            -> plan completo con escalas
 //   node generar-mapa.mjs ../../img/flights-directo.svg directo -> solo el vuelo directo CDMX -> Tokio, tachado
+//   node generar-mapa.mjs ../../img/flights-completo.svg completo -> el plan completo, a tamaño de toda la diapositiva
 import fs from 'node:fs';
 import * as d3 from 'd3-geo';
 import * as topojson from 'topojson-client';
 
 const out = process.argv[2];
 const directo = process.argv[3] === 'directo';
+const completo = process.argv[3] === 'completo';   // mapa del plan a tamaño de toda la diapositiva
 const load = r => { const w = JSON.parse(fs.readFileSync(new URL(`./node_modules/world-atlas/countries-${r}.json`, import.meta.url))); return topojson.feature(w, w.objects.countries).features; };
 const countries = load('110m');      // mapa general
 const detail = load('50m');          // recuadro ampliado de Europa
-const W = 1448, H = 386;
+const W = 1448, H = completo ? 736 : 386;
 const f = n => n.toFixed(1);
 
 const city = {
@@ -71,7 +73,7 @@ if (directo) {
 } else {
   svg.push(label('mex', -76, 16, 176, '+ visa EUA \\(O_1\\)'));
   svg.push(label('la', -150, -54, 128));
-  svg.push(label('tyo', -60, 16, 150, 'meta \\(S^*\\)'));
+  svg.push(completo ? label('tyo', 14, -66, 140, 'meta \\(S^*\\)') : label('tyo', -60, 16, 150, 'meta \\(S^*\\)'));
 }
 
 // Vuelo directo imposible: una flecha de CDMX a Tokio con un tache en medio
@@ -94,8 +96,8 @@ for (const [[x, y], op] of badges) {
 
 // Recuadro ampliado: Madrid <-> París
 if (!directo) {
-const box = { x: 820, y: 196, w: 290, h: 172 };
 const [mx, my] = P(city.mad.c), [px, py] = P(city.par.c);
+const box = completo ? { x: Math.round(mx - 90), y: Math.round(my + 150), w: 330, h: 196 } : { x: 820, y: 196, w: 290, h: 172 };
 svg.push(`  <path d="M${f(mx)} ${f(my)} L${box.x} ${box.y + 40}" stroke="#1f4a7d" stroke-width="1.5" stroke-dasharray="3 5" fill="none"/>`);
 svg.push(`  <path d="M${f(px)} ${f(py)} L${box.x + 40} ${box.y}" stroke="#1f4a7d" stroke-width="1.5" stroke-dasharray="3 5" fill="none"/>`);
 svg.push(`  <rect class="glass" x="${box.x}" y="${box.y}" width="${box.w}" height="${box.h}" rx="18"/>`);
@@ -126,7 +128,7 @@ svg.push(`  <text x="${f(zpx + 12)}" y="${f(zpy - 6)}" font-size="14" font-weigh
 svg.push(`  <foreignObject x="${f(zpx + 12)}" y="${f(zpy - 2)}" width="120" height="20"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-accent" style="font-size:12px;font-weight:600;height:20px">+ visa JP \\(O_5\\)</div></foreignObject>`);
 }
 
-svg.push(`  <text x="${W - 24}" y="${H - 14}" font-size="11" text-anchor="end" fill="#4c5a6b" fill-opacity=".8">Mapa: Natural Earth · ${directo ? 'esquema ilustrativo' : 'rutas de gran círculo'} · instancia ficticia</text>`);
+svg.push(`  <text x="${completo ? 24 : W - 24}" y="${H - 14}" font-size="11" text-anchor="${completo ? 'start' : 'end'}" fill="#4c5a6b" fill-opacity=".8">Mapa: Natural Earth · ${directo ? 'esquema ilustrativo' : 'rutas de gran círculo'} · instancia ficticia</text>`);
 svg.push('</svg>');
 fs.writeFileSync(out, svg.join('\n') + '\n');
 console.log('ok', (fs.statSync(out).size / 1024).toFixed(0) + ' KB');

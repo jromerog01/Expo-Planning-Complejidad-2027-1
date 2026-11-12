@@ -222,43 +222,196 @@ Ahora hay $4$ focos y $4$ botones. El botón $i$ solo funciona si los focos $1, 
 
 ## ¿Qué es Planning? {#que-es-planning}
 
-::: {.stage .l-plans}
+::: {.stage .l-stats}
+::: {.card .blue .a1}
+
+::: {.left}
+::: {.title-slot .md}
+:::
+
+::: {.lead}
+Planning es un **problema de decisión**: dados un estado inicial y un estado final, ¿existe una secuencia de acciones válidas que lleve del primero al segundo?
+:::
+
+::: {.clean .formal .mt-m}
+- **Entrada:** un estado inicial, un estado final y un conjunto de acciones, cada una con sus requisitos y su efecto.
+- **Acción válida:** solo puede aplicarse si sus requisitos se cumplen en el estado actual, y al aplicarla el estado cambia.
+- **Respuesta:** *sí*, si existe una secuencia de acciones válidas que llegue al estado final; *no*, en caso contrario.
+- **Dificultad:** no basta con avanzar, porque ciertas acciones llevan a estados atascados, donde ya no queda ninguna acción válida.
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .inner .solo}
+::: {.strip}
+```{=html}
+{{< include img/planning-escalera.svg >}}
+```
+:::
+:::
+
+:::
+:::
+
+## Hechos y estados {#definiciones}
+
+::: {.stage .l-split .hechos}
+
+::: {.card .media .a1}
+```{=html}
+{{< include img/estados.svg >}}
+```
+:::
+
+::: {.card .blue .a2}
+::: {.title-slot .md}
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a3}
+::: {.cols3 .cols2}
+::: {}
+![](img/icons/list.svg){.ico}
+
+[Hechos (condiciones)]{.h-card}
+
+[Las condiciones $\mathcal{C} = \{c_1, \dots, c_n\}.$ Cada una es verdadera o falsa, por ejemplo:]{.small}
+
+::: {.clean .small .mt-s}
+- Estoy en Madrid
+- Tengo pasaporte
+- Estoy en Ciudad de México
+:::
+:::
+
+::: {}
+![](img/icons/layers.svg){.ico}
+
+[Estados]{.h-card}
+
+[Un estado es el conjunto $S \subseteq \mathcal{C}$ de hechos que se cumplen. Se puede ver como una **tupla de $n$ valores binarios**: $1$ si el hecho se cumple y $0$ si no. Por ejemplo, si se cumplen $c_1$ y $c_3$ pero no $c_2,$ el estado es la tupla $(1, 0, 1).$]{.small}
+
+[Cada hecho tiene $2$ valores posibles y se combinan libremente, así que hay $2 \cdot 2 \cdots 2 = 2^n$ estados. Con $n = 3$ hechos, $2^3 = 8.$]{.small .mt-s}
+:::
+:::
+:::
+
+:::
+
+## Operadores {#operadores}
+
+::: {.stage .l-deep .tall .amplio}
+
+::: {.card .media .chico .a1}
+```{=html}
+{{< include img/operador-ejemplo.svg >}}
+```
+:::
+
+::: {.a2 .title-slot .md}
+:::
+
+::: {.card .a3}
+::: {.grupo}
+[Definición]{.kicker}
+
+Un **operador** $O_i = (P_i, A_i, D_i)$ es una acción descrita con tres listas de hechos:
+
+::: {.clean .mt-s}
+- **$P_i$, prerrequisitos:** hechos que deben cumplirse para aplicarlo.
+- **$A_i$, adiciones:** hechos que pasan a cumplirse.
+- **$D_i$, eliminaciones:** hechos que dejan de cumplirse.
+:::
+:::
+
+::: {.grupo}
+[Cómo se aplica]{.h-card}
+
+::: {.clean .mt-s}
+- Se revisa que los prerrequisitos se cumplan en el estado actual.
+- Se agregan los hechos de la lista de adiciones.
+- Se eliminan los hechos de la lista de eliminaciones.
+- El resultado es el estado nuevo, como en el ejemplo del botón 2 de los focos.
+:::
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+:::
+
+## La gráfica implícita {#grafica}
+
+::: {.stage .l-map}
+
+::: {.card .media .a1}
+```{=html}
+{{< include img/graph-implicit.svg >}}
+```
+:::
+
+::: {.card .blue .a2}
+[Planning como camino]{.kicker}
+
+::: {.title-slot .sm}
+:::
+:::
+
+::: {.card .a3}
+[Cada estado es un nodo y cada operador aplicable es una flecha entre dos estados.]{.h-card}
+
+::: {.clean .mt-s}
+- **Implícita:** la gráfica representa las $2^n$ combinaciones posibles de hechos, pero no necesitamos construirla explícitamente: podemos calcular las transiciones utilizando los operadores.
+- **Pregunta:** ¿existe un camino de $S_0$ a $S^*$, es decir, una secuencia de operadores, cada uno aplicable?
+:::
+
+[Siguiente]{.btn-arrow}
+:::
+
+:::
+
+## Una instancia de Planning {#elementos}
+
+::: {.stage .l-plans .instancia}
 ::: {.card .blue .a1}
 
 ::: {.plans}
 ::: {.plan}
-[Punto de partida]{.pill}
+[Estado inicial]{.pill}
 
 [$S_0$]{.stat}
 
 ::: {.clean}
-- Un estado inicial: lo que es cierto al empezar.
-- Se describe con los hechos que se cumplen.
-- En el viaje: estoy en Ciudad de México y tengo pasaporte.
+- Una tupla de $n$ valores binarios: qué hechos se cumplen al empezar.
+- **Focos:** $(0, 0, 0)$, todos apagados.
+- **Vuelos:** estoy en Ciudad de México y tengo pasaporte.
 :::
 :::
 
 ::: {.plan .featured}
-[Acciones]{.pill}
+[Operadores]{.pill}
 
 [$O_1, \dots, O_k$]{.stat}
 
 ::: {.clean}
-- Cada acción exige ciertos requisitos y cambia el estado.
-- Al aplicarla, unos hechos se agregan y otros se eliminan.
-- Volar a Tokio exige estar en Madrid y tener la visa japonesa.
+- Cada $O_i = (P_i, A_i, D_i)$: prerrequisitos, adiciones y eliminaciones.
+- **Focos:** el botón $2$ exige el foco $1$ encendido, enciende el foco $2$ y apaga el $1.$
+- **Vuelos:** volar a Los Ángeles exige la visa estadounidense.
 :::
 :::
 
 ::: {.plan}
-[Meta]{.pill}
+[Estado final]{.pill}
 
 [$S^*$]{.stat}
 
 ::: {.clean}
-- El estado objetivo al que se quiere llegar.
-- Hay que alcanzarlo exactamente.
-- En el viaje: estoy en Tokio con mis documentos.
+- La tupla que queremos alcanzar.
+- **Focos:** $(1, 1, 1)$, todos encendidos.
+- **Vuelos:** estar en Tokio.
 :::
 :::
 :::
@@ -267,7 +420,7 @@ Ahora hay $4$ focos y $4$ botones. El botón $i$ solo funciona si los focos $1, 
 ::: {.title-slot .md}
 :::
 
-¿Existe una secuencia de acciones permitidas que lleve del estado inicial al objetivo? Es un problema de decisión: se responde *sí* o *no*.
+Planning pregunta si existe una secuencia de operadores aplicables que lleve de $S_0$ a $S^*.$
 
 [Siguiente]{.btn-arrow}
 :::
@@ -275,49 +428,106 @@ Ahora hay $4$ focos y $4$ botones. El botón $i$ solo funciona si los focos $1, 
 :::
 :::
 
-## Hechos, estados y operadores {#definiciones}
+## De vuelta a Tokio… {#vuelta-tokio}
 
-::: {.stage .l-split}
+::: {.stage .l-stack .tokio}
 
-::: {.card .media .a1}
-```{=html}
-{{< include img/operator.svg >}}
-```
+::: {.card .blue .a1}
+[Instancia ficticia]{.kicker}
+
+::: {.title-slot .md}
 :::
 
-::: {.card .blue .a2}
-::: {.title-slot .sm}
+::: {.lead}
+Con lo que ya definimos, modelamos el viaje: hechos, estados y operadores.
 :::
 
 [Siguiente]{.btn-arrow}
+:::
+
+::: {.card .a2}
+::: {.dos}
+::: {}
+[Hechos]{.h-card}
+
+::: {.clean .dosc}
+- $c_1$: estoy en Ciudad de México
+- $c_2$: estoy en Los Ángeles
+- $c_3$: estoy en Madrid
+- $c_4$: estoy en París
+- $c_5$: estoy en Tokio
+- $c_6$: tengo pasaporte
+- $c_7$: tengo visa estadounidense
+- $c_8$: tengo visa japonesa
+:::
+:::
+
+::: {}
+[Estados]{.h-card}
+
+Hay $2^8 = 256$ estados, cada uno una tupla de $8$ valores binarios.
+
+**Estado inicial:** $S_0 = (1, 0, 0, 0, 0, 1, 0, 0)$
+
+**Estado final:** $S^* = (0, 0, 0, 0, 1, 1, 1, 1)$
+:::
+:::
 :::
 
 ::: {.card .a3}
-::: {.cols3}
-::: {}
-![](img/icons/list.svg){.ico}
-
-[Hechos]{.h-card}
-
-[Las condiciones $\mathcal{C} = \{c_1, \dots, c_n\}.$ Cada una es verdadera o falsa: «estoy en Madrid», «tengo pasaporte».]{.small}
-:::
-
-::: {}
-![](img/icons/layers.svg){.ico}
-
-[Estados]{.h-card}
-
-[Un estado (o configuración) es el conjunto $S \subseteq \mathcal{C}$ de hechos que se cumplen. Hay $2^n$ estados posibles.]{.small}
-:::
-
-::: {}
-![](img/icons/bolt.svg){.ico}
-
 [Operadores]{.h-card}
 
-[$O_i = (P_i, A_i, D_i).$ Si $P_i \subseteq S$, agrega $A_i$ y elimina $D_i$: $S' = (S \setminus D_i) \cup A_i.$]{.small}
+```{=html}
+<table class="tight acciones ops">
+  <thead><tr><th>Operador</th><th>Acción</th><th>Prerrequisitos</th><th>Agrega</th><th>Elimina</th></tr></thead>
+  <tbody>
+    <tr><td><strong>\(O_1\)</strong></td><td>Tramitar la visa estadounidense</td><td>\(c_1, c_6\)</td><td>\(c_7\)</td><td>ninguno</td></tr>
+    <tr><td><strong>\(O_2\)</strong></td><td>Volar de Ciudad de México a Los Ángeles</td><td>\(c_1, c_6, c_7\)</td><td>\(c_2\)</td><td>\(c_1\)</td></tr>
+    <tr><td><strong>\(O_3\)</strong></td><td>Volar de Los Ángeles a Madrid</td><td>\(c_2, c_6\)</td><td>\(c_3\)</td><td>\(c_2\)</td></tr>
+    <tr><td><strong>\(O_4\)</strong></td><td>Volar de Madrid a París</td><td>\(c_3, c_6\)</td><td>\(c_4\)</td><td>\(c_3\)</td></tr>
+    <tr><td><strong>\(O_5\)</strong></td><td>Tramitar la visa japonesa</td><td>\(c_4, c_6\)</td><td>\(c_8\)</td><td>ninguno</td></tr>
+    <tr><td><strong>\(O_6\)</strong></td><td>Volar de París a Madrid</td><td>\(c_4, c_6\)</td><td>\(c_3\)</td><td>\(c_4\)</td></tr>
+    <tr><td><strong>\(O_7\)</strong></td><td>Volar de Madrid a Tokio</td><td>\(c_3, c_6, c_8\)</td><td>\(c_5\)</td><td>\(c_3\)</td></tr>
+  </tbody>
+</table>
+```
+:::
+
+:::
+
+## El plan de viaje {#plan-tokio}
+
+::: {.stage .l-full}
+
+::: {.card .media .a1}
+```{=html}
+{{< include img/flights-completo.svg >}}
+```
+:::
+
+::: {.card .rotulo}
+::: {.title-slot .xs}
 :::
 :::
+
+::: {.card .flotante}
+[Operadores y estados aplicados]{.h-card}
+
+```{=html}
+<table class="tight acciones plan">
+  <thead><tr><th>Operador</th><th>Estado resultante</th></tr></thead>
+  <tbody>
+    <tr><td class="muted">inicio</td><td>\(S_0 = (1,0,0,0,0,1,0,0)\)</td></tr>
+    <tr><td><strong>\(O_1\)</strong></td><td>\(S_1 = (1,0,0,0,0,1,1,0)\)</td></tr>
+    <tr><td><strong>\(O_2\)</strong></td><td>\(S_2 = (0,1,0,0,0,1,1,0)\)</td></tr>
+    <tr><td><strong>\(O_3\)</strong></td><td>\(S_3 = (0,0,1,0,0,1,1,0)\)</td></tr>
+    <tr><td><strong>\(O_4\)</strong></td><td>\(S_4 = (0,0,0,1,0,1,1,0)\)</td></tr>
+    <tr><td><strong>\(O_5\)</strong></td><td>\(S_5 = (0,0,0,1,0,1,1,1)\)</td></tr>
+    <tr><td><strong>\(O_6\)</strong></td><td>\(S_6 = (0,0,1,0,0,1,1,1)\)</td></tr>
+    <tr><td><strong>\(O_7\)</strong></td><td>\(S_7 = S^* = (0,0,0,0,1,1,1,1)\)</td></tr>
+  </tbody>
+</table>
+```
 :::
 
 :::
@@ -702,47 +912,6 @@ Es el modelo detrás de la logística de una operación de socorro, de un robot 
 [Fikes y Nilsson (1971); Kleinberg y Tardos (2005, p. 538).]{.cite}
 
 [Siguiente]{.btn-arrow}
-:::
-
-:::
-
-## El problema de decisión Planning {#decision}
-
-::: {.stage .l-stack}
-
-::: {.card .blue .a1}
-::: {.title-slot .md}
-:::
-
-::: {.lead}
-Equivale a buscar un camino en una grafica de $2^n$ configuraciones que está descrita de forma compacta y nunca se construye.
-:::
-
-[Siguiente]{.btn-arrow}
-:::
-
-::: {.card .a2}
-::: {.strip}
-```{=html}
-{{< include img/graph-implicit.svg >}}
-```
-:::
-
-::: {.txt}
-[Entrada]{.h-card}
-
-Condiciones $\mathcal{C}$, operadores $(P_i, A_i, D_i)$, una configuración inicial $S_0$ y una meta $S^*.$
-:::
-:::
-
-::: {.card .a3}
-[Pregunta]{.h-card}
-
-¿Existe una secuencia de operadores, cada uno aplicable, que lleve de $S_0$ **exactamente** a $S^*$?
-
-::: {.chips .mt-auto}
-[$S_0$]{.chip} [$\to$]{.to} [$O_{i_1}$]{.chip} [$\to$]{.to} [$O_{i_2}$]{.chip} [$\to$]{.to} [$\cdots$]{.chip} [$\to$]{.to} [$S^*$]{.chip .on}
-:::
 :::
 
 :::

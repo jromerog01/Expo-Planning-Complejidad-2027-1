@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 740 740" role="img" aria-label="Un estado se ve como una tupla de 3 valores binarios; con 3 hechos hay 8 estados">
+  <rect class="glass" x="170" y="36" width="400" height="196" rx="26" />
+  <text x="206" y="76" font-size="16" font-weight="600" text-anchor="start" class="t-muted">HECHOS</text>
+  <rect x="206" y="96" width="72" height="46" rx="12" fill="url(#g-blue)" />
+  <foreignObject x="-18.0" y="101.0" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_1\)</div></foreignObject>
+  <text x="242" y="176" font-size="18" font-weight="650" text-anchor="middle" class="t-muted">1</text>
+  <rect x="290" y="96" width="72" height="46" rx="12" fill="#e6eef8" />
+  <foreignObject x="66.0" y="101.0" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_2\)</div></foreignObject>
+  <text x="326" y="176" font-size="18" font-weight="650" text-anchor="middle" class="t-muted">0</text>
+  <rect x="374" y="96" width="72" height="46" rx="12" fill="url(#g-blue)" />
+  <foreignObject x="150.0" y="101.0" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_3\)</div></foreignObject>
+  <text x="410" y="176" font-size="18" font-weight="650" text-anchor="middle" class="t-muted">1</text>
+  <text x="206" y="208" font-size="14" font-weight="500" text-anchor="start" class="t-muted">1 = se cumple · 0 = no se cumple</text>
+  <path class="edge" d="M370 242 V264" />
+  <rect x="130" y="272" width="480" height="196" rx="28" fill="url(#g-ink)" filter="url(#ds)" />
+  <foreignObject x="166.0" y="279.4" width="520" height="53.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:28px;font-weight:700;justify-content:flex-start;height:53.2px">Estado \(S\)</div></foreignObject>
+  <foreignObject x="54.0" y="290.8" width="520" height="30.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:16px;font-weight:400;justify-content:flex-end;height:30.4px;color:#9fb3c9">tupla binaria</div></foreignObject>
+  <foreignObject x="110.0" y="338.8" width="520" height="106.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:56px;font-weight:700;justify-content:center;height:106.4px">\((1,\,0,\,1)\)</div></foreignObject>
+  <path class="edge" d="M370 480 V516" />
+  <rect class="glass" x="70" y="526" width="600" height="190" rx="26" />
+  <text x="104" y="566" font-size="15" font-weight="600" text-anchor="start" class="t-muted">TODOS LOS ESTADOS POSIBLES</text>
+  <rect x="100" y="590" width="124" height="44" rx="12" fill="#fff" fill-opacity=".8" />
+  <text x="162" y="619" font-size="18" font-weight="650" text-anchor="middle" class="">(0, 0, 0)</text>
+  <rect x="236" y="590" width="124" height="44" rx="12" fill="#fff" fill-opacity=".8" />
+  <text x="298" y="619" font-size="18" font-weight="650" text-anchor="middle" class="">(0, 0, 1)</text>
+  <rect x="372" y="590" width="124" height="44" rx="12" fill="#fff" fill-opacity=".8" />
+  <text x="434" y="619" font-size="18" font-weight="650" text-anchor="middle" class="">(0, 1, 0)</text>
+  <rect x="508" y="590" width="124" height="44" rx="12" fill="#fff" fill-opacity=".8" />
+  <text x="570" y="619" font-size="18" font-weight="650" text-anchor="middle" class="">(0, 1, 1)</text>
+  <rect x="100" y="648" width="124" height="44" rx="12" fill="#fff" fill-opacity=".8" />
+  <text x="162" y="677" font-size="18" font-weight="650" text-anchor="middle" class="">(1, 0, 0)</text>
+  <rect x="236" y="648" width="124" height="44" rx="12" fill="url(#g-ink)" />
+  <text x="298" y="677" font-size="18" font-weight="650" text-anchor="middle" class="t-white">(1, 0, 1)</text>
+  <rect x="372" y="648" width="124" height="44" rx="12" fill="#fff" fill-opacity=".8" />
+  <text x="434" y="677" font-size="18" font-weight="650" text-anchor="middle" class="">(1, 1, 0)</text>
+  <rect x="508" y="648" width="124" height="44" rx="12" fill="#fff" fill-opacity=".8" />
+  <text x="570" y="677" font-size="18" font-weight="650" text-anchor="middle" class="">(1, 1, 1)</text>
+  <rect class="glass" x="538" y="498" width="132" height="50" rx="16" />
+  <foreignObject x="344.0" y="504.0" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:20px;font-weight:700;justify-content:center;height:38.0px">\(2^3 = 8\)</div></foreignObject>
+  </svg>

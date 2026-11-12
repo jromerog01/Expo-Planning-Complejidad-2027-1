@@ -1,12 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 740 740" role="img" aria-label="Un operador transforma la configuración S en S prima">
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 740 740" role="img" aria-label="Un operador transforma el estado S en S prima">
   
   <rect class="glass" x="170" y="70" width="400" height="140" rx="26" />
-  <foreignObject x="206.0" y="97.0" width="520" height="30.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:16px;font-weight:600;justify-content:flex-start;height:30.4px">CONFIGURACIÓN \(S\)</div></foreignObject>
+  <foreignObject x="206.0" y="97.0" width="520" height="30.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:16px;font-weight:600;justify-content:flex-start;height:30.4px">ESTADO \(S\)</div></foreignObject>
   <g font-size="19" font-weight="650" text-anchor="middle">
-    <rect x="206" y="138" width="72" height="46" rx="12" fill="url(#g-blue)" /><foreignObject x="-18.0" y="143.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_1\)</div></foreignObject>
-    <rect x="290" y="138" width="72" height="46" rx="12" fill="url(#g-blue)" /><foreignObject x="66.0" y="143.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_2\)</div></foreignObject>
-    <rect x="374" y="138" width="72" height="46" rx="12" fill="#e6eef8" /><foreignObject x="150.0" y="143.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_3\)</div></foreignObject>
-    <rect x="458" y="138" width="72" height="46" rx="12" fill="#e6eef8" /><foreignObject x="234.0" y="143.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_4\)</div></foreignObject>
+    <rect x="250" y="138" width="72" height="46" rx="12" fill="url(#g-blue)" /><foreignObject x="26.0" y="143.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_1\)</div></foreignObject>
+    <rect x="334" y="138" width="72" height="46" rx="12" fill="#e6eef8" /><foreignObject x="110.0" y="143.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_2\)</div></foreignObject>
+    <rect x="418" y="138" width="72" height="46" rx="12" fill="#e6eef8" /><foreignObject x="194.0" y="143.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_3\)</div></foreignObject>
   </g>
   <path class="edge" d="M370 222 V262" />
   
@@ -17,23 +16,19 @@
     <rect x="166" y="346" width="408" height="38" rx="10" fill="#ffffff" fill-opacity=".08" />
     <foreignObject x="184.0" y="345.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:20px;font-weight:600;justify-content:flex-start;height:38.0px;color:#8fc0f2">\(P\)</div></foreignObject><text x="220" y="372" class="t-white">prerrequisitos</text><foreignObject x="36.0" y="345.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:20px;font-weight:600;justify-content:flex-end;height:38.0px">\(\{c_1\}\)</div></foreignObject>
     <rect x="166" y="392" width="408" height="38" rx="10" fill="#ffffff" fill-opacity=".08" />
-    <foreignObject x="184.0" y="391.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:20px;font-weight:600;justify-content:flex-start;height:38.0px;color:#7fd6a6">\(A\)</div></foreignObject><text x="220" y="418" class="t-white">agrega</text><foreignObject x="36.0" y="391.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:20px;font-weight:600;justify-content:flex-end;height:38.0px">\(\{c_3\}\)</div></foreignObject>
+    <foreignObject x="184.0" y="391.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:20px;font-weight:600;justify-content:flex-start;height:38.0px;color:#7fd6a6">\(A\)</div></foreignObject><text x="220" y="418" class="t-white">agrega</text><foreignObject x="36.0" y="391.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:20px;font-weight:600;justify-content:flex-end;height:38.0px">\(\{c_2\}\)</div></foreignObject>
     <rect x="166" y="438" width="408" height="38" rx="10" fill="#ffffff" fill-opacity=".08" />
     <foreignObject x="184.0" y="437.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:20px;font-weight:600;justify-content:flex-start;height:38.0px;color:#f2a29a">\(D\)</div></foreignObject><text x="220" y="464" class="t-white">elimina</text><foreignObject x="36.0" y="437.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:20px;font-weight:600;justify-content:flex-end;height:38.0px">\(\{c_1\}\)</div></foreignObject>
   </g>
   <path class="edge" d="M370 498 V538" />
   
   <rect class="glass" x="170" y="548" width="400" height="140" rx="26" />
-  <foreignObject x="206.0" y="575.0" width="520" height="30.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:16px;font-weight:600;justify-content:flex-start;height:30.4px">CONFIGURACIÓN \(S'\)</div></foreignObject>
+  <foreignObject x="206.0" y="575.0" width="520" height="30.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:16px;font-weight:600;justify-content:flex-start;height:30.4px">ESTADO \(S'\)</div></foreignObject>
   <g font-size="19" font-weight="650" text-anchor="middle">
-    <rect x="206" y="616" width="72" height="46" rx="12" fill="#e6eef8" /><foreignObject x="-18.0" y="621.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_1\)</div></foreignObject>
-    <rect x="290" y="616" width="72" height="46" rx="12" fill="url(#g-blue)" /><foreignObject x="66.0" y="621.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_2\)</div></foreignObject>
-    <rect x="374" y="616" width="72" height="46" rx="12" fill="url(#g-blue)" /><foreignObject x="150.0" y="621.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_3\)</div></foreignObject>
-    <rect x="458" y="616" width="72" height="46" rx="12" fill="#e6eef8" /><foreignObject x="234.0" y="621.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_4\)</div></foreignObject>
+    <rect x="250" y="616" width="72" height="46" rx="12" fill="#e6eef8" /><foreignObject x="26.0" y="621.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_1\)</div></foreignObject>
+    <rect x="334" y="616" width="72" height="46" rx="12" fill="url(#g-blue)" /><foreignObject x="110.0" y="621.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_2\)</div></foreignObject>
+    <rect x="418" y="616" width="72" height="46" rx="12" fill="#e6eef8" /><foreignObject x="194.0" y="621.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_3\)</div></foreignObject>
   </g>
-  
-  <rect class="glass" x="590" y="128" width="120" height="56" rx="16" />
-  <foreignObject x="390.0" y="140.7" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:17px;font-weight:650;justify-content:center;height:32.3px">\(2^n\) estados</div></foreignObject>
   <rect class="glass" x="20" y="590" width="140" height="56" rx="16" />
   <foreignObject x="-170.0" y="602.7" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:17px;font-weight:650;justify-content:center;height:32.3px">aplicar \(O_i\)</div></foreignObject>
 </svg>

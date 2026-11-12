@@ -1412,3 +1412,180 @@ $code-color: $ink;
     margin-bottom: 12px;
   }
 }
+
+// Lista con letra grande dentro del panel azul (diapositiva "¿Qué es Planning?")
+.reveal .l-stats .left .clean.formal li {
+  font-size: 21px;
+  line-height: 1.45;
+  margin-bottom: 12px;
+  padding-left: 24px;
+}
+
+// En "¿Qué es Planning?" la ilustración ocupa toda la tarjeta blanca
+.reveal .l-stats .inner.solo {
+  grid-template-rows: 1fr;
+}
+
+// "Hechos, estados y operadores": tarjeta de columnas más alta (título más bajo)
+.l-split.hechos {
+  grid-template-rows: 0.5fr 1fr;
+}
+
+// "Operadores": tarjeta alta con letra grande, el contenido se reparte a lo alto
+.l-deep.tall.amplio {
+  .a3 {
+    justify-content: space-evenly;
+    padding: 28px 44px 24px;
+  }
+
+  .a3 > p:not(.cite):not(.formula),
+  .a3 .grupo > p:not(.kicker):not(.h-card) {
+    font-size: 22px;
+  }
+
+  .a3 .clean li {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .a3 .h-card {
+    font-size: 25px;
+    margin-bottom: 8px;
+  }
+}
+
+// Variante de la tarjeta de columnas con solo dos columnas
+.l-split .cols3.cols2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+// Diagrama del ejemplo de operador dentro de la tarjeta de texto
+
+// Ilustración con margen interior (más pequeña dentro de su tarjeta)
+.card.media.chico {
+  > svg,
+  > p > svg {
+    inset: 44px 52px;
+    width: calc(100% - 104px);
+    height: calc(100% - 88px);
+  }
+}
+
+// "Una instancia de Planning": letra más grande en las tres columnas
+.l-plans.instancia .plan .clean li {
+  font-size: 21px;
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+// ===============================================================
+//  Diapositivas de Tokio
+// ===============================================================
+
+// 1) Instancia modelada: título azul | hechos y estados / tabla de operadores
+.l-stack.tokio {
+  grid-template-columns: 0.55fr 1fr;
+  grid-template-rows: 0.74fr 1.26fr;
+
+  > .a2 {
+    padding: 26px 34px;
+    gap: 0;
+  }
+
+  > .a3 {
+    padding: 24px 34px 26px;
+  }
+
+  .dos {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+    height: 100%;
+  }
+
+  .dos p {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+
+  .dos .h-card {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  .clean.dosc ul {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(4, auto);
+    column-gap: 22px;
+  }
+
+  .clean.dosc li {
+    break-inside: avoid;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  > .a3 .h-card {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+}
+
+.reveal table.tight.acciones.ops {
+  margin: 4px 0 0;
+
+  th,
+  td {
+    font-size: 18px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    line-height: 1.3;
+  }
+}
+
+// 2) Mapa a toda la diapositiva con un recuadro flotante
+.l-full {
+  grid-template-areas: "a1";
+
+  .rotulo {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    z-index: 3;
+    padding: 14px 26px 16px;
+    background: rgba(255, 255, 255, 0.88);
+  }
+
+  .flotante {
+    position: absolute;
+    right: 22px;
+    bottom: 22px;
+    z-index: 3;
+    padding: 14px 20px 12px;
+    background: rgba(255, 255, 255, 0.94);
+  }
+
+  .flotante .h-card {
+    font-size: 17px;
+    margin-bottom: 2px;
+  }
+}
+
+.reveal .title-slot.xs h2 {
+  font-size: 40px;
+}
+
+.reveal table.tight.acciones.plan {
+  margin: 4px 0 0;
+
+  th,
+  td {
+    font-size: 13px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 8px;
+    line-height: 1.2;
+  }
+}
