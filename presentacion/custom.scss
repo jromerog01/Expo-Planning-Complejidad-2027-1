@@ -1623,3 +1623,171 @@ $code-color: $ink;
     margin: 4px 0 6px;
   }
 }
+
+// ===============================================================
+//  Diapositiva "Algoritmo Path"
+// ===============================================================
+
+// Pseudocódigo dentro de la tarjeta de texto (versión en línea de .code-window)
+.reveal .pseudo {
+  margin: 4px 0;
+  padding: 12px 26px;
+  border-radius: 18px;
+  background: #f3f7fc;
+  border: 1px solid #dde7f2;
+
+  .algo {
+    font-size: 20px;
+    line-height: 1.65;
+    color: var(--ink);
+
+    .ln { white-space: nowrap; }
+    .i1 { padding-left: 30px; }
+    .i2 { padding-left: 60px; }
+    b { color: var(--accent); font-weight: 650; }
+    .cm { color: #8a94a2; font-size: 0.9em; }
+  }
+}
+
+// Diapositivas de Path: aire entre los bloques de texto
+.l-deep.path .a3 .grupo + .grupo {
+  margin-top: 14px;
+}
+
+// Demostración paso a paso: título de cada dirección y lista numerada
+.reveal .l-deep.path .dir {
+  display: block;
+  font-size: 21px;
+  font-weight: 650;
+  line-height: 1.3;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.reveal .pasos ol {
+  list-style: none;
+  counter-reset: paso;
+  margin: 0;
+  padding: 0;
+
+  li {
+    counter-increment: paso;
+    position: relative;
+    padding-left: 36px;
+    margin: 0 0 7px;
+    font-size: 19px;
+    line-height: 1.4;
+  }
+
+  li::before {
+    content: counter(paso);
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 24px;
+    text-align: center;
+  }
+}
+
+// Recuadro de conclusión dentro de la tarjeta de texto (Planning ∈ PSPACE)
+.reveal .l-deep.path .conclusion {
+  margin: 10px 0 4px;
+  padding: 14px 22px 12px;
+  border-radius: 16px;
+  background: #e9f2fb;
+  border: 1.5px solid #bcd5ef;
+
+  .dir {
+    margin-bottom: 4px;
+  }
+
+  p {
+    font-size: 19px;
+    line-height: 1.4;
+  }
+}
+
+// "Correctitud de Path": enunciado a la izquierda; estrategia y caso base a la derecha
+.l-stack.prueba {
+  grid-template-rows: 1.08fr 1fr;
+
+  > .a1 {
+    padding: 46px 50px 40px;
+  }
+
+  > .a2,
+  > .a3 {
+    padding: 34px 44px 30px;
+  }
+
+  > .a2 > p:not(.h-card) {
+    font-size: 22px;
+  }
+
+  > .a2 .chips {
+    margin-bottom: 4px;
+  }
+
+  > .a3 .clean li {
+    font-size: 21px;
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+}
+
+// Las dos direcciones del teorema, como mini-tarjetas dentro del panel azul
+.l-stack.prueba .dirs {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.l-stack.prueba .dir-item {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 22px 16px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: var(--shadow-sm);
+}
+
+.l-stack.prueba .dsimb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--ink);
+  color: #fff;
+
+  p {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+  }
+
+  mjx-container {
+    color: #fff;
+  }
+}
+
+.l-stack.prueba .dtexto p {
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+// La nota "falta el paso inductivo" baja al pie de la tarjeta
+.l-stack.prueba > .a3 > p:has(> .cite) {
+  margin-top: auto;
+}

@@ -6,26 +6,20 @@
 <script src="presentacion_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="presentacion_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="presentacion_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="presentacion_files/libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.11.9">
+<link href="presentacion_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
 
   <title>Planning · PSPACE-completo</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="presentacion_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="presentacion_files/libs/revealjs/dist/reveal.css">
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
+    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: 1.5em;}
-    div.column{flex: auto;}
-    @media screen {
-    div.columns{gap: min(4vw, 1.5em);}
-    div.column{overflow-x: auto;}
-    }
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -34,7 +28,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="presentacion_files/libs/revealjs/dist/theme/quarto-1c8e0d5bdcf287ff083a226d62163793.css">
+  <link rel="stylesheet" href="presentacion_files/libs/revealjs/dist/theme/quarto-fe4335ccb3615fe0a5766e98b4f98e49.css">
   <link href="presentacion_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="presentacion_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="presentacion_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -1516,663 +1510,8 @@
 </div>
 </div>
 </section>
-<section id="exp-tiempo" class="slide level2">
-<h2>¿Por qué es exponencial en tiempo?</h2>
-<div class="stage l-banner">
-<div class="card blue a1">
-<div class="title-slot sm">
-
-</div>
-<div class="strip">
-<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewbox="0 0 640 200" role="img" aria-label="Contador de 3 bits: 7 pasos de vacío a c1 c2 c3">
-  <rect x="20" y="34" width="52" height="132" rx="16" class="glass"></rect>
-  <rect x="32" y="50" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="32" y="86" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="32" y="122" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="98" y="34" width="52" height="132" rx="16" class="glass"></rect>
-  <rect x="110" y="50" width="28" height="28" rx="7" fill="url(#g-blue)"></rect>
-  <rect x="110" y="86" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="110" y="122" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="176" y="34" width="52" height="132" rx="16" class="glass"></rect>
-  <rect x="188" y="50" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="188" y="86" width="28" height="28" rx="7" fill="url(#g-blue)"></rect>
-  <rect x="188" y="122" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="254" y="34" width="52" height="132" rx="16" class="glass"></rect>
-  <rect x="266" y="50" width="28" height="28" rx="7" fill="url(#g-blue)"></rect>
-  <rect x="266" y="86" width="28" height="28" rx="7" fill="url(#g-blue)"></rect>
-  <rect x="266" y="122" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="332" y="34" width="52" height="132" rx="16" class="glass"></rect>
-  <rect x="344" y="50" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="344" y="86" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="344" y="122" width="28" height="28" rx="7" fill="url(#g-blue)"></rect>
-  <rect x="410" y="34" width="52" height="132" rx="16" class="glass"></rect>
-  <rect x="422" y="50" width="28" height="28" rx="7" fill="url(#g-blue)"></rect>
-  <rect x="422" y="86" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="422" y="122" width="28" height="28" rx="7" fill="url(#g-blue)"></rect>
-  <rect x="488" y="34" width="52" height="132" rx="16" class="glass"></rect>
-  <rect x="500" y="50" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="500" y="86" width="28" height="28" rx="7" fill="url(#g-blue)"></rect>
-  <rect x="500" y="122" width="28" height="28" rx="7" fill="url(#g-blue)"></rect>
-  <rect x="566" y="34" width="52" height="132" rx="16" fill="url(#g-ink)" filter="url(#ds)"></rect>
-  <rect x="578" y="50" width="28" height="28" rx="7" fill="#8bb9ea"></rect>
-  <rect x="578" y="86" width="28" height="28" rx="7" fill="#8bb9ea"></rect>
-  <rect x="578" y="122" width="28" height="28" rx="7" fill="#8bb9ea"></rect>
-  <path d="M76 100 H92" stroke="#2e5f97" stroke-width="2.2" marker-end="url(#arrow)"></path>
-  <foreignobject x="-175.0" y="165.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(O_1\)</div></foreignobject>
-  <path d="M154 100 H170" stroke="#2e5f97" stroke-width="2.2" marker-end="url(#arrow)"></path>
-  <foreignobject x="-97.0" y="165.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(O_2\)</div></foreignobject>
-  <path d="M232 100 H248" stroke="#2e5f97" stroke-width="2.2" marker-end="url(#arrow)"></path>
-  <foreignobject x="-19.0" y="165.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(O_1\)</div></foreignobject>
-  <path d="M310 100 H326" stroke="#2e5f97" stroke-width="2.2" marker-end="url(#arrow)"></path>
-  <foreignobject x="59.0" y="165.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(O_3\)</div></foreignobject>
-  <path d="M388 100 H404" stroke="#2e5f97" stroke-width="2.2" marker-end="url(#arrow)"></path>
-  <foreignobject x="137.0" y="165.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(O_1\)</div></foreignobject>
-  <path d="M466 100 H482" stroke="#2e5f97" stroke-width="2.2" marker-end="url(#arrow)"></path>
-  <foreignobject x="215.0" y="165.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(O_2\)</div></foreignobject>
-  <path d="M544 100 H560" stroke="#2e5f97" stroke-width="2.2" marker-end="url(#arrow)"></path>
-  <foreignobject x="293.0" y="165.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(O_1\)</div></foreignobject>
-</svg>
-
-</div>
-<p><span class="btn-arrow">Siguiente</span></p>
-</div>
-<div class="card a2">
-<p><span class="stat"><span class="math inline">\(2^n\)</span></span></p>
-<p><span class="stat-label">Estados posibles</span></p>
-<p><span class="stat-text">Cada uno de los <span class="math inline">\(n\)</span> hechos es verdadero o falso. Buscar un plan es buscar un camino entre <span class="math inline">\(2^n\)</span> estados.</span></p>
-</div>
-<div class="card a3">
-<p><span class="stat"><span class="math inline">\(2^n - 1\)</span></span></p>
-<p><span class="stat-label">Pasos del plan más corto</span></p>
-<p><span class="stat-text">En el contador de <span class="math inline">\(n\)</span> bits no hay atajos: solo recorrer el plan ya toma un número exponencial de pasos.</span></p>
-</div>
-<div class="card a4">
-<p><span class="stat"><span class="math inline">\(2^{O(n^2)}\)</span></span></p>
-<p><span class="stat-label">Llamadas de Path</span></p>
-<p><span class="stat-text">El algoritmo que veremos no guarda resultados: los recalcula. No se conoce ninguno de tiempo polinomial.</span></p>
-</div>
-</div>
-</section>
-<section id="poli-espacio" class="slide level2">
-<h2>¿Por qué es polinomial en espacio?</h2>
-<div class="stage l-stats">
-<div class="card blue a1">
-<div class="left">
-<div class="title-slot md">
-
-</div>
-<div class="lead">
-<p>Nunca se guarda el plan ni la grafica de estados: solo lo que se está revisando en ese momento, y esa memoria se reutiliza.</p>
-</div>
-<div class="mt-l muted">
-<p>Es la idea de los focos: se recorren <span class="math inline">\(2^n\)</span> estados usando siempre los mismos <span class="math inline">\(n\)</span> bits.</p>
-</div>
-<p><span class="btn-arrow">Siguiente</span></p>
-</div>
-<div class="card inner">
-<div class="strip">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:html="http://www.w3.org/1999/xhtml" class="ill" viewbox="0 0 600 420" role="img" aria-label="Llamadas a Path crecen muy rápido; los marcos de pila crecen lento">
-  <rect class="glass" x="30" y="26" width="540" height="368" rx="22"></rect>
-  <text x="62" y="68" font-size="15" font-weight="600" letter-spacing="1.2" class="t-muted">ESCALA LOG</text>
-  <g stroke="#e3ebf4" stroke-width="1.5">
-    <line x1="70" y1="330" x2="540" y2="330"></line><line x1="70" y1="262" x2="540" y2="262"></line>
-    <line x1="70" y1="194" x2="540" y2="194"></line><line x1="70" y1="126" x2="540" y2="126"></line>
-  </g>
-  
-  <g>
-    <rect x="96" y="291" width="52" height="39" rx="10" fill="url(#g-blue)"></rect>
-    <rect x="210" y="250" width="52" height="80" rx="10" fill="url(#g-blue)"></rect>
-    <rect x="324" y="189" width="52" height="141" rx="10" fill="url(#g-blue)"></rect>
-    <rect x="438" y="109" width="52" height="221" rx="10" fill="url(#g-ink)"></rect>
-  </g>
-  <g font-size="15" font-weight="650" text-anchor="middle">
-    <foreignobject x="-138.0" y="262.4" width="520" height="28.5"><html:div class="fo" style="font-size:15px;font-weight:650;justify-content:center;height:28.5px">\(20\)</html:div></foreignobject><foreignobject x="-24.0" y="221.3" width="520" height="28.5"><html:div class="fo" style="font-size:15px;font-weight:650;justify-content:center;height:28.5px">\(454\)</html:div></foreignobject><foreignobject x="90.0" y="160.3" width="520" height="28.5"><html:div class="fo" style="font-size:15px;font-weight:650;justify-content:center;height:28.5px">\(48\,795\)</html:div></foreignobject><foreignobject x="204.0" y="80.3" width="520" height="28.5"><html:div class="fo" style="font-size:15px;font-weight:650;justify-content:center;height:28.5px">\(23\,167\,425\)</html:div></foreignobject>
-  </g>
-  
-  <path d="M122 318 L236 314 L350 310 L464 306" fill="none" stroke="#1f7a4d" stroke-width="3.5" stroke-linecap="round"></path>
-  <g fill="#1f7a4d"><circle cx="122" cy="318" r="5.5"></circle><circle cx="236" cy="314" r="5.5"></circle><circle cx="350" cy="310" r="5.5"></circle><circle cx="464" cy="306" r="5.5"></circle></g>
-  <g font-size="15" font-weight="600" text-anchor="middle" class="t-muted">
-    <foreignobject x="-138.0" y="336.4" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(n = 2\)</div></foreignobject><foreignobject x="-24.0" y="336.4" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(n = 3\)</div></foreignobject><foreignobject x="90.0" y="336.4" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(n = 4\)</div></foreignobject><foreignobject x="204.0" y="336.4" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(n = 5\)</div></foreignobject>
-  </g>
-  <g font-size="14" font-weight="600">
-    <rect x="300" y="52" width="14" height="14" rx="4" fill="url(#g-blue)"></rect><text x="320" y="64">llamadas</text>
-    <rect x="410" y="57" width="18" height="4" rx="2" fill="#1f7a4d"></rect><text x="434" y="64">marcos de pila</text>
-  </g>
-</svg>
-
-</div>
-<div class="stats2">
-<div>
-<p><span class="stat"><span class="math inline">\(n\)</span> bits</span></p>
-<p><span class="stat-label">Por estado</span></p>
-<p><span class="stat-text">Un estado es un subconjunto de los <span class="math inline">\(n\)</span> hechos: basta un bit por hecho.</span></p>
-</div>
-<div>
-<p><span class="stat"><span class="math inline">\(n + 1\)</span></span></p>
-<p><span class="stat-label">Niveles de recursión</span></p>
-<p><span class="stat-text">Path guarda unos cuantos estados por nivel y, de cada subproblema resuelto, un solo bit.</span></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="cota" class="slide level2">
-<h2>Cota superior sobre la longitud del plan</h2>
-<div class="stage l-stack">
-<div class="card blue a1">
-<div class="title-slot sm">
-
-</div>
-<div class="lead">
-<p>Si una instancia con <span class="math inline">\(n\)</span> condiciones tiene solución, tiene una con a lo más <span class="math inline">\(2^n - 1\)</span> pasos (Teorema 9.7).</p>
-</div>
-<p><span class="btn-arrow">Siguiente</span></p>
-</div>
-<div class="card a2">
-<div class="strip">
-<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewbox="0 0 740 210" role="img" aria-label="Grafica implícita de configuraciones con un camino de S0 a S*">
-  <line x1="55" y1="41" x2="73" y2="96" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="133" y1="39" x2="199" y2="45" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="254" y1="48" x2="323" y2="47" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="254" y1="48" x2="261" y2="111" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="323" y1="47" x2="392" y2="40" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="392" y1="40" x2="471" y2="55" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="392" y1="40" x2="408" y2="102" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="471" y1="55" x2="532" y2="42" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="471" y1="55" x2="530" y2="99" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="532" y1="42" x2="615" y2="57" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="532" y1="42" x2="530" y2="99" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="615" y1="57" x2="682" y2="46" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="615" y1="57" x2="616" y2="104" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="73" y1="96" x2="139" y2="101" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="73" y1="96" x2="59" y2="158" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="188" y1="97" x2="261" y2="111" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="188" y1="97" x2="191" y2="163" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="261" y1="111" x2="342" y2="158" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="327" y1="107" x2="408" y2="102" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="327" y1="107" x2="342" y2="158" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="327" y1="107" x2="418" y2="154" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="408" y1="102" x2="475" y2="96" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="408" y1="102" x2="471" y2="167" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="475" y1="96" x2="530" y2="99" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="475" y1="96" x2="471" y2="167" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="530" y1="99" x2="616" y2="104" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="616" y1="104" x2="675" y2="107" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="675" y1="107" x2="687" y2="163" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="342" y1="158" x2="418" y2="154" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="418" y1="154" x2="471" y2="167" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="471" y1="167" x2="532" y2="162" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="532" y1="162" x2="598" y2="165" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="598" y1="165" x2="687" y2="163" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <path d="M73 96 L133 39 L199 45 L261 111 L342 158 L418 154 L475 96 L532 42 L616 104 L675 107" fill="none" stroke="#1f4a7d" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></path>
-  <circle cx="55" cy="41" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="133" cy="39" r="9" fill="#1f4a7d" stroke="#fff" stroke-width="3"></circle>
-  <circle cx="199" cy="45" r="9" fill="#1f4a7d" stroke="#fff" stroke-width="3"></circle>
-  <circle cx="254" cy="48" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="323" cy="47" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="392" cy="40" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="471" cy="55" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="532" cy="42" r="9" fill="#1f4a7d" stroke="#fff" stroke-width="3"></circle>
-  <circle cx="615" cy="57" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="682" cy="46" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="139" cy="101" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="188" cy="97" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="261" cy="111" r="9" fill="#1f4a7d" stroke="#fff" stroke-width="3"></circle>
-  <circle cx="327" cy="107" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="408" cy="102" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="475" cy="96" r="9" fill="#1f4a7d" stroke="#fff" stroke-width="3"></circle>
-  <circle cx="530" cy="99" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="616" cy="104" r="9" fill="#1f4a7d" stroke="#fff" stroke-width="3"></circle>
-  <circle cx="59" cy="158" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="137" cy="166" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="191" cy="163" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="267" cy="170" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="342" cy="158" r="9" fill="#1f4a7d" stroke="#fff" stroke-width="3"></circle>
-  <circle cx="418" cy="154" r="9" fill="#1f4a7d" stroke="#fff" stroke-width="3"></circle>
-  <circle cx="471" cy="167" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="532" cy="162" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="598" cy="165" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="687" cy="163" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <rect class="glass" x="41" y="74" width="64" height="44" rx="14"></rect><foreignobject x="-187.0" y="78.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(S_0\)</div></foreignobject>
-  <rect x="643" y="85" width="64" height="44" rx="14" fill="url(#g-ink)" filter="url(#ds)"></rect><foreignobject x="415.0" y="89.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(S^*\)</div></foreignobject>
-</svg>
-
-</div>
-<div class="txt">
-<p><span class="h-card">Demostración</span></p>
-<p>La grafica de estados tiene <span class="math inline">\(2^n\)</span> nodos. El camino más corto de <span class="math inline">\(S_0\)</span> a <span class="math inline">\(S^*\)</span> no repite nodos, así que tiene a lo más <span class="math inline">\(2^n - 1\)</span> aristas.</p>
-</div>
-</div>
-<div class="card a3">
-<p><span class="h-card">¿Para qué sirve?</span></p>
-<p>Basta preguntar por caminos de a lo más <span class="math inline">\(2^n\)</span> pasos: el problema completo es <span class="math inline">\(\textsf{Path}(S_0, S^*, 2^n).\)</span></p>
-<div class="chips mt-auto">
-<p><span class="chip"><span class="math inline">\(2^n\)</span>&nbsp;estados</span> <span class="to"><span class="math inline">\(\to\)</span></span> <span class="chip">sin repetir</span> <span class="to"><span class="math inline">\(\to\)</span></span> <span class="chip on"><span class="math inline">\(\le 2^n - 1\)</span>&nbsp;pasos</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="algoritmo-path" class="slide level2">
-<h2>Algoritmo Path</h2>
-<div class="stage l-mosaic">
-<div class="card blue a1">
-<div class="title-slot md">
-
-</div>
-<div class="lead">
-<p>¿Se puede llegar de <span class="math inline">\(S_1\)</span> a <span class="math inline">\(S_2\)</span> en a lo más <span class="math inline">\(L\)</span> pasos?</p>
-</div>
-</div>
-<div class="card media a2">
-<div class="code-window">
-  <div class="bar"><i></i><i></i><i></i><span>Kleinberg y Tardos (2005, p. 542)</span></div>
-  <div class="algo">
-    <div class="ln"><b>procedimiento</b> \(\textsf{Path}(S_1, S_2, L)\)</div>
-    <div class="ln i1"><b>si</b> \(L = 1\) <b>entonces</b> devolver \(S_1 = S_2\) o \(\exists\, O : S_1 \xrightarrow{O} S_2\)</div>
-    <div class="ln i1"><b>para cada</b> \(S'\) <span class="cm">(contador de \(n\) bits)</span> <b>hacer</b></div>
-    <div class="ln i2">\(x \gets \textsf{Path}(S_1, S', \lceil L/2 \rceil)\) <span class="cm">— borrar todo salvo \(x\)</span></div>
-    <div class="ln i2">\(y \gets \textsf{Path}(S', S_2, \lceil L/2 \rceil)\) <span class="cm">— borrar todo salvo \(y\)</span></div>
-    <div class="ln i2"><b>si</b> \(x\) y \(y\) <b>entonces</b> devolver «sí»</div>
-    <div class="ln i1">devolver «no»</div>
-  </div>
-</div>
-</div>
-<div class="card media a3">
-<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewbox="0 0 710 376" role="img" aria-label="Path divide la longitud L a la mitad en cada nivel">
-  <g font-weight="650">
-    <rect x="60" y="44" width="590" height="46" rx="14" fill="url(#g-ink)" filter="url(#ds)"></rect>
-    <foreignobject x="95.0" y="50.4" width="520" height="34.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:18px;font-weight:650;justify-content:center;height:34.2px">\(\textsf{Path}(S_1, S_2, L)\)</div></foreignobject>
-    <rect class="glass" x="60" y="124" width="287" height="42" rx="13"></rect>
-    <rect class="glass" x="363" y="124" width="287" height="42" rx="13"></rect>
-    <foreignobject x="-57.0" y="128.7" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:17px;font-weight:650;justify-content:center;height:32.3px">\(S_1 \to S'\) · \(L/2\)</div></foreignobject>
-    <foreignobject x="246.0" y="128.7" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:17px;font-weight:650;justify-content:center;height:32.3px">\(S' \to S_2\) · \(L/2\)</div></foreignobject>
-    <g fill="#fff" fill-opacity=".8">
-      <rect x="60" y="198" width="138" height="36" rx="11"></rect><rect x="209" y="198" width="138" height="36" rx="11"></rect>
-      <rect x="363" y="198" width="138" height="36" rx="11"></rect><rect x="512" y="198" width="138" height="36" rx="11"></rect>
-    </g>
-    <g font-size="15" text-anchor="middle" class="t-muted">
-      <foreignobject x="-131.0" y="201.3" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:650;justify-content:center;height:28.5px">\(L/4\)</div></foreignobject><foreignobject x="18.0" y="201.3" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:650;justify-content:center;height:28.5px">\(L/4\)</div></foreignobject><foreignobject x="172.0" y="201.3" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:650;justify-content:center;height:28.5px">\(L/4\)</div></foreignobject><foreignobject x="321.0" y="201.3" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:650;justify-content:center;height:28.5px">\(L/4\)</div></foreignobject>
-    </g>
-    <g fill="#fff" fill-opacity=".55">
-      <rect x="60" y="266" width="64" height="28" rx="9"></rect><rect x="134" y="266" width="64" height="28" rx="9"></rect>
-      <rect x="209" y="266" width="64" height="28" rx="9"></rect><rect x="283" y="266" width="64" height="28" rx="9"></rect>
-      <rect x="363" y="266" width="64" height="28" rx="9"></rect><rect x="437" y="266" width="64" height="28" rx="9"></rect>
-      <rect x="512" y="266" width="64" height="28" rx="9"></rect><rect x="586" y="266" width="64" height="28" rx="9"></rect>
-    </g>
-  </g>
-  <g stroke="#1f4a7d" stroke-width="2" stroke-dasharray="3 5">
-    <path d="M355 96 V300"></path>
-  </g>
-  <circle cx="355" cy="107" r="11" fill="#4f8fd6" stroke="#fff" stroke-width="3"></circle>
-  <foreignobject x="372.0" y="92.0" width="520" height="30.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:16px;font-weight:700;justify-content:flex-start;height:30.4px;color:#1f4a7d">\(S'\)</div></foreignobject>
-  <foreignobject x="95.0" y="317.0" width="520" height="30.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:16px;font-weight:600;justify-content:center;height:30.4px">profundidad \(\log L = n\) · cada nivel guarda solo un bit</div></foreignobject>
-</svg>
-
-</div>
-<div class="card a4">
-<div class="clean">
-<ul>
-<li><strong>Caso base</strong> (<span class="math inline">\(L = 1\)</span>): los estados son iguales o un operador lleva de uno al otro.</li>
-<li><strong>Punto medio</strong>: prueba cada estado <span class="math inline">\(S'\)</span> y resuelve las dos mitades con <span class="math inline">\(\lceil L/2 \rceil.\)</span></li>
-<li><strong>Memoria</strong>: de cada mitad resuelta solo conserva un bit.</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="correctitud" class="slide level2">
-<h2>Demostración de correctitud</h2>
-<div class="stage l-split">
-<div class="card media a1">
-<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewbox="0 0 500 570" role="img" aria-label="Un camino de longitud L prima se parte en su punto medio S prima">
-  <path d="M90 120 C 170 140, 150 230, 240 250 S 330 360, 410 420" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"></path>
-  <g fill="#fff">
-    <circle cx="128" cy="134" r="8"></circle><circle cx="160" cy="180" r="8"></circle><circle cx="190" cy="226" r="8"></circle>
-    <circle cx="290" cy="290" r="8"></circle><circle cx="324" cy="338" r="8"></circle><circle cx="364" cy="384" r="8"></circle>
-  </g>
-  <path d="M84 96 C 120 40, 230 120, 236 220" fill="none" stroke="#1f4a7d" stroke-width="2.4" stroke-dasharray="5 7"></path>
-  <path d="M262 236 C 350 230, 440 300, 430 394" fill="none" stroke="#1f4a7d" stroke-width="2.4" stroke-dasharray="5 7"></path>
-  <rect class="glass" x="132" y="44" width="130" height="44" rx="14"></rect>
-  <foreignobject x="-63.0" y="49.7" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:17px;font-weight:650;justify-content:center;height:32.3px">\(\le \lceil L/2 \rceil\)</div></foreignobject>
-  <rect class="glass" x="330" y="218" width="130" height="44" rx="14"></rect>
-  <foreignobject x="135.0" y="223.7" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:17px;font-weight:650;justify-content:center;height:32.3px">\(\le \lceil L/2 \rceil\)</div></foreignobject>
-  <rect class="glass" x="42" y="98" width="70" height="46" rx="14"></rect>
-  <foreignobject x="-183.0" y="103.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(S_1\)</div></foreignobject>
-  <rect x="200" y="226" width="80" height="50" rx="15" fill="url(#g-blue)" filter="url(#ds)"></rect>
-  <foreignobject x="-20.0" y="231.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:20px;font-weight:700;justify-content:center;height:38.0px">\(S'\)</div></foreignobject>
-  <rect x="372" y="398" width="76" height="48" rx="15" fill="url(#g-ink)" filter="url(#ds)"></rect>
-  <foreignobject x="150.0" y="404.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(S_2\)</div></foreignobject>
-  <rect class="glass" x="40" y="380" width="200" height="80" rx="18"></rect>
-  <foreignobject x="62.0" y="391.7" width="520" height="26.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:14px;font-weight:400;justify-content:flex-start;height:26.6px">inducción sobre \(L\)</div></foreignobject>
-  <foreignobject x="62.0" y="414.4" width="520" height="34.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:18px;font-weight:650;justify-content:flex-start;height:34.2px">\(L = 1\) → caso base</div></foreignobject>
-</svg>
-
-</div>
-<div class="card blue a2">
-<div class="title-slot sm">
-
-</div>
-<p><span class="btn-arrow">Siguiente</span></p>
-</div>
-<div class="card a3">
-<div class="cols3">
-<div>
-<p><img data-src="img/icons/shield.svg" class="ico"></p>
-<p><span class="h-card">Caso base</span></p>
-<p><span class="small">Inducción sobre <span class="math inline">\(L.\)</span> Si <span class="math inline">\(L = 1\)</span>, Path revisa directamente si <span class="math inline">\(S_1 = S_2\)</span> o si algún operador lleva de <span class="math inline">\(S_1\)</span> a <span class="math inline">\(S_2.\)</span></span></p>
-</div>
-<div>
-<p><img data-src="img/icons/target.svg" class="ico"></p>
-<p><span class="h-card">Si hay camino</span></p>
-<p><span class="small">Su punto medio <span class="math inline">\(S'\)</span> lo parte en dos tramos de a lo más <span class="math inline">\(\lceil L/2 \rceil\)</span> pasos: por hipótesis, ambas llamadas responden <em>sí</em>.</span></p>
-</div>
-<div>
-<p><img data-src="img/icons/swap.svg" class="ico"></p>
-<p><span class="h-card">Si responde sí</span></p>
-<p><span class="small">Existe <span class="math inline">\(S'\)</span> con ambas llamadas en <em>sí</em>. Al unir los dos caminos queda uno de a lo más <span class="math inline">\(L\)</span> pasos de <span class="math inline">\(S_1\)</span> a <span class="math inline">\(S_2.\)</span></span></p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="memoria" class="slide level2">
-<h2>Demostración de la complejidad de memoria</h2>
-<div class="stage l-deep">
-<div class="card media a1">
-<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewbox="0 0 500 570" role="img" aria-label="La pila de Path tiene n más 1 marcos">
-  <g font-weight="650">
-    <rect x="70" y="56" width="330" height="74" rx="18" fill="url(#g-ink)" filter="url(#ds)"></rect>
-    <foreignobject x="96.0" y="67.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:650;justify-content:flex-start;height:36.1px">\(\textsf{Path}(S_0, S^*, 2^n)\)</div></foreignobject>
-    <foreignobject x="96.0" y="97.7" width="520" height="26.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:14px;font-weight:650;justify-content:flex-start;height:26.6px;color:#9fb3c9">\(S_1\) · \(S_2\) · \(S'\) · contador · \(j\) · \(x\) · \(y\)</div></foreignobject>
-    <rect class="glass" x="84" y="146" width="302" height="62" rx="16"></rect>
-    <foreignobject x="108.0" y="160.4" width="520" height="34.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:18px;font-weight:650;justify-content:flex-start;height:34.2px">\(\textsf{Path}(\cdot, \cdot, 2^{n-1})\)</div></foreignobject>
-    <rect class="glass" x="98" y="224" width="274" height="58" rx="16"></rect>
-    <foreignobject x="122.0" y="236.4" width="520" height="34.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:18px;font-weight:650;justify-content:flex-start;height:34.2px">\(\textsf{Path}(\cdot, \cdot, 2^{n-2})\)</div></foreignobject>
-    <foreignobject x="-25.0" y="283.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:26px;font-weight:650;justify-content:center;height:49.4px">\(\vdots\)</div></foreignobject>
-    <rect class="glass" x="112" y="338" width="246" height="56" rx="16"></rect>
-    <foreignobject x="136.0" y="349.4" width="520" height="34.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:18px;font-weight:650;justify-content:flex-start;height:34.2px">\(\textsf{Path}(\cdot, \cdot, 1)\)</div></foreignobject>
-  </g>
-  <path d="M424 60 h14 v330 h-14" fill="none" stroke="#1f4a7d" stroke-width="2.4" stroke-linejoin="round"></path>
-  <rect class="glass" x="370" y="196" width="112" height="70" rx="16"></rect>
-  <foreignobject x="166.0" y="199.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:20px;font-weight:700;justify-content:center;height:38.0px">\(n + 1\)</div></foreignobject>
-  <text x="426" y="249" font-size="14" text-anchor="middle" class="t-muted">marcos</text>
-  <rect class="glass" x="70" y="420" width="250" height="56" rx="16"></rect>
-  <foreignobject x="94.0" y="432.7" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:17px;font-weight:650;justify-content:flex-start;height:32.3px">\(O(n + \log k)\) bits c/u</div></foreignobject>
-</svg>
-
-</div>
-<div class="a2 title-slot sm">
-
-</div>
-<div class="card a3">
-<p><span class="kicker">Teorema 9.8 · espacio</span></p>
-<p><span class="formula"><span class="math inline">\(O\big(n(n + \log k)\big)\)</span> bits</span></p>
-<div class="clean mt-m">
-<ul>
-<li><strong>Una llamada activa por nivel</strong>; de las terminadas solo queda un bit.</li>
-<li><strong>Marco</strong>: <span class="math inline">\(S_1\)</span>, <span class="math inline">\(S_2\)</span>, <span class="math inline">\(S'\)</span>, contador, <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> <span class="math inline">\(\to\)</span> <span class="math inline">\(O(n + \log k)\)</span> bits.</li>
-<li><strong>Profundidad</strong> <span class="math inline">\(n + 1\)</span>: <span class="math inline">\(L\)</span> baja de <span class="math inline">\(2^n\)</span> a <span class="math inline">\(1\)</span> dividiéndose entre <span class="math inline">\(2.\)</span></li>
-</ul>
-</div>
-<p><span class="cite"><span class="math inline">\(S(L) \le p(n, k, \log L) + S(\lceil L/2 \rceil).\)</span></span></p>
-<p><span class="btn-arrow">Siguiente</span></p>
-</div>
-</div>
-</section>
-<section id="intro" class="slide level2">
-<h2>¿Existe un plan?</h2>
-<div class="stage l-stats">
-<div class="card blue a1">
-<div class="left">
-<div class="title-slot xl">
-
-</div>
-<div class="lead">
-<p>Partiendo de un estado inicial, ¿hay una secuencia de acciones permitidas que lleve a un estado objetivo?</p>
-</div>
-<div class="mt-l muted">
-<p>Es el modelo detrás de la logística de una operación de socorro, de un robot que acomoda cajas o del rompecabezas de quince (Kleinberg y Tardos, 2005).</p>
-</div>
-<p><span class="btn-arrow">Siguiente</span></p>
-</div>
-<div class="card inner">
-<div class="strip">
-<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewbox="0 0 600 420" role="img" aria-label="Rompecabezas de quince">
-  <rect x="150" y="40" width="300" height="300" rx="26" fill="#ffffff" fill-opacity=".4" stroke="#fff" stroke-opacity=".9" stroke-width="2"></rect>
-  <g font-size="26" font-weight="700" text-anchor="middle">
-    <rect class="glass" x="166" y="56" width="62" height="62" rx="14"></rect><foreignobject x="-63.0" y="62.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(1\)</div></foreignobject>
-    <rect class="glass" x="236" y="56" width="62" height="62" rx="14"></rect><foreignobject x="7.0" y="62.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(2\)</div></foreignobject>
-    <rect class="glass" x="306" y="56" width="62" height="62" rx="14"></rect><foreignobject x="77.0" y="62.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(3\)</div></foreignobject>
-    <rect class="glass" x="376" y="56" width="62" height="62" rx="14"></rect><foreignobject x="147.0" y="62.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(4\)</div></foreignobject>
-    <rect class="glass" x="166" y="126" width="62" height="62" rx="14"></rect><foreignobject x="-63.0" y="132.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(5\)</div></foreignobject>
-    <rect class="glass" x="236" y="126" width="62" height="62" rx="14"></rect><foreignobject x="7.0" y="132.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(6\)</div></foreignobject>
-    <rect class="glass" x="306" y="126" width="62" height="62" rx="14"></rect><foreignobject x="77.0" y="132.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(7\)</div></foreignobject>
-    <rect class="glass" x="376" y="126" width="62" height="62" rx="14"></rect><foreignobject x="147.0" y="132.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(8\)</div></foreignobject>
-    <rect class="glass" x="166" y="196" width="62" height="62" rx="14"></rect><foreignobject x="-63.0" y="202.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(9\)</div></foreignobject>
-    <rect class="glass" x="236" y="196" width="62" height="62" rx="14"></rect><foreignobject x="7.0" y="202.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(10\)</div></foreignobject>
-    <rect class="glass" x="306" y="196" width="62" height="62" rx="14"></rect><foreignobject x="77.0" y="202.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(11\)</div></foreignobject>
-    <rect x="376" y="196" width="62" height="62" rx="14" fill="url(#g-blue)" filter="url(#ds)"></rect><foreignobject x="147.0" y="202.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(12\)</div></foreignobject>
-    <rect class="glass" x="166" y="266" width="62" height="62" rx="14"></rect><foreignobject x="-63.0" y="272.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(13\)</div></foreignobject>
-    <rect class="glass" x="236" y="266" width="62" height="62" rx="14"></rect><foreignobject x="7.0" y="272.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(14\)</div></foreignobject>
-    <rect class="glass" x="306" y="266" width="62" height="62" rx="14"></rect><foreignobject x="77.0" y="272.9" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:26px;font-weight:700;justify-content:center;height:49.4px">\(15\)</div></foreignobject>
-    <rect x="376" y="266" width="62" height="62" rx="14" fill="none" stroke="#fff" stroke-width="2.4" stroke-dasharray="6 6"></rect>
-  </g>
-  <path d="M407 262 v8" stroke="#2e5f97" stroke-width="2.6" marker-end="url(#arrow)"></path>
-  <rect class="glass" x="22" y="300" width="150" height="70" rx="16"></rect>
-  <text x="42" y="328" font-size="14" class="t-muted">operador</text>
-  <text x="42" y="353" font-size="18" font-weight="650">mover ficha</text>
-  <rect class="glass" x="430" y="350" width="150" height="56" rx="16"></rect>
-  <text x="450" y="384" font-size="17" font-weight="650">¿hay plan?</text>
-</svg>
-
-</div>
-<div class="stats2">
-<div>
-<p><span class="stat"><span class="math inline">\(2^n\)</span></span></p>
-<p><span class="stat-label">Configuraciones</span></p>
-<p><span class="stat-text">posibles con <span class="math inline">\(n\)</span> condiciones verdaderas o falsas.</span></p>
-</div>
-<div>
-<p><span class="stat"><span class="math inline">\(2^n - 1\)</span></span></p>
-<p><span class="stat-label">Pasos</span></p>
-<p><span class="stat-text">puede medir el plan más corto en algunas instancias.</span></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="pspace" class="slide level2">
-<h2>La clase PSPACE</h2>
-<div class="stage l-split">
-<div class="card media a1">
-<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewbox="0 0 670 740" role="img" aria-label="P contenida en NP y co-NP, contenidas en PSPACE, contenida en EXPTIME">
-  <ellipse cx="335" cy="390" rx="292" ry="315" fill="#fff" fill-opacity=".22" stroke="#fff" stroke-opacity=".95" stroke-width="2.5"></ellipse>
-  <ellipse cx="335" cy="420" rx="240" ry="250" fill="#fff" fill-opacity=".38" stroke="#fff" stroke-width="2.5"></ellipse>
-  <ellipse cx="275" cy="480" rx="138" ry="112" fill="#fff" fill-opacity=".55" stroke="#2e5f97" stroke-opacity=".35" stroke-width="2"></ellipse>
-  <ellipse cx="395" cy="480" rx="138" ry="112" fill="#fff" fill-opacity=".55" stroke="#2e5f97" stroke-opacity=".35" stroke-width="2"></ellipse>
-  <ellipse cx="335" cy="492" rx="62" ry="48" fill="url(#g-ink)" filter="url(#ds)"></ellipse>
-  <g font-weight="700" text-anchor="middle" letter-spacing="-.5">
-    <text x="335" y="118" font-size="26" class="t-muted">EXPTIME</text>
-    <text x="335" y="214" font-size="32">PSPACE</text>
-    <text x="196" y="470" font-size="26">NP</text>
-    <text x="474" y="470" font-size="26">co-NP</text>
-    <text x="335" y="502" font-size="28" class="t-white">P</text>
-  </g>
-  <rect class="glass" x="215" y="262" width="240" height="84" rx="20"></rect>
-  <text x="335" y="294" font-size="14" font-weight="600" letter-spacing="1.4" text-anchor="middle" class="t-accent">PSPACE-COMPLETOS</text>
-  <text x="335" y="324" font-size="21" font-weight="650" text-anchor="middle">Planning · QSAT</text>
-  <rect class="glass" x="400" y="610" width="236" height="74" rx="18"></rect>
-  <text x="422" y="640" font-size="14" class="t-muted">Savitch (1970)</text>
-  <foreignobject x="422.0" y="641.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:19px;font-weight:650;justify-content:flex-start;height:36.1px">\(\mathsf{NPSPACE} = \mathsf{PSPACE}\)</div></foreignobject>
-</svg>
-
-</div>
-<div class="card blue a2">
-<div class="title-slot">
-
-</div>
-<p><span class="btn-arrow">Siguiente</span></p>
-</div>
-<div class="card a3">
-<div class="cols3">
-<div>
-<p><img data-src="img/icons/chip.svg" class="ico"></p>
-<p><span class="h-card">Memoria polinomial</span></p>
-<p><span class="small">Problemas que se resuelven usando espacio polinomial en el tamaño de la entrada. Contiene a <span class="math inline">\(\mathsf{P}\)</span> y a <span class="math inline">\(\mathsf{NP}\)</span>, y está contenida en <span class="math inline">\(\mathsf{EXPTIME}.\)</span></span></p>
-</div>
-<div>
-<p><img data-src="img/icons/target.svg" class="ico"></p>
-<p><span class="h-card">PSPACE‑completo</span></p>
-<p><span class="small"><span class="math inline">\(X \in \mathsf{PSPACE}\)</span> y todo <span class="math inline">\(Y \in \mathsf{PSPACE}\)</span> cumple <span class="math inline">\(Y \le_P X.\)</span> El problema raíz es QSAT (Stockmeyer y Meyer, 1973).</span></p>
-</div>
-<div>
-<p><img data-src="img/icons/swap.svg" class="ico"></p>
-<p><span class="h-card">El espacio se reutiliza</span></p>
-<p><span class="small">Un contador de <span class="math inline">\(n\)</span> bits recorre <span class="math inline">\(2^n\)</span> valores en espacio <span class="math inline">\(O(n)\)</span>: el espacio se recicla; el tiempo, no.</span></p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="modelo" class="slide level2">
-<h2>Condiciones y operadores</h2>
-<div class="stage l-deep">
-<div class="card media a1">
-<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewbox="0 0 740 740" role="img" aria-label="Un operador transforma el estado S en S prima">
-  
-  <rect class="glass" x="170" y="70" width="400" height="140" rx="26"></rect>
-  <foreignobject x="206.0" y="97.0" width="520" height="30.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:16px;font-weight:600;justify-content:flex-start;height:30.4px">ESTADO \(S\)</div></foreignobject>
-  <g font-size="19" font-weight="650" text-anchor="middle">
-    <rect x="250" y="138" width="72" height="46" rx="12" fill="url(#g-blue)"></rect><foreignobject x="26.0" y="143.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_1\)</div></foreignobject>
-    <rect x="334" y="138" width="72" height="46" rx="12" fill="#e6eef8"></rect><foreignobject x="110.0" y="143.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_2\)</div></foreignobject>
-    <rect x="418" y="138" width="72" height="46" rx="12" fill="#e6eef8"></rect><foreignobject x="194.0" y="143.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_3\)</div></foreignobject>
-  </g>
-  <path class="edge" d="M370 222 V262"></path>
-  
-  <rect x="130" y="272" width="480" height="214" rx="28" fill="url(#g-ink)" filter="url(#ds)"></rect>
-  <foreignobject x="166.0" y="282.7" width="520" height="57.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:30px;font-weight:700;justify-content:flex-start;height:57.0px">Operador \(O_i\)</div></foreignobject>
-  <foreignobject x="52.0" y="301.0" width="520" height="30.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:16px;font-weight:400;justify-content:flex-end;height:30.4px;color:#9fb3c9">aplicable si \(P_i \subseteq S\)</div></foreignobject>
-  <g font-size="20" font-weight="600">
-    <rect x="166" y="346" width="408" height="38" rx="10" fill="#ffffff" fill-opacity=".08"></rect>
-    <foreignobject x="184.0" y="345.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:20px;font-weight:600;justify-content:flex-start;height:38.0px;color:#8fc0f2">\(P\)</div></foreignobject><text x="220" y="372" class="t-white">prerrequisitos</text><foreignobject x="36.0" y="345.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:20px;font-weight:600;justify-content:flex-end;height:38.0px">\(\{c_1\}\)</div></foreignobject>
-    <rect x="166" y="392" width="408" height="38" rx="10" fill="#ffffff" fill-opacity=".08"></rect>
-    <foreignobject x="184.0" y="391.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:20px;font-weight:600;justify-content:flex-start;height:38.0px;color:#7fd6a6">\(A\)</div></foreignobject><text x="220" y="418" class="t-white">agrega</text><foreignobject x="36.0" y="391.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:20px;font-weight:600;justify-content:flex-end;height:38.0px">\(\{c_2\}\)</div></foreignobject>
-    <rect x="166" y="438" width="408" height="38" rx="10" fill="#ffffff" fill-opacity=".08"></rect>
-    <foreignobject x="184.0" y="437.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:20px;font-weight:600;justify-content:flex-start;height:38.0px;color:#f2a29a">\(D\)</div></foreignobject><text x="220" y="464" class="t-white">elimina</text><foreignobject x="36.0" y="437.8" width="520" height="38.0"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:20px;font-weight:600;justify-content:flex-end;height:38.0px">\(\{c_1\}\)</div></foreignobject>
-  </g>
-  <path class="edge" d="M370 498 V538"></path>
-  
-  <rect class="glass" x="170" y="548" width="400" height="140" rx="26"></rect>
-  <foreignobject x="206.0" y="575.0" width="520" height="30.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:16px;font-weight:600;justify-content:flex-start;height:30.4px">ESTADO \(S'\)</div></foreignobject>
-  <g font-size="19" font-weight="650" text-anchor="middle">
-    <rect x="250" y="616" width="72" height="46" rx="12" fill="#e6eef8"></rect><foreignobject x="26.0" y="621.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_1\)</div></foreignobject>
-    <rect x="334" y="616" width="72" height="46" rx="12" fill="url(#g-blue)"></rect><foreignobject x="110.0" y="621.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_2\)</div></foreignobject>
-    <rect x="418" y="616" width="72" height="46" rx="12" fill="#e6eef8"></rect><foreignobject x="194.0" y="621.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(c_3\)</div></foreignobject>
-  </g>
-  <rect class="glass" x="20" y="590" width="140" height="56" rx="16"></rect>
-  <foreignobject x="-170.0" y="602.7" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:17px;font-weight:650;justify-content:center;height:32.3px">aplicar \(O_i\)</div></foreignobject>
-</svg>
-
-</div>
-<div class="a2 title-slot xl">
-
-</div>
-<div class="card a3">
-<p><span class="kicker">Modelo STRIPS proposicional</span></p>
-<p><span class="formula"><span class="math inline">\(S' = (S \setminus D_i) \cup A_i\)</span></span></p>
-<div class="clean mt-m">
-<ul>
-<li><strong>Condiciones</strong>: <span class="math inline">\(\mathcal{C} = \{c_1, \dots, c_n\}.\)</span></li>
-<li><strong>Configuración</strong>: un subconjunto <span class="math inline">\(S \subseteq \mathcal{C}\)</span>; hay <span class="math inline">\(2^n\)</span> posibles.</li>
-<li><strong>Operador</strong> <span class="math inline">\(O_i = (P_i, A_i, D_i)\)</span>: prerrequisitos, adiciones y eliminaciones. Es aplicable en <span class="math inline">\(S\)</span> si <span class="math inline">\(P_i \subseteq S.\)</span></li>
-</ul>
-</div>
-<p><span class="cite">Fikes y Nilsson (1971); Kleinberg y Tardos (2005, p.&nbsp;538).</span></p>
-<p><span class="btn-arrow">Siguiente</span></p>
-</div>
-</div>
-</section>
-<section id="exponencial" class="slide level2">
-<h2>Planes de longitud exponencial</h2>
-<div class="stage l-banner">
-<div class="card blue a1">
-<div class="title-slot sm">
-
-</div>
-<div class="strip">
-<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewbox="0 0 640 200" role="img" aria-label="Contador de 3 bits: 7 pasos de vacío a c1 c2 c3">
-  <rect x="20" y="34" width="52" height="132" rx="16" class="glass"></rect>
-  <rect x="32" y="50" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="32" y="86" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="32" y="122" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="98" y="34" width="52" height="132" rx="16" class="glass"></rect>
-  <rect x="110" y="50" width="28" height="28" rx="7" fill="url(#g-blue)"></rect>
-  <rect x="110" y="86" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="110" y="122" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="176" y="34" width="52" height="132" rx="16" class="glass"></rect>
-  <rect x="188" y="50" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="188" y="86" width="28" height="28" rx="7" fill="url(#g-blue)"></rect>
-  <rect x="188" y="122" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="254" y="34" width="52" height="132" rx="16" class="glass"></rect>
-  <rect x="266" y="50" width="28" height="28" rx="7" fill="url(#g-blue)"></rect>
-  <rect x="266" y="86" width="28" height="28" rx="7" fill="url(#g-blue)"></rect>
-  <rect x="266" y="122" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="332" y="34" width="52" height="132" rx="16" class="glass"></rect>
-  <rect x="344" y="50" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="344" y="86" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="344" y="122" width="28" height="28" rx="7" fill="url(#g-blue)"></rect>
-  <rect x="410" y="34" width="52" height="132" rx="16" class="glass"></rect>
-  <rect x="422" y="50" width="28" height="28" rx="7" fill="url(#g-blue)"></rect>
-  <rect x="422" y="86" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="422" y="122" width="28" height="28" rx="7" fill="url(#g-blue)"></rect>
-  <rect x="488" y="34" width="52" height="132" rx="16" class="glass"></rect>
-  <rect x="500" y="50" width="28" height="28" rx="7" fill="#ffffff" stroke="#cdd9e7" stroke-width="1.5"></rect>
-  <rect x="500" y="86" width="28" height="28" rx="7" fill="url(#g-blue)"></rect>
-  <rect x="500" y="122" width="28" height="28" rx="7" fill="url(#g-blue)"></rect>
-  <rect x="566" y="34" width="52" height="132" rx="16" fill="url(#g-ink)" filter="url(#ds)"></rect>
-  <rect x="578" y="50" width="28" height="28" rx="7" fill="#8bb9ea"></rect>
-  <rect x="578" y="86" width="28" height="28" rx="7" fill="#8bb9ea"></rect>
-  <rect x="578" y="122" width="28" height="28" rx="7" fill="#8bb9ea"></rect>
-  <path d="M76 100 H92" stroke="#2e5f97" stroke-width="2.2" marker-end="url(#arrow)"></path>
-  <foreignobject x="-175.0" y="165.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(O_1\)</div></foreignobject>
-  <path d="M154 100 H170" stroke="#2e5f97" stroke-width="2.2" marker-end="url(#arrow)"></path>
-  <foreignobject x="-97.0" y="165.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(O_2\)</div></foreignobject>
-  <path d="M232 100 H248" stroke="#2e5f97" stroke-width="2.2" marker-end="url(#arrow)"></path>
-  <foreignobject x="-19.0" y="165.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(O_1\)</div></foreignobject>
-  <path d="M310 100 H326" stroke="#2e5f97" stroke-width="2.2" marker-end="url(#arrow)"></path>
-  <foreignobject x="59.0" y="165.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(O_3\)</div></foreignobject>
-  <path d="M388 100 H404" stroke="#2e5f97" stroke-width="2.2" marker-end="url(#arrow)"></path>
-  <foreignobject x="137.0" y="165.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(O_1\)</div></foreignobject>
-  <path d="M466 100 H482" stroke="#2e5f97" stroke-width="2.2" marker-end="url(#arrow)"></path>
-  <foreignobject x="215.0" y="165.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(O_2\)</div></foreignobject>
-  <path d="M544 100 H560" stroke="#2e5f97" stroke-width="2.2" marker-end="url(#arrow)"></path>
-  <foreignobject x="293.0" y="165.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(O_1\)</div></foreignobject>
-</svg>
-
-</div>
-<p><span class="btn-arrow">Siguiente</span></p>
-</div>
-<div class="card a2">
-<p><span class="stat"><span class="math inline">\(2^n - 1\)</span></span></p>
-<p><span class="stat-label">Plan mínimo del contador</span></p>
-<p><span class="stat-text">Con <span class="math inline">\(n\)</span> condiciones y <span class="math inline">\(n\)</span> operadores, el plan más corto mide <span class="math inline">\(2^n - 1\)</span> pasos: cuenta en binario (Teorema 9.6).</span></p>
-</div>
-<div class="card a3">
-<p><span class="stat"><span class="math inline">\(\le 2^n - 1\)</span></span></p>
-<p><span class="stat-label">Cota superior</span></p>
-<p><span class="stat-text">Si hay solución, hay una con a lo más <span class="math inline">\(2^n - 1\)</span> pasos: un camino simple en una grafica de <span class="math inline">\(2^n\)</span> nodos (Teorema 9.7).</span></p>
-</div>
-<div class="card a4">
-<p><span class="stat">¿<span class="math inline">\(\mathsf{NP}\)</span>?</span></p>
-<p><span class="stat-label">El plan no es certificado</span></p>
-<p><span class="stat-text">Puede ser exponencial: ni siquiera cabe escribirlo en espacio polinomial. Hay que <em>decidir</em> sin verlo completo.</span></p>
-</div>
-</div>
-</section>
 <section id="path" class="slide level2">
-<h2>El procedimiento Path</h2>
+<h2>El Algoritmo Path</h2>
 <div class="stage l-mosaic">
 <div class="card blue a1">
 <div class="title-slot md">
@@ -2234,20 +1573,112 @@
 </div>
 </div>
 </section>
-<section id="en-pspace" class="slide level2">
-<h2>Planning está en PSPACE</h2>
-<div class="stage l-stories">
+<section id="tiempo-path" class="slide level2">
+<h2>Análisis de tiempo</h2>
+<div class="stage l-deep tall amplio path">
+<div class="card media a1">
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewbox="0 0 520 736" role="img" aria-label="Árbol de llamadas de Path: el nivel i tiene a a la i llamadas, con a igual a 2 a la n más 1; domina el último nivel">
+  <rect x="50" y="22" width="420" height="50" rx="16" fill="url(#g-ink)" filter="url(#ds)"></rect>
+  <foreignobject x="0.0" y="29.9" width="520" height="34.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:18px;font-weight:650;justify-content:center;height:34.2px">Cada llamada hace a lo más \(a = 2^{n+1}\) llamadas</div></foreignobject>
+  <foreignobject x="50.0" y="89.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:flex-start;height:28.5px">NIVEL</div></foreignobject>
+  <foreignobject x="190.0" y="89.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:flex-start;height:28.5px">LLAMADAS</div></foreignobject>
+  <foreignobject x="50.0" y="119.1" width="520" height="41.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:22px;font-weight:650;justify-content:flex-start;height:41.8px">\(L = 2^n\)</div></foreignobject>
+  <rect x="190" y="120" width="30" height="40" rx="12" fill="url(#g-blue)"></rect>
+  <foreignobject x="234.0" y="119.1" width="520" height="41.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:22px;font-weight:700;justify-content:flex-start;height:41.8px">\(1\)</div></foreignobject>
+  <foreignobject x="50.0" y="211.1" width="520" height="41.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:22px;font-weight:650;justify-content:flex-start;height:41.8px">\(L = 2^{n-1}\)</div></foreignobject>
+  <rect x="190" y="212" width="80" height="40" rx="12" fill="url(#g-blue)"></rect>
+  <foreignobject x="284.0" y="211.1" width="520" height="41.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:22px;font-weight:700;justify-content:flex-start;height:41.8px">\(a\)</div></foreignobject>
+  <foreignobject x="50.0" y="303.1" width="520" height="41.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:22px;font-weight:650;justify-content:flex-start;height:41.8px">\(L = 2^{n-2}\)</div></foreignobject>
+  <rect x="190" y="304" width="150" height="40" rx="12" fill="url(#g-blue)"></rect>
+  <foreignobject x="354.0" y="303.1" width="520" height="41.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:22px;font-weight:700;justify-content:flex-start;height:41.8px">\(a^2\)</div></foreignobject>
+  <foreignobject x="50.0" y="459.1" width="520" height="41.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:22px;font-weight:650;justify-content:flex-start;height:41.8px">\(L = 1\)</div></foreignobject>
+  <rect x="190" y="460" width="240" height="40" rx="12" fill="url(#g-ink)" filter="url(#ds)"></rect>
+  <foreignobject x="444.0" y="459.1" width="520" height="41.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:22px;font-weight:700;justify-content:flex-start;height:41.8px">\(a^n\)</div></foreignobject>
+  <foreignobject x="204.0" y="377.3" width="520" height="49.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:26px;font-weight:700;justify-content:flex-start;height:49.4px">\(\vdots\)</div></foreignobject>
+  <rect class="glass" x="50" y="548" width="420" height="82" rx="20"></rect>
+  <foreignobject x="0.0" y="559.8" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">SUMA DE TODOS LOS NIVELES</div></foreignobject>
+  <foreignobject x="0.0" y="584.2" width="520" height="45.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:24px;font-weight:650;justify-content:center;height:45.6px">\(1 + a + \cdots + a^n \le 2a^n\)</div></foreignobject>
+  <rect class="glass" x="50" y="660" width="420" height="58" rx="18" stroke="#1b2430" stroke-width="2.5"></rect>
+  <foreignobject x="0.0" y="668.1" width="520" height="41.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:22px;font-weight:650;justify-content:center;height:41.8px">\(N(2^n) \le 2^{n(n+1)+1} = 2^{O(n^2)}\)</div></foreignobject>
+  </svg>
+
+</div>
+<div class="a2 title-slot md">
+
+</div>
+<div class="card a3">
+<div class="grupo">
+<p><span class="kicker">Tiempo de ejecución</span></p>
+<p><span class="math inline">\(\textsf{Path}(S_0, S^*, 2^n)\)</span> tarda tiempo <span class="math inline">\(2^{O(n^2)}\)</span>. El espacio se ahorra a costa de tiempo.</p>
+</div>
+<div class="pasos">
+<ol type="1">
+<li>Sea <span class="math inline">\(N(L)\)</span> el número de llamadas que genera <span class="math inline">\(\textsf{Path}(S_1, S_2, L).\)</span> Con <span class="math inline">\(L = 1\)</span> no hay llamadas internas: <span class="math inline">\(N(1) = 1.\)</span></li>
+<li>Si <span class="math inline">\(L &gt; 1\)</span>, el ciclo recorre <span class="math inline">\(2^n\)</span> estados <span class="math inline">\(S'\)</span> y hace a lo más <span class="math inline">\(2\)</span> llamadas con <span class="math inline">\(L/2\)</span> por cada uno: <span class="math inline">\(N(L) \le 1 + 2^{n+1}\, N(L/2).\)</span></li>
+<li>Con <span class="math inline">\(a = 2^{n+1}\)</span> y <span class="math inline">\(L = 2^j\)</span>, al desenrollar: <span class="math inline">\(N(2^j) \le 1 + a + \cdots + a^j \le 2a^j\)</span>, porque <span class="math inline">\(a \ge 2.\)</span> Para <span class="math inline">\(j = n\)</span> resulta <span class="math inline">\(N(2^n) \le 2^{n(n+1)+1}.\)</span></li>
+<li>Cada llamada cuesta tiempo polinomial, así que el tiempo total es <span class="math inline">\(2^{O(n^2)}\)</span>: exponencial, pero con espacio polinomial.</li>
+</ol>
+</div>
+<p><span class="cite">Es lo opuesto a la programación dinámica: se borra todo y se recalcula. Kleinberg y Tardos (2005, p.&nbsp;543).</span></p>
+<p><span class="btn-arrow">Siguiente</span></p>
+</div>
+</div>
+</section>
+<section id="correctitud" class="slide level2">
+<h2>Correctitud de Path</h2>
+<div class="stage l-stack prueba">
 <div class="card blue a1">
+<p><span class="kicker">Teorema 9.8</span></p>
 <div class="title-slot md">
 
 </div>
 <div class="lead">
-<p><span class="math inline">\(\textsf{Path}(S_0, S^*, 2^n)\)</span> decide la instancia: es correcto y usa memoria polinomial.</p>
+<p><span class="math inline">\(\textsf{Path}(S_1, S_2, L)\)</span> devuelve <em>sí</em> <strong>si y solo si</strong> existe una secuencia de a lo más <span class="math inline">\(L\)</span> operadores de <span class="math inline">\(S_1\)</span> a <span class="math inline">\(S_2\)</span>, con <span class="math inline">\(L\)</span> potencia de <span class="math inline">\(2.\)</span></p>
+</div>
+<div class="dirs">
+<div class="dir-item">
+<div class="dsimb">
+<p><span class="math inline">\(\Leftarrow\)</span></p>
+</div>
+<div class="dtexto">
+<p>Si hay camino, Path responde <em>sí</em>: no se le escapa ninguno.</p>
+</div>
+</div>
+<div class="dir-item">
+<div class="dsimb">
+<p><span class="math inline">\(\Rightarrow\)</span></p>
+</div>
+<div class="dtexto">
+<p>Si Path responde <em>sí</em>, el camino existe: no inventa caminos.</p>
+</div>
+</div>
 </div>
 <p><span class="btn-arrow">Siguiente</span></p>
 </div>
-<div class="story a2">
-<div class="card media">
+<div class="card a2">
+<p><span class="h-card">Estrategia: inducción sobre <span class="math inline">\(L\)</span></span></p>
+<p><strong>Hipótesis (HI):</strong> Path es correcto con <span class="math inline">\(\lceil L/2 \rceil\)</span>, es decir, en las llamadas de adentro. Con eso se prueba que lo es con <span class="math inline">\(L.\)</span></p>
+<div class="chips mt-auto">
+<p><span class="chip on"><span class="math inline">\(L = 1\)</span></span> <span class="to"><span class="math inline">\(\to\)</span></span> <span class="chip"><span class="math inline">\(L = 2\)</span></span> <span class="to"><span class="math inline">\(\to\)</span></span> <span class="chip"><span class="math inline">\(L = 4\)</span></span> <span class="to"><span class="math inline">\(\to\)</span></span> <span class="chip"><span class="math inline">\(\cdots\)</span></span> <span class="to"><span class="math inline">\(\to\)</span></span> <span class="chip"><span class="math inline">\(L = 2^n\)</span></span></p>
+</div>
+<p><span class="small muted mt-s">Cada nivel se apoya en el anterior, como una fila de dominós.</span></p>
+</div>
+<div class="card a3">
+<p><span class="h-card">Caso base: <span class="math inline">\(L = 1\)</span></span></p>
+<div class="clean mt-s">
+<ul>
+<li>Path devuelve <em>sí</em> si <span class="math inline">\(S_1 = S_2\)</span> o si algún operador lleva de <span class="math inline">\(S_1\)</span> a <span class="math inline">\(S_2.\)</span></li>
+<li>Eso es existir una secuencia de a lo más <span class="math inline">\(1\)</span> operador: la vacía o la de un solo operador. Entonces es correcto.</li>
+</ul>
+</div>
+<p><span class="cite">Falta el paso inductivo (<span class="math inline">\(L &gt; 1\)</span>), en la siguiente diapositiva.</span></p>
+</div>
+</div>
+</section>
+<section id="correctitud-paso" class="slide level2">
+<h2>Paso inductivo</h2>
+<div class="stage l-deep tall amplio path">
+<div class="card media a1">
 <svg xmlns="http://www.w3.org/2000/svg" class="ill" viewbox="0 0 500 570" role="img" aria-label="Un camino de longitud L prima se parte en su punto medio S prima">
   <path d="M90 120 C 170 140, 150 230, 240 250 S 330 360, 410 420" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"></path>
   <g fill="#fff">
@@ -2272,15 +1703,44 @@
 </svg>
 
 </div>
-<div class="card caption">
-<div class="who">
-<p><img data-src="img/icons/shield.svg" class="ico"> <span class="pill soft">Correctitud · Teorema 9.8</span></p>
+<div class="a2 title-slot md">
+
 </div>
-<p><span class="quote">“Devuelve <em>sí</em> si y solo si existe una secuencia de a lo más <span class="math inline">\(L\)</span> operadores. Por inducción sobre <span class="math inline">\(L\)</span>, partiendo el camino en su punto medio.”</span></p>
+<div class="card a3">
+<div class="grupo">
+<p><span class="kicker">Teorema 9.8 · demostración</span></p>
+<p>Sea <span class="math inline">\(L &gt; 1.\)</span> <strong>HI:</strong> Path es correcto con <span class="math inline">\(\lceil L/2 \rceil.\)</span></p>
+</div>
+<div class="grupo">
+<p><span class="dir">(⇐) Si existe un camino de <span class="math inline">\(L' \le L\)</span> pasos, Path devuelve <em>sí</em>.</span></p>
+<div class="pasos">
+<ol type="1">
+<li>Sea <span class="math inline">\(S'\)</span> el estado en la posición <span class="math inline">\(\lceil L'/2 \rceil\)</span> del camino: lo parte en tramos de <span class="math inline">\(\lceil L'/2 \rceil\)</span> y <span class="math inline">\(\lfloor L'/2 \rfloor\)</span> pasos.</li>
+<li>Como <span class="math inline">\(L' \le L\)</span>, ambos miden a lo más <span class="math inline">\(\lceil L/2 \rceil\)</span>: <span class="math inline">\(\lfloor L'/2 \rfloor \le \lceil L'/2 \rceil \le \lceil L/2 \rceil.\)</span></li>
+<li>Por HI, las llamadas con <span class="math inline">\((S_1, S')\)</span> y con <span class="math inline">\((S', S_2)\)</span> devuelven <em>sí</em>.</li>
+<li>El ciclo prueba todos los estados <span class="math inline">\(S'\)</span>, así que en este (o antes, en otro que sirva) devuelve <em>sí</em>.</li>
+</ol>
 </div>
 </div>
-<div class="story a3">
-<div class="card media">
+<div class="grupo">
+<p><span class="dir">(⇒) Si Path devuelve <em>sí</em>, existe un camino de a lo más <span class="math inline">\(L\)</span> pasos.</span></p>
+<div class="pasos">
+<ol type="1">
+<li>Devolvió <em>sí</em> con algún <span class="math inline">\(S'\)</span> cuyas dos llamadas devolvieron <em>sí</em>.</li>
+<li>Por HI, hay un camino de <span class="math inline">\(S_1\)</span> a <span class="math inline">\(S'\)</span> y otro de <span class="math inline">\(S'\)</span> a <span class="math inline">\(S_2\)</span>, cada uno de a lo más <span class="math inline">\(\lceil L/2 \rceil\)</span> pasos.</li>
+<li>Unidos miden a lo más <span class="math inline">\(2\lceil L/2 \rceil = L\)</span> pasos. <span class="math inline">\(\blacksquare\)</span></li>
+</ol>
+</div>
+</div>
+<p><span class="cite">Figura: el camino de <span class="math inline">\(S_1\)</span> a <span class="math inline">\(S_2\)</span> partido en <span class="math inline">\(S'\)</span>, con tramos de a lo más <span class="math inline">\(\lceil L/2 \rceil.\)</span> Kleinberg y Tardos (2005, p.&nbsp;542).</span></p>
+<p><span class="btn-arrow">Siguiente</span></p>
+</div>
+</div>
+</section>
+<section id="memoria" class="slide level2">
+<h2>Análisis de espacio</h2>
+<div class="stage l-deep tall amplio path">
+<div class="card media a1">
 <svg xmlns="http://www.w3.org/2000/svg" class="ill" viewbox="0 0 500 570" role="img" aria-label="La pila de Path tiene n más 1 marcos">
   <g font-weight="650">
     <rect x="70" y="56" width="330" height="74" rx="18" fill="url(#g-ink)" filter="url(#ds)"></rect>
@@ -2303,76 +1763,31 @@
 </svg>
 
 </div>
-<div class="card caption">
-<div class="who">
-<p><img data-src="img/icons/layers.svg" class="ico"> <span class="pill soft">Espacio · Teorema 9.8</span></p>
-</div>
-<p><span class="quote">“Solo hay una llamada activa por nivel: <span class="math inline">\(n + 1\)</span> marcos de <span class="math inline">\(O(n + \log k)\)</span> bits, en total <span class="math inline">\(O\big(n(n + \log k)\big).\)</span>”</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="tiempo" class="slide level2">
-<h2>Espacio a costa de tiempo</h2>
-<div class="stage l-stats">
-<div class="card blue a1">
-<div class="left">
-<div class="title-slot">
+<div class="a2 title-slot md">
 
 </div>
-<div class="lead">
-<p>Path no guarda nada: tira el trabajo intermedio y lo recalcula. Es lo opuesto a la programación dinámica.</p>
+<div class="card a3">
+<div class="grupo">
+<p><span class="kicker">Teorema 9.8 · espacio</span></p>
+<p><span class="math inline">\(\textsf{Path}(S_1, S_2, L)\)</span> usa espacio polinomial en <span class="math inline">\(n\)</span>, <span class="math inline">\(k\)</span> y <span class="math inline">\(\log L.\)</span></p>
 </div>
-<div class="mt-l muted">
-<p><span class="math inline">\(N(1) = 1\)</span> y <span class="math inline">\(N(L) \le 1 + 2^{n+1}\, N(L/2)\)</span>, por lo que <span class="math inline">\(N(2^n) \le 2 \cdot 2^{n(n+1)}.\)</span></p>
+<div class="grupo">
+<div class="pasos">
+<ol type="1">
+<li><strong>Un marco</strong> guarda <span class="math inline">\(S_1\)</span>, <span class="math inline">\(S_2\)</span>, <span class="math inline">\(S'\)</span> y el contador (<span class="math inline">\(n\)</span> bits cada uno), el exponente <span class="math inline">\(j\)</span> con <span class="math inline">\(L = 2^j\)</span> (<span class="math inline">\(O(\log n)\)</span> bits) y los bits <span class="math inline">\(x\)</span> y <span class="math inline">\(y.\)</span></li>
+<li>Revisar si un operador lleva de <span class="math inline">\(S_1\)</span> a <span class="math inline">\(S_2\)</span> recorre la entrada (<span class="math inline">\(k\)</span> operadores) con <span class="math inline">\(O(n + \log k)\)</span> bits más: <strong>cada marco usa <span class="math inline">\(O(n + \log k)\)</span> bits.</strong></li>
+<li><strong>Una llamada activa por nivel:</strong> al terminar, se borra su trabajo y solo queda su bit.</li>
+<li><strong>Profundidad:</strong> <span class="math inline">\(L\)</span> baja de <span class="math inline">\(2^n\)</span> a <span class="math inline">\(1\)</span> dividiéndose entre <span class="math inline">\(2\)</span>: hay <span class="math inline">\(n + 1\)</span> marcos a la vez.</li>
+<li><strong>Total:</strong> <span class="math inline">\((n + 1) \cdot O(n + \log k) = O\big(n(n + \log k)\big)\)</span> bits, más la entrada, que solo se lee. Como esta mide al menos <span class="math inline">\(n\)</span> y es proporcional a <span class="math inline">\(k\)</span>, es polinomial en su tamaño. <span class="math inline">\(\blacksquare\)</span></li>
+</ol>
 </div>
+</div>
+<div class="conclusion">
+<p><span class="dir">Conclusión: <span class="math inline">\(\textsf{Planning} \in \mathsf{PSPACE}\)</span></span></p>
+<p>Si hay plan, hay uno de a lo más <span class="math inline">\(2^n - 1\)</span> pasos (Teorema 9.7), así que basta decidir <span class="math inline">\(\textsf{Path}(S_0, S^*, 2^n).\)</span> Por la correctitud, Path decide la instancia; por este análisis, usa espacio polinomial. <span class="math inline">\(\blacksquare\)</span></p>
+</div>
+<p><span class="cite">Equivale a <span class="math inline">\(S(L) \le p + S(\lceil L/2 \rceil)\)</span>, que da <span class="math inline">\(O(\log L \cdot p).\)</span> Kleinberg y Tardos (2005, pp.&nbsp;542–543).</span></p>
 <p><span class="btn-arrow">Siguiente</span></p>
-</div>
-<div class="card inner">
-<div class="strip">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:html="http://www.w3.org/1999/xhtml" class="ill" viewbox="0 0 600 420" role="img" aria-label="Llamadas a Path crecen muy rápido; los marcos de pila crecen lento">
-  <rect class="glass" x="30" y="26" width="540" height="368" rx="22"></rect>
-  <text x="62" y="68" font-size="15" font-weight="600" letter-spacing="1.2" class="t-muted">ESCALA LOG</text>
-  <g stroke="#e3ebf4" stroke-width="1.5">
-    <line x1="70" y1="330" x2="540" y2="330"></line><line x1="70" y1="262" x2="540" y2="262"></line>
-    <line x1="70" y1="194" x2="540" y2="194"></line><line x1="70" y1="126" x2="540" y2="126"></line>
-  </g>
-  
-  <g>
-    <rect x="96" y="291" width="52" height="39" rx="10" fill="url(#g-blue)"></rect>
-    <rect x="210" y="250" width="52" height="80" rx="10" fill="url(#g-blue)"></rect>
-    <rect x="324" y="189" width="52" height="141" rx="10" fill="url(#g-blue)"></rect>
-    <rect x="438" y="109" width="52" height="221" rx="10" fill="url(#g-ink)"></rect>
-  </g>
-  <g font-size="15" font-weight="650" text-anchor="middle">
-    <foreignobject x="-138.0" y="262.4" width="520" height="28.5"><html:div class="fo" style="font-size:15px;font-weight:650;justify-content:center;height:28.5px">\(20\)</html:div></foreignobject><foreignobject x="-24.0" y="221.3" width="520" height="28.5"><html:div class="fo" style="font-size:15px;font-weight:650;justify-content:center;height:28.5px">\(454\)</html:div></foreignobject><foreignobject x="90.0" y="160.3" width="520" height="28.5"><html:div class="fo" style="font-size:15px;font-weight:650;justify-content:center;height:28.5px">\(48\,795\)</html:div></foreignobject><foreignobject x="204.0" y="80.3" width="520" height="28.5"><html:div class="fo" style="font-size:15px;font-weight:650;justify-content:center;height:28.5px">\(23\,167\,425\)</html:div></foreignobject>
-  </g>
-  
-  <path d="M122 318 L236 314 L350 310 L464 306" fill="none" stroke="#1f7a4d" stroke-width="3.5" stroke-linecap="round"></path>
-  <g fill="#1f7a4d"><circle cx="122" cy="318" r="5.5"></circle><circle cx="236" cy="314" r="5.5"></circle><circle cx="350" cy="310" r="5.5"></circle><circle cx="464" cy="306" r="5.5"></circle></g>
-  <g font-size="15" font-weight="600" text-anchor="middle" class="t-muted">
-    <foreignobject x="-138.0" y="336.4" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(n = 2\)</div></foreignobject><foreignobject x="-24.0" y="336.4" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(n = 3\)</div></foreignobject><foreignobject x="90.0" y="336.4" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(n = 4\)</div></foreignobject><foreignobject x="204.0" y="336.4" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:15px;font-weight:600;justify-content:center;height:28.5px">\(n = 5\)</div></foreignobject>
-  </g>
-  <g font-size="14" font-weight="600">
-    <rect x="300" y="52" width="14" height="14" rx="4" fill="url(#g-blue)"></rect><text x="320" y="64">llamadas</text>
-    <rect x="410" y="57" width="18" height="4" rx="2" fill="#1f7a4d"></rect><text x="434" y="64">marcos de pila</text>
-  </g>
-</svg>
-
-</div>
-<div class="stats2">
-<div>
-<p><span class="stat"><span class="math inline">\(2^{O(n^2)}\)</span></span></p>
-<p><span class="stat-label">Tiempo</span></p>
-<p><span class="stat-text">Exponencial: cada llamada cuesta tiempo polinomial, pero hay <span class="math inline">\(2^{O(n^2)}\)</span> llamadas.</span></p>
-</div>
-<div>
-<p><span class="stat"><span class="math inline">\(n + 1\)</span></span></p>
-<p><span class="stat-label">Marcos de pila</span></p>
-<p><span class="stat-text">Cada uno de <span class="math inline">\(O(n + \log k)\)</span> bits: el espacio total es polinomial.</span></p>
-</div>
-</div>
-</div>
 </div>
 </div>
 </section>
@@ -3359,7 +2774,7 @@
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"\u003ci class=\"fas fa-gear\">\u003c/i>","content":"\u003cul class=\"slide-menu-items\">\n\u003cli class=\"slide-tool-item active\" data-item=\"0\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\">\u003ckbd>f\u003c/kbd> Fullscreen\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"1\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\">\u003ckbd>s\u003c/kbd> Speaker View\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"2\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\">\u003ckbd>o\u003c/kbd> Slide Overview\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"3\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\">\u003ckbd>e\u003c/kbd> PDF Export Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"4\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\">\u003ckbd>r\u003c/kbd> Scroll View Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"5\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\">\u003ckbd>?\u003c/kbd> Keyboard Help\u003c/a>\u003c/li>\n\u003c/ul>"}],"openButton":false,"openButtonLabel":"Slide menu"},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -3518,7 +2933,7 @@
         maxScale: 2,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -3701,8 +3116,7 @@
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }
           // Inspect non-navigation links and adorn them if external
-          window.quartoDecorateExternalLinks = function (root) {
-         var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
           for (var i=0; i<links.length; i++) {
             const link = links[i];
             if (!isInternal(link.href)) {
@@ -3711,69 +3125,8 @@
               if (link.dataset.originalHref !== undefined) {
                 link.href = link.dataset.originalHref;
               }
-              if (!link.classList.contains('no-external-icon')) {
-              }
             }
           }
-          };
-          window.quartoDecorateExternalLinks(window.document);
-        // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
-        // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
-        const hideOnEscAndFocusOut = {
-          name: 'hideOnEscAndFocusOut',
-          defaultValue: true,
-          fn(instance) {
-            const dismiss = () => {
-              // A show scheduled by the trigger delay would otherwise reopen it
-              instance.clearDelayTimeouts();
-              instance.hide();
-            };
-            const onKeyDown = (event) => {
-              if (event.key !== 'Escape') {
-                return;
-              }
-              // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
-              // except an open reveal.js slide menu, which Esc should close too.
-              // The menu handles keys only when its keyboard option is on.
-              const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
-                window.Reveal.getConfig().menu?.keyboard !== false;
-              if (!menuHandlesEsc) {
-                event.stopPropagation();
-              }
-              if (instance.popper.contains(window.document.activeElement)) {
-                // Disabled while refocusing so the focus trigger does not reopen it
-                instance.disable();
-                instance.reference.focus();
-                instance.enable();
-              }
-              dismiss();
-            };
-            const onFocusOut = (event) => {
-              const target = event.relatedTarget;
-              if (target && !instance.reference.contains(target) &&
-                  !instance.popper.contains(target)) {
-                dismiss();
-              }
-            };
-            // On the trigger too: a click trigger (code-annotations: select) has no
-            // blur handling. Attached for the instance's lifetime so leaving the
-            // trigger also cancels a show still pending on the trigger delay.
-            instance.reference.addEventListener('focusout', onFocusOut);
-            return {
-              onShow() {
-                window.document.addEventListener('keydown', onKeyDown, true);
-                instance.popper.addEventListener('focusout', onFocusOut);
-              },
-              onHide() {
-                window.document.removeEventListener('keydown', onKeyDown, true);
-                instance.popper.removeEventListener('focusout', onFocusOut);
-              },
-              onDestroy() {
-                instance.reference.removeEventListener('focusout', onFocusOut);
-              },
-            };
-          },
-        };
         function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
           const config = {
             allowHTML: true,
@@ -3787,7 +3140,6 @@
             interactiveBorder: 10,
             theme: 'light-border',
             placement: 'bottom-start',
-            plugins: [hideOnEscAndFocusOut],
           };
           if (contentFn) {
             config.content = contentFn;

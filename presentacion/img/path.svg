@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 520 736" role="img" aria-label="Path parte el camino de S1 a S2 por la mitad en cada nivel: L, L/2, L/4, hasta L = 1">
+  <rect x="110" y="22" width="300" height="50" rx="16" fill="url(#g-ink)" filter="url(#ds)" />
+  <foreignObject x="0.0" y="26.1" width="520" height="41.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:22px;font-weight:700;justify-content:center;height:41.8px">\(\textsf{Path}(S_1, S_2, L)\)</div></foreignObject>
+  <rect class="glass" x="218" y="84" width="64" height="28" rx="14" />
+  <foreignObject x="-10.0" y="82.8" width="520" height="30.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:16px;font-weight:650;justify-content:center;height:30.4px">\(L\)</div></foreignObject>
+  <rect class="glass" x="298" y="84" width="64" height="28" rx="14" />
+  <foreignObject x="70.0" y="82.8" width="520" height="30.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:16px;font-weight:650;justify-content:center;height:30.4px">\(L/2\)</div></foreignObject>
+  <rect class="glass" x="378" y="84" width="64" height="28" rx="14" />
+  <foreignObject x="150.0" y="82.8" width="520" height="30.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:16px;font-weight:650;justify-content:center;height:30.4px">\(L/4\)</div></foreignObject>
+  <path d="M168 380 H241" fill="none" stroke="#ffffff" stroke-opacity=".8" stroke-width="2" stroke-dasharray="2 7" stroke-linecap="round" />
+  <path d="M168 260 H321" fill="none" stroke="#ffffff" stroke-opacity=".8" stroke-width="2" stroke-dasharray="2 7" stroke-linecap="round" />
+  <path d="M168 500 H321" fill="none" stroke="#ffffff" stroke-opacity=".8" stroke-width="2" stroke-dasharray="2 7" stroke-linecap="round" />
+  <path d="M168 200 H401" fill="none" stroke="#ffffff" stroke-opacity=".8" stroke-width="2" stroke-dasharray="2 7" stroke-linecap="round" />
+  <path d="M168 320 H401" fill="none" stroke="#ffffff" stroke-opacity=".8" stroke-width="2" stroke-dasharray="2 7" stroke-linecap="round" />
+  <path d="M168 440 H401" fill="none" stroke="#ffffff" stroke-opacity=".8" stroke-width="2" stroke-dasharray="2 7" stroke-linecap="round" />
+  <path d="M168 560 H401" fill="none" stroke="#ffffff" stroke-opacity=".8" stroke-width="2" stroke-dasharray="2 7" stroke-linecap="round" />
+  <path d="M243 146 H250 V614 H243" fill="none" stroke="#1b2430" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="250" cy="380" r="7" fill="#1b2430" stroke="#fff" stroke-width="2.5" />
+  <path d="M323 146 H330 V374 H323" fill="none" stroke="#2f6fb5" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="330" cy="260" r="7" fill="#2f6fb5" stroke="#fff" stroke-width="2.5" />
+  <path d="M323 386 H330 V614 H323" fill="none" stroke="#2f6fb5" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="330" cy="500" r="7" fill="#2f6fb5" stroke="#fff" stroke-width="2.5" />
+  <path d="M403 146 H410 V254 H403" fill="none" stroke="#8bb9ea" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="410" cy="200" r="7" fill="#8bb9ea" stroke="#fff" stroke-width="2.5" />
+  <path d="M403 266 H410 V374 H403" fill="none" stroke="#8bb9ea" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="410" cy="320" r="7" fill="#8bb9ea" stroke="#fff" stroke-width="2.5" />
+  <path d="M403 386 H410 V494 H403" fill="none" stroke="#8bb9ea" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="410" cy="440" r="7" fill="#8bb9ea" stroke="#fff" stroke-width="2.5" />
+  <path d="M403 506 H410 V614 H403" fill="none" stroke="#8bb9ea" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="410" cy="560" r="7" fill="#8bb9ea" stroke="#fff" stroke-width="2.5" />
+  <path class="edge" d="M110 164 V187" />
+  <path class="edge" d="M110 212 V245" />
+  <path class="edge" d="M110 274 V307" />
+  <path class="edge" d="M110 332 V355" />
+  <path class="edge" d="M110 404 V427" />
+  <path class="edge" d="M110 452 V485" />
+  <path class="edge" d="M110 514 V547" />
+  <path class="edge" d="M110 572 V595" />
+  <rect class="glass" x="58" y="119" width="104" height="42" rx="13" stroke="#1b2430" stroke-width="2.5" />
+  <foreignObject x="-150.0" y="122.0" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(S_1\)</div></foreignObject>
+  <circle cx="110" cy="200" r="9" fill="#cfe3f7" stroke="#8bb9ea" stroke-width="2" />
+  <circle cx="110" cy="260" r="11" fill="url(#g-blue)" stroke="#fff" stroke-width="2.5" />
+  <foreignObject x="-430.0" y="243.8" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:17px;font-weight:650;justify-content:flex-end;height:32.3px">\(S''\)</div></foreignObject>
+  <circle cx="110" cy="320" r="9" fill="#cfe3f7" stroke="#8bb9ea" stroke-width="2" />
+  <rect x="58" y="359" width="104" height="42" rx="13" fill="url(#g-ink)" filter="url(#ds)" />
+  <foreignObject x="-150.0" y="361.9" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(S'\)</div></foreignObject>
+  <circle cx="110" cy="440" r="9" fill="#cfe3f7" stroke="#8bb9ea" stroke-width="2" />
+  <circle cx="110" cy="500" r="11" fill="url(#g-blue)" stroke="#fff" stroke-width="2.5" />
+  <foreignObject x="-430.0" y="483.9" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-muted" style="font-size:17px;font-weight:650;justify-content:flex-end;height:32.3px">\(S''\)</div></foreignObject>
+  <circle cx="110" cy="560" r="9" fill="#cfe3f7" stroke="#8bb9ea" stroke-width="2" />
+  <rect class="glass" x="58" y="599" width="104" height="42" rx="13" stroke="#1b2430" stroke-width="2.5" />
+  <foreignObject x="-150.0" y="602.0" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:19px;font-weight:650;justify-content:center;height:36.1px">\(S_2\)</div></foreignObject>
+  <rect class="glass" x="30" y="672" width="460" height="50" rx="16" />
+  <foreignObject x="0.0" y="680.9" width="520" height="32.3"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:17px;font-weight:600;justify-content:center;height:32.3px">Cada tramo se parte igual, hasta \(L = 1\)</div></foreignObject>
+  </svg>

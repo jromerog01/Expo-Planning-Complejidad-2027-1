@@ -532,434 +532,7 @@ Hay $2^8 = 256$ estados, cada uno una tupla de $8$ valores binarios.
 
 :::
 
-## ¿Por qué es exponencial en tiempo? {#exp-tiempo}
-
-::: {.stage .l-banner}
-
-::: {.card .blue .a1}
-::: {.title-slot .sm}
-:::
-
-::: {.strip}
-```{=html}
-{{< include img/counter.svg >}}
-```
-:::
-
-[Siguiente]{.btn-arrow}
-:::
-
-::: {.card .a2}
-[$2^n$]{.stat}
-
-[Estados posibles]{.stat-label}
-
-[Cada uno de los $n$ hechos es verdadero o falso. Buscar un plan es buscar un camino entre $2^n$ estados.]{.stat-text}
-:::
-
-::: {.card .a3}
-[$2^n - 1$]{.stat}
-
-[Pasos del plan más corto]{.stat-label}
-
-[En el contador de $n$ bits no hay atajos: solo recorrer el plan ya toma un número exponencial de pasos.]{.stat-text}
-:::
-
-::: {.card .a4}
-[$2^{O(n^2)}$]{.stat}
-
-[Llamadas de Path]{.stat-label}
-
-[El algoritmo que veremos no guarda resultados: los recalcula. No se conoce ninguno de tiempo polinomial.]{.stat-text}
-:::
-
-:::
-
-## ¿Por qué es polinomial en espacio? {#poli-espacio}
-
-::: {.stage .l-stats}
-::: {.card .blue .a1}
-
-::: {.left}
-::: {.title-slot .md}
-:::
-
-::: {.lead}
-Nunca se guarda el plan ni la grafica de estados: solo lo que se está revisando en ese momento, y esa memoria se reutiliza.
-:::
-
-::: {.mt-l .muted}
-Es la idea de los focos: se recorren $2^n$ estados usando siempre los mismos $n$ bits.
-:::
-
-[Siguiente]{.btn-arrow}
-:::
-
-::: {.card .inner}
-::: {.strip}
-```{=html}
-{{< include img/tradeoff.svg >}}
-```
-:::
-
-::: {.stats2}
-::: {}
-[$n$ bits]{.stat}
-
-[Por estado]{.stat-label}
-
-[Un estado es un subconjunto de los $n$ hechos: basta un bit por hecho.]{.stat-text}
-:::
-
-::: {}
-[$n + 1$]{.stat}
-
-[Niveles de recursión]{.stat-label}
-
-[Path guarda unos cuantos estados por nivel y, de cada subproblema resuelto, un solo bit.]{.stat-text}
-:::
-:::
-:::
-
-:::
-:::
-
-## Cota superior sobre la longitud del plan {#cota}
-
-::: {.stage .l-stack}
-
-::: {.card .blue .a1}
-::: {.title-slot .sm}
-:::
-
-::: {.lead}
-Si una instancia con $n$ condiciones tiene solución, tiene una con a lo más $2^n - 1$ pasos (Teorema 9.7).
-:::
-
-[Siguiente]{.btn-arrow}
-:::
-
-::: {.card .a2}
-::: {.strip}
-```{=html}
-{{< include img/graph-implicit.svg >}}
-```
-:::
-
-::: {.txt}
-[Demostración]{.h-card}
-
-La grafica de estados tiene $2^n$ nodos. El camino más corto de $S_0$ a $S^*$ no repite nodos, así que tiene a lo más $2^n - 1$ aristas.
-:::
-:::
-
-::: {.card .a3}
-[¿Para qué sirve?]{.h-card}
-
-Basta preguntar por caminos de a lo más $2^n$ pasos: el problema completo es $\textsf{Path}(S_0, S^*, 2^n).$
-
-::: {.chips .mt-auto}
-[$2^n$&nbsp;estados]{.chip} [$\to$]{.to} [sin repetir]{.chip} [$\to$]{.to} [$\le 2^n - 1$&nbsp;pasos]{.chip .on}
-:::
-:::
-
-:::
-
-## Algoritmo Path {#algoritmo-path}
-
-::: {.stage .l-mosaic}
-
-::: {.card .blue .a1}
-::: {.title-slot .md}
-:::
-
-::: {.lead}
-¿Se puede llegar de $S_1$ a $S_2$ en a lo más $L$ pasos?
-:::
-:::
-
-::: {.card .media .a2}
-```{=html}
-<div class="code-window">
-  <div class="bar"><i></i><i></i><i></i><span>Kleinberg y Tardos (2005, p. 542)</span></div>
-  <div class="algo">
-    <div class="ln"><b>procedimiento</b> \(\textsf{Path}(S_1, S_2, L)\)</div>
-    <div class="ln i1"><b>si</b> \(L = 1\) <b>entonces</b> devolver \(S_1 = S_2\) o \(\exists\, O : S_1 \xrightarrow{O} S_2\)</div>
-    <div class="ln i1"><b>para cada</b> \(S'\) <span class="cm">(contador de \(n\) bits)</span> <b>hacer</b></div>
-    <div class="ln i2">\(x \gets \textsf{Path}(S_1, S', \lceil L/2 \rceil)\) <span class="cm">— borrar todo salvo \(x\)</span></div>
-    <div class="ln i2">\(y \gets \textsf{Path}(S', S_2, \lceil L/2 \rceil)\) <span class="cm">— borrar todo salvo \(y\)</span></div>
-    <div class="ln i2"><b>si</b> \(x\) y \(y\) <b>entonces</b> devolver «sí»</div>
-    <div class="ln i1">devolver «no»</div>
-  </div>
-</div>
-```
-:::
-
-::: {.card .media .a3}
-```{=html}
-{{< include img/midpoint.svg >}}
-```
-:::
-
-::: {.card .a4}
-::: {.clean}
-- **Caso base** ($L = 1$): los estados son iguales o un operador lleva de uno al otro.
-- **Punto medio**: prueba cada estado $S'$ y resuelve las dos mitades con $\lceil L/2 \rceil.$
-- **Memoria**: de cada mitad resuelta solo conserva un bit.
-:::
-:::
-
-:::
-
-## Demostración de correctitud {#correctitud}
-
-::: {.stage .l-split}
-
-::: {.card .media .a1}
-```{=html}
-{{< include img/induction.svg >}}
-```
-:::
-
-::: {.card .blue .a2}
-::: {.title-slot .sm}
-:::
-
-[Siguiente]{.btn-arrow}
-:::
-
-::: {.card .a3}
-::: {.cols3}
-::: {}
-![](img/icons/shield.svg){.ico}
-
-[Caso base]{.h-card}
-
-[Inducción sobre $L.$ Si $L = 1$, Path revisa directamente si $S_1 = S_2$ o si algún operador lleva de $S_1$ a $S_2.$]{.small}
-:::
-
-::: {}
-![](img/icons/target.svg){.ico}
-
-[Si hay camino]{.h-card}
-
-[Su punto medio $S'$ lo parte en dos tramos de a lo más $\lceil L/2 \rceil$ pasos: por hipótesis, ambas llamadas responden *sí*.]{.small}
-:::
-
-::: {}
-![](img/icons/swap.svg){.ico}
-
-[Si responde sí]{.h-card}
-
-[Existe $S'$ con ambas llamadas en *sí*. Al unir los dos caminos queda uno de a lo más $L$ pasos de $S_1$ a $S_2.$]{.small}
-:::
-:::
-:::
-
-:::
-
-## Demostración de la complejidad de memoria {#memoria}
-
-::: {.stage .l-deep}
-
-::: {.card .media .a1}
-```{=html}
-{{< include img/stack.svg >}}
-```
-:::
-
-::: {.a2 .title-slot .sm}
-:::
-
-::: {.card .a3}
-[Teorema 9.8 · espacio]{.kicker}
-
-[$O\big(n(n + \log k)\big)$ bits]{.formula}
-
-::: {.clean .mt-m}
-- **Una llamada activa por nivel**; de las terminadas solo queda un bit.
-- **Marco**: $S_1$, $S_2$, $S'$, contador, $x$, $y$ $\to$ $O(n + \log k)$ bits.
-- **Profundidad** $n + 1$: $L$ baja de $2^n$ a $1$ dividiéndose entre $2.$
-:::
-
-[$S(L) \le p(n, k, \log L) + S(\lceil L/2 \rceil).$]{.cite}
-
-[Siguiente]{.btn-arrow}
-:::
-
-:::
-
-## ¿Existe un plan? {#intro}
-
-::: {.stage .l-stats}
-::: {.card .blue .a1}
-
-::: {.left}
-::: {.title-slot .xl}
-:::
-
-::: {.lead}
-Partiendo de un estado inicial, ¿hay una secuencia de acciones permitidas que lleve a un estado objetivo?
-:::
-
-::: {.mt-l .muted}
-Es el modelo detrás de la logística de una operación de socorro, de un robot que acomoda cajas o del rompecabezas de quince (Kleinberg y Tardos, 2005).
-:::
-
-[Siguiente]{.btn-arrow}
-:::
-
-::: {.card .inner}
-::: {.strip}
-```{=html}
-{{< include img/puzzle.svg >}}
-```
-:::
-
-::: {.stats2}
-::: {}
-[$2^n$]{.stat}
-
-[Configuraciones]{.stat-label}
-
-[posibles con $n$ condiciones verdaderas o falsas.]{.stat-text}
-:::
-
-::: {}
-[$2^n - 1$]{.stat}
-
-[Pasos]{.stat-label}
-
-[puede medir el plan más corto en algunas instancias.]{.stat-text}
-:::
-:::
-:::
-
-:::
-:::
-
-## La clase PSPACE {#pspace}
-
-::: {.stage .l-split}
-
-::: {.card .media .a1}
-```{=html}
-{{< include img/hierarchy.svg >}}
-```
-:::
-
-::: {.card .blue .a2}
-::: {.title-slot}
-:::
-
-[Siguiente]{.btn-arrow}
-:::
-
-::: {.card .a3}
-::: {.cols3}
-::: {}
-![](img/icons/chip.svg){.ico}
-
-[Memoria polinomial]{.h-card}
-
-[Problemas que se resuelven usando espacio polinomial en el tamaño de la entrada. Contiene a $\mathsf{P}$ y a $\mathsf{NP}$, y está contenida en $\mathsf{EXPTIME}.$]{.small}
-:::
-
-::: {}
-![](img/icons/target.svg){.ico}
-
-[PSPACE‑completo]{.h-card}
-
-[$X \in \mathsf{PSPACE}$ y todo $Y \in \mathsf{PSPACE}$ cumple $Y \le_P X.$ El problema raíz es QSAT (Stockmeyer y Meyer, 1973).]{.small}
-:::
-
-::: {}
-![](img/icons/swap.svg){.ico}
-
-[El espacio se reutiliza]{.h-card}
-
-[Un contador de $n$ bits recorre $2^n$ valores en espacio $O(n)$: el espacio se recicla; el tiempo, no.]{.small}
-:::
-:::
-:::
-
-:::
-
-## Condiciones y operadores {#modelo}
-
-::: {.stage .l-deep}
-
-::: {.card .media .a1}
-```{=html}
-{{< include img/operator.svg >}}
-```
-:::
-
-::: {.a2 .title-slot .xl}
-:::
-
-::: {.card .a3}
-[Modelo STRIPS proposicional]{.kicker}
-
-[$S' = (S \setminus D_i) \cup A_i$]{.formula}
-
-::: {.clean .mt-m}
-- **Condiciones**: $\mathcal{C} = \{c_1, \dots, c_n\}.$
-- **Configuración**: un subconjunto $S \subseteq \mathcal{C}$; hay $2^n$ posibles.
-- **Operador** $O_i = (P_i, A_i, D_i)$: prerrequisitos, adiciones y eliminaciones. Es aplicable en $S$ si $P_i \subseteq S.$
-:::
-
-[Fikes y Nilsson (1971); Kleinberg y Tardos (2005, p. 538).]{.cite}
-
-[Siguiente]{.btn-arrow}
-:::
-
-:::
-
-## Planes de longitud exponencial {#exponencial}
-
-::: {.stage .l-banner}
-
-::: {.card .blue .a1}
-::: {.title-slot .sm}
-:::
-
-::: {.strip}
-```{=html}
-{{< include img/counter.svg >}}
-```
-:::
-
-[Siguiente]{.btn-arrow}
-:::
-
-::: {.card .a2}
-[$2^n - 1$]{.stat}
-
-[Plan mínimo del contador]{.stat-label}
-
-[Con $n$ condiciones y $n$ operadores, el plan más corto mide $2^n - 1$ pasos: cuenta en binario (Teorema 9.6).]{.stat-text}
-:::
-
-::: {.card .a3}
-[$\le 2^n - 1$]{.stat}
-
-[Cota superior]{.stat-label}
-
-[Si hay solución, hay una con a lo más $2^n - 1$ pasos: un camino simple en una grafica de $2^n$ nodos (Teorema 9.7).]{.stat-text}
-:::
-
-::: {.card .a4}
-[¿$\mathsf{NP}$?]{.stat}
-
-[El plan no es certificado]{.stat-label}
-
-[Puede ser exponencial: ni siquiera cabe escribirlo en espacio polinomial. Hay que *decidir* sin verlo completo.]{.stat-text}
-:::
-
-:::
-
-## El procedimiento Path {#path}
+## El Algoritmo Path {#path}
 
 ::: {.stage .l-mosaic}
 
@@ -1003,104 +576,190 @@ Prueba cada configuración $S'$ como punto medio, resuelve las dos mitades con $
 
 :::
 
-## Planning está en PSPACE {#en-pspace}
+## Análisis de tiempo {#tiempo-path}
 
-::: {.stage .l-stories}
+::: {.stage .l-deep .tall .amplio .path}
+
+::: {.card .media .a1}
+```{=html}
+{{< include img/tiempo.svg >}}
+```
+:::
+
+::: {.a2 .title-slot .md}
+:::
+
+::: {.card .a3}
+::: {.grupo}
+[Tiempo de ejecución]{.kicker}
+
+$\textsf{Path}(S_0, S^*, 2^n)$ tarda tiempo $2^{O(n^2)}$. El espacio se ahorra a costa de tiempo.
+:::
+
+::: {.pasos}
+1. Sea $N(L)$ el número de llamadas que genera $\textsf{Path}(S_1, S_2, L).$ Con $L = 1$ no hay llamadas internas: $N(1) = 1.$
+2. Si $L > 1$, el ciclo recorre $2^n$ estados $S'$ y hace a lo más $2$ llamadas con $L/2$ por cada uno: $N(L) \le 1 + 2^{n+1}\, N(L/2).$
+3. Con $a = 2^{n+1}$ y $L = 2^j$, al desenrollar: $N(2^j) \le 1 + a + \cdots + a^j \le 2a^j$, porque $a \ge 2.$ Para $j = n$ resulta $N(2^n) \le 2^{n(n+1)+1}.$
+4. Cada llamada cuesta tiempo polinomial, así que el tiempo total es $2^{O(n^2)}$: exponencial, pero con espacio polinomial.
+:::
+
+[Es lo opuesto a la programación dinámica: se borra todo y se recalcula. Kleinberg y Tardos (2005, p. 543).]{.cite}
+
+[Siguiente]{.btn-arrow}
+:::
+
+:::
+
+## Correctitud de Path {#correctitud}
+
+::: {.stage .l-stack .prueba}
 
 ::: {.card .blue .a1}
+[Teorema 9.8]{.kicker}
+
 ::: {.title-slot .md}
 :::
 
 ::: {.lead}
-$\textsf{Path}(S_0, S^*, 2^n)$ decide la instancia: es correcto y usa memoria polinomial.
+$\textsf{Path}(S_1, S_2, L)$ devuelve *sí* **si y solo si** existe una secuencia de a lo más $L$ operadores de $S_1$ a $S_2$, con $L$ potencia de $2.$
+:::
+
+::: {.dirs}
+::: {.dir-item}
+::: {.dsimb}
+$\Leftarrow$
+:::
+::: {.dtexto}
+Si hay camino, Path responde *sí*: no se le escapa ninguno.
+:::
+:::
+::: {.dir-item}
+::: {.dsimb}
+$\Rightarrow$
+:::
+::: {.dtexto}
+Si Path responde *sí*, el camino existe: no inventa caminos.
+:::
+:::
 :::
 
 [Siguiente]{.btn-arrow}
 :::
 
-::: {.story .a2}
-::: {.card .media}
+::: {.card .a2}
+[Estrategia: inducción sobre $L$]{.h-card}
+
+**Hipótesis (HI):** Path es correcto con $\lceil L/2 \rceil$, es decir, en las llamadas de adentro. Con eso se prueba que lo es con $L.$
+
+::: {.chips .mt-auto}
+[$L = 1$]{.chip .on} [$\to$]{.to} [$L = 2$]{.chip} [$\to$]{.to} [$L = 4$]{.chip} [$\to$]{.to} [$\cdots$]{.chip} [$\to$]{.to} [$L = 2^n$]{.chip}
+:::
+
+[Cada nivel se apoya en el anterior, como una fila de dominós.]{.small .muted .mt-s}
+:::
+
+::: {.card .a3}
+[Caso base: $L = 1$]{.h-card}
+
+::: {.clean .mt-s}
+- Path devuelve *sí* si $S_1 = S_2$ o si algún operador lleva de $S_1$ a $S_2.$
+- Eso es existir una secuencia de a lo más $1$ operador: la vacía o la de un solo operador. Entonces es correcto.
+:::
+
+[Falta el paso inductivo ($L > 1$), en la siguiente diapositiva.]{.cite}
+:::
+
+:::
+
+## Paso inductivo {#correctitud-paso}
+
+::: {.stage .l-deep .tall .amplio .path}
+
+::: {.card .media .a1}
 ```{=html}
 {{< include img/induction.svg >}}
 ```
 :::
 
-::: {.card .caption}
-::: {.who}
-![](img/icons/shield.svg){.ico}
-[Correctitud · Teorema 9.8]{.pill .soft}
+::: {.a2 .title-slot .md}
 :::
 
-[“Devuelve *sí* si y solo si existe una secuencia de a lo más $L$ operadores. Por inducción sobre $L$, partiendo el camino en su punto medio.”]{.quote}
+::: {.card .a3}
+::: {.grupo}
+[Teorema 9.8 · demostración]{.kicker}
+
+Sea $L > 1.$ **HI:** Path es correcto con $\lceil L/2 \rceil.$
+:::
+
+::: {.grupo}
+[(⇐) Si existe un camino de $L' \le L$ pasos, Path devuelve *sí*.]{.dir}
+
+::: {.pasos}
+1. Sea $S'$ el estado en la posición $\lceil L'/2 \rceil$ del camino: lo parte en tramos de $\lceil L'/2 \rceil$ y $\lfloor L'/2 \rfloor$ pasos.
+2. Como $L' \le L$, ambos miden a lo más $\lceil L/2 \rceil$: $\lfloor L'/2 \rfloor \le \lceil L'/2 \rceil \le \lceil L/2 \rceil.$
+3. Por HI, las llamadas con $(S_1, S')$ y con $(S', S_2)$ devuelven *sí*.
+4. El ciclo prueba todos los estados $S'$, así que en este (o antes, en otro que sirva) devuelve *sí*.
 :::
 :::
 
-::: {.story .a3}
-::: {.card .media}
+::: {.grupo}
+[(⇒) Si Path devuelve *sí*, existe un camino de a lo más $L$ pasos.]{.dir}
+
+::: {.pasos}
+1. Devolvió *sí* con algún $S'$ cuyas dos llamadas devolvieron *sí*.
+2. Por HI, hay un camino de $S_1$ a $S'$ y otro de $S'$ a $S_2$, cada uno de a lo más $\lceil L/2 \rceil$ pasos.
+3. Unidos miden a lo más $2\lceil L/2 \rceil = L$ pasos. $\blacksquare$
+:::
+:::
+
+[Figura: el camino de $S_1$ a $S_2$ partido en $S'$, con tramos de a lo más $\lceil L/2 \rceil.$ Kleinberg y Tardos (2005, p. 542).]{.cite}
+
+[Siguiente]{.btn-arrow}
+:::
+
+:::
+
+## Análisis de espacio {#memoria}
+
+::: {.stage .l-deep .tall .amplio .path}
+
+::: {.card .media .a1}
 ```{=html}
 {{< include img/stack.svg >}}
 ```
 :::
 
-::: {.card .caption}
-::: {.who}
-![](img/icons/layers.svg){.ico}
-[Espacio · Teorema 9.8]{.pill .soft}
+::: {.a2 .title-slot .md}
 :::
 
-[“Solo hay una llamada activa por nivel: $n + 1$ marcos de $O(n + \log k)$ bits, en total $O\big(n(n + \log k)\big).$”]{.quote}
+::: {.card .a3}
+::: {.grupo}
+[Teorema 9.8 · espacio]{.kicker}
+
+$\textsf{Path}(S_1, S_2, L)$ usa espacio polinomial en $n$, $k$ y $\log L.$
+:::
+
+::: {.grupo}
+::: {.pasos}
+1. **Un marco** guarda $S_1$, $S_2$, $S'$ y el contador ($n$ bits cada uno), el exponente $j$ con $L = 2^j$ ($O(\log n)$ bits) y los bits $x$ y $y.$
+2. Revisar si un operador lleva de $S_1$ a $S_2$ recorre la entrada ($k$ operadores) con $O(n + \log k)$ bits más: **cada marco usa $O(n + \log k)$ bits.**
+3. **Una llamada activa por nivel:** al terminar, se borra su trabajo y solo queda su bit.
+4. **Profundidad:** $L$ baja de $2^n$ a $1$ dividiéndose entre $2$: hay $n + 1$ marcos a la vez.
+5. **Total:** $(n + 1) \cdot O(n + \log k) = O\big(n(n + \log k)\big)$ bits, más la entrada, que solo se lee. Como esta mide al menos $n$ y es proporcional a $k$, es polinomial en su tamaño. $\blacksquare$
 :::
 :::
 
+::: {.conclusion}
+[Conclusión: $\textsf{Planning} \in \mathsf{PSPACE}$]{.dir}
+
+Si hay plan, hay uno de a lo más $2^n - 1$ pasos (Teorema 9.7), así que basta decidir $\textsf{Path}(S_0, S^*, 2^n).$ Por la correctitud, Path decide la instancia; por este análisis, usa espacio polinomial. $\blacksquare$
 :::
 
-## Espacio a costa de tiempo {#tiempo}
-
-::: {.stage .l-stats}
-::: {.card .blue .a1}
-
-::: {.left}
-::: {.title-slot}
-:::
-
-::: {.lead}
-Path no guarda nada: tira el trabajo intermedio y lo recalcula. Es lo opuesto a la programación dinámica.
-:::
-
-::: {.mt-l .muted}
-$N(1) = 1$ y $N(L) \le 1 + 2^{n+1}\, N(L/2)$, por lo que $N(2^n) \le 2 \cdot 2^{n(n+1)}.$
-:::
+[Equivale a $S(L) \le p + S(\lceil L/2 \rceil)$, que da $O(\log L \cdot p).$ Kleinberg y Tardos (2005, pp. 542–543).]{.cite}
 
 [Siguiente]{.btn-arrow}
 :::
 
-::: {.card .inner}
-::: {.strip}
-```{=html}
-{{< include img/tradeoff.svg >}}
-```
-:::
-
-::: {.stats2}
-::: {}
-[$2^{O(n^2)}$]{.stat}
-
-[Tiempo]{.stat-label}
-
-[Exponencial: cada llamada cuesta tiempo polinomial, pero hay $2^{O(n^2)}$ llamadas.]{.stat-text}
-:::
-
-::: {}
-[$n + 1$]{.stat}
-
-[Marcos de pila]{.stat-label}
-
-[Cada uno de $O(n + \log k)$ bits: el espacio total es polinomial.]{.stat-text}
-:::
-:::
-:::
-
-:::
 :::
 
 ## Dureza y QSAT {#dureza}
