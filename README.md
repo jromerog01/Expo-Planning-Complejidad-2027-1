@@ -84,7 +84,7 @@ también necesita `img/` y `presentacion_files/`.
 
 ## 4. Exportar a PDF
 
-Ya hay un PDF listo: `presentacion/presentacion.pdf` (19 páginas, vectorial, igual al HTML).
+Ya hay un PDF listo: `presentacion/presentacion.pdf` (una página por diapositiva, vectorial, igual al HTML).
 Si cambias la presentación, vuelve a generarlo:
 
 **Opción A (recomendada, queda idéntico al HTML)** — necesita [Node.js](https://nodejs.org):

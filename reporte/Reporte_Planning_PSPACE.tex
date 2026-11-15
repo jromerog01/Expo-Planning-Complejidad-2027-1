@@ -36,6 +36,131 @@
 % \fieldlabel{TEXTO}: versal pequeña, gris, con tracking.
 \newcommand{\fieldlabel}[1]{{\portadasf\small\color{muted}\textls[110]{\MakeUppercase{#1}}}}
 
+% ---------- Títulos, subtítulos e índice (estilo de la portada) ----------
+% Mismo lenguaje visual de la portada: letra Latin Modern Sans
+% (\portadasf), colores ink / muted, versales con tracking (\textls)
+% y reglas delgadas de 0.6pt. Solo cambia el estilo, no el texto:
+% el índice y los marcadores del PDF conservan el título original.
+\usepackage{titlesec}
+\usepackage{titletoc}
+
+% Dentro de los títulos en versales, los nombres de clases (\PSPACE,
+% \PLANNING, \Path...) se escriben como texto en lugar de modo
+% matemático (\nombreMat usa \text dentro de matemáticas). Así quedan
+% en versales, con el mismo tamaño y el mismo tracking que el resto
+% del título. Fuera de los títulos, \nombreMat no cambia.
+% Es un comando robusto para que \MakeUppercase no lo expanda; si lo
+% expandiera, pondría en mayúsculas también el nombre de la familia de
+% letra (cmss -> CMSS) y la fuente dejaría de existir.
+\DeclareRobustCommand{\nombreMatTitulo}[1]{%
+  \mbox{\fontencoding{OT1}\fontfamily{cmss}\upshape\selectfont
+        \MakeUppercase{#1}}}
+
+% Secciones y sub-subsecciones: el título se muestra en versales con
+% tracking, como el nombre del curso en la portada.
+% El \begingroup/\endgroup hace que el cambio de \nombreMat sea local.
+\newcommand{\tituloseccion}[1]{%
+  \begingroup
+  \renewcommand{\nombreMat}[1]{\nombreMatTitulo{##1}}%
+  \textls[120]{\MakeUppercase{#1}}%
+  \endgroup}
+\newcommand{\titulosubsubseccion}[1]{%
+  \begingroup
+  \renewcommand{\nombreMat}[1]{\nombreMatTitulo{##1}}%
+  \textls[100]{\MakeUppercase{#1}}%
+  \endgroup}
+
+% Regla corta bajo cada sección: la misma que enmarca el título de la
+% portada (0.42 del ancho, 0.6pt, color ink).
+\newcommand{\reglatitulo}{%
+  \nointerlineskip
+  \vspace{0.5em}%
+  {\color{ink}\hrule width 0.42\linewidth height 0.6pt}%
+}
+
+% \section: número gris (muted) + título en versales, negritas y sans.
+\titleformat{\section}[hang]
+  {\portadasf\bfseries\fontsize{13}{16}\selectfont\color{ink}}
+  {\color{muted}\thesection}
+  {0.9em}
+  {\tituloseccion}
+  [\reglatitulo]
+\titlespacing*{\section}{0pt}{2.2em plus 0.3em minus 0.2em}{1.1em}
+
+% \subsection: sans en negritas, tamaño intermedio, número gris.
+\titleformat{\subsection}[hang]
+  {\portadasf\bfseries\fontsize{12}{15}\selectfont\color{ink}}
+  {\color{muted}\thesubsection}
+  {0.8em}
+  {}
+\titlespacing*{\subsection}{0pt}{1.8em plus 0.2em minus 0.1em}{0.6em}
+
+% \subsubsection: versales pequeñas con tracking, como las etiquetas
+% (\fieldlabel) de la portada.
+\titleformat{\subsubsection}[hang]
+  {\portadasf\bfseries\fontsize{9.5}{12}\selectfont\color{ink}}
+  {\color{muted}\thesubsubsection}
+  {0.8em}
+  {\titulosubsubseccion}
+\titlespacing*{\subsubsection}{0pt}{1.4em plus 0.2em minus 0.1em}{0.5em}
+
+% \paragraph: título en línea (run-in), sans en negritas.
+\titleformat{\paragraph}[runin]
+  {\portadasf\bfseries\small\color{ink}}
+  {}
+  {0pt}
+  {}
+\titlespacing*{\paragraph}{0pt}{1.0em plus 0.2em minus 0.1em}{0.6em}
+
+% --- Índice ---
+% Etiquetas numéricas y puntos guía en gris (muted); títulos y número
+% de página en tinta oscura (ink). El número de página es un enlace de
+% hyperref, por eso toma el color de los enlaces del índice (ink).
+
+% Secciones: negritas sans, número gris, sin puntos guía.
+\titlecontents{section}[0pt]
+  {\addvspace{1.0em}\portadasf\bfseries\color{ink}}
+  {\contentslabel[{\color{muted}\thecontentslabel}]{2.4em}}
+  {\hspace*{2.4em}}
+  {\hfill\contentspage}
+
+% Subsecciones: sans normal, sangradas, con puntos guía grises.
+\titlecontents{subsection}[2.4em]
+  {\portadasf\small\color{ink}}
+  {\contentslabel[{\color{muted}\thecontentslabel}]{2.6em}}
+  {}
+  {\color{muted}\titlerule*[0.5em]{.}\contentspage}
+
+% Sub-subsecciones: igual que las subsecciones, más pequeñas y sangradas.
+\titlecontents{subsubsection}[5.0em]
+  {\portadasf\footnotesize\color{ink}}
+  {\contentslabel[{\color{muted}\thecontentslabel}]{3.4em}}
+  {}
+  {\color{muted}\titlerule*[0.5em]{.}\contentspage}
+
+% ---------- Caja de problema de decisión (estilo de la portada) ----------
+% Fondo blanco, marco delgado de 0.6pt y encabezado relleno en el azul
+% grisáceo de la portada (muted), con el título en blanco, en versales
+% sans con tracking. Esquinas rectas.
+\tcbset{
+  caja portada/.style={
+    colback=white,
+    colframe=muted,
+    boxrule=0.6pt,
+    arc=0pt,
+    colbacktitle=muted,
+    coltitle=white,
+    fonttitle=\portadasf\bfseries\small,
+    titlerule=0.6pt,
+    left=10pt, right=10pt, top=8pt, bottom=8pt,
+    toptitle=4pt, bottomtitle=4pt,
+  }
+}
+
+% Etiquetas dentro de la caja ("Entrada:", "Pregunta:"): sans en
+% negritas, color ink, como los títulos del documento.
+\newcommand{\etiquetacaja}[1]{{\portadasf\bfseries\color{ink}#1}}
+
 \renewcommand{\contentsname}{Índice}
 \renewcommand{\abstractname}{Resumen}
 \renewcommand{\figurename}{Figura}
@@ -186,7 +311,9 @@
     \vfill
 \end{titlepage}
 
-\tableofcontents
+% Los enlaces del índice van en tinta oscura (ink) en lugar de azul,
+% para respetar el estilo de la portada. Solo afecta al índice.
+{\hypersetup{linkcolor=ink}\tableofcontents}
 \newpage
 
 % =====================================================================
@@ -201,17 +328,17 @@ $\coNP$: la clase $\PSPACE$
 (Kleinberg \& Tardos, 2005, p.~531).
 
 
-\textcolor{azulCambios}{ Uno de los problemas más representativos de PSPACE es el problema de planeación (Planning). De manera general, consiste en determinar si, partiendo de un estado inicial, existe una secuencia de acciones permitidas que permita alcanzar un estado objetivo. }Es el modelo abstracto detrás de la logística de
+ Uno de los problemas más representativos de PSPACE es el problema de planeación (Planning). De manera general, consiste en determinar si, partiendo de un estado inicial, existe una secuencia de acciones permitidas que permita alcanzar un estado objetivo. Es el modelo abstracto detrás de la logística de
 una operación de socorro, de un robot que acomoda cajas en un
 almacén o de los solitarios como el rompecabezas de quince
-(Kleinberg \& Tardos, 2005, pp.~533--534). \textcolor{azulCambios}{
+(Kleinberg \& Tardos, 2005, pp.~533--534). 
 Otro ejemplo es la planeación de un viaje con escalas en el que
 ciertos vuelos solo pueden tomarse con documentos que se tramitan
 en ciertas ciudades, como una visa. Ya no basta con encontrar
 conexiones entre ciudades: cada acción cambia las condiciones
 del viajero y, con ello, las acciones que tiene disponibles
 (véase la sección~\ref{sec:vuelos}).
-}
+
 
 Lo que hace especial a \PLANNING{} es que
 \emph{los planes pueden ser exponencialmente largos}, de modo que
@@ -365,12 +492,12 @@ $\C=\{c_1,\dots,c_n\}$.
 es un subconjunto $S\subseteq\C$ que representa las
 condiciones que se cumplen en un momento dado.
 
-\textcolor{azulCambios}{
+
 Cada condición puede ser verdadera o falsa, por lo que
 existen $2^{n}$ configuraciones posibles, correspondientes
 a todas las combinaciones de valores verdaderos y falsos
 de las $n$ condiciones.
-}
+
 
 \item Un conjunto de \emph{operadores} o \emph{acciones}
 $\{O_1,\dots,O_k\}$. Cada $O_i$ tiene una
@@ -429,11 +556,10 @@ de la sección~\ref{sec:aplicaciones}.
 \section{Problema de decisión \PLANNING}
 
 \begin{tcolorbox}[
-    colback=green!4,
-    colframe=green!50!black,
-    title=\PLANNING
+    caja portada,
+    title=\tituloseccion{\PLANNING}
 ]
-\textbf{Entrada:} un conjunto de condiciones
+\etiquetacaja{Entrada:} un conjunto de condiciones
 $\C=\{c_1,\dots,c_n\}$, un conjunto de operadores
 o acciones $O_1,\dots,O_k$ con sus respectivas listas
 de prerrequisitos, adición y eliminación
@@ -441,7 +567,7 @@ $(P_i,A_i,D_i)$, una configuración inicial
 $S_0\subseteq\C$ y una configuración meta
 $S^{*}\subseteq\C$.\\
 
-\textbf{Pregunta:} ¿existe una secuencia de operadores
+\etiquetacaja{Pregunta:} ¿existe una secuencia de operadores
 $O_{i_1},\dots,O_{i_m}$ tal que, empezando en $S_0$,
 cada uno sea aplicable y se llegue exactamente a
 $S^{*}$ (es decir, se cumplen precisamente las
@@ -453,22 +579,22 @@ El tamaño de la entrada es polinomial en $n$, $k$
 y la longitud de las listas; en particular,
 es al menos $n$.
 
-\textcolor{azulCambios}{
+
 Además, como los $k$ operadores se describen explícitamente,
 el tamaño de la entrada también es al menos proporcional
 a $k$.
-}
+
 
 Un \emph{plan} es una secuencia de operadores que
 permite llegar desde la configuración inicial hasta la meta.
 
 
-\textcolor{azulCambios}{
+
 Sin embargo, \PLANNING{} es un problema de decisión,
 por lo que únicamente nos interesa determinar si existe
 dicho plan, sin necesidad de construirlo o almacenarlo
 completo.
-}
+
 
 \begin{observacion}[Una grafica implícito]
 
@@ -487,19 +613,19 @@ Aunque $\mathcal{G}$ puede tener un número exponencial
 de nodos, está descrito de forma compacta mediante
 $n$ condiciones y $k$ operadores.
 
-\textcolor{azulCambios}{
+
 Esto significa que no necesitamos almacenar todas
 las configuraciones ni todas las aristas para conocer
 las transiciones posibles, ya que podemos calcularlas
 a partir de los operadores.
-}
 
-\textcolor{azulCambios}{
+
+
 Por lo tanto, construir explícitamente la grafica completa
 puede requerir espacio exponencial, lo que motiva la
 búsqueda de un algoritmo capaz de decidir si existe
 un camino utilizando únicamente espacio polinomial.
-}
+
 
 \end{observacion}
 
@@ -510,14 +636,14 @@ un camino utilizando únicamente espacio polinomial.
 \newpage
 \section{Planes de longitud exponencial y el procedimiento \Path}
 
-\textcolor{azulCambios}{
+
 Antes de demostrar la complejidad de \PLANNING{}, es necesario
 entender por qué los planes pueden ser tan largos y por qué
 los algoritmos tradicionales de búsqueda pueden requerir
 demasiada memoria. Después presentaremos el procedimiento
 \Path, basado en la técnica de Savitch, que permite decidir
 si existe un plan sin almacenarlo completo.
-}
+
 
 \subsection{Planes de longitud exponencial}
 
@@ -627,12 +753,12 @@ La pregunta es entonces si se puede \emph{decidir}
 la existencia de un plan sin tener nunca la
 solución completa a la vista.
 
-\textcolor{azulCambios}{
+
 Esto no demuestra que \PLANNING{} esté fuera de
 $\NP$, sino que una secuencia explícita de acciones
 no siempre constituye un certificado de tamaño
 polinomial.
-}
+
 \end{observacion}
 
 \subsection{Enfoques exponenciales}\label{sec:enfoquesexp}
@@ -672,7 +798,7 @@ $\lceil L/2\rceil$ pasos cada una, unidas por un
 \emph{punto medio} $S'$
 (Kleinberg \& Tardos, 2005, p.~541).
 
-\textcolor{azulCambios}{
+
 El procedimiento prueba las configuraciones posibles
 como puntos medios, una por una. Para cada candidata,
 primero comprueba si existe un camino desde $S_1$
@@ -681,16 +807,17 @@ $S_2$. Si ambas respuestas son afirmativas, existe
 un camino entre las configuraciones originales.
 Al terminar cada llamada recursiva se reutiliza su
 memoria, conservando únicamente el resultado necesario.
-}
+
 
 \begin{tcolorbox}[
-colback=gray!5,
-colframe=gray!60,
-title={Procedimiento $\Path(S_1,S_2,L)$
-(Kleinberg \& Tardos, 2005, p.~542)}
+caja portada,
+% Nombre del procedimiento en versales; la cita va en minúsculas,
+% sin negritas y alineada a la derecha.
+title={\tituloseccion{Procedimiento $\Path(S_1,S_2,L)$}
+\hfill{\mdseries(Kleinberg \& Tardos, 2005, p.~542)}}
 ]
 \begin{algorithmic}[1]
-\Statex \textbf{Entrada:} configuraciones $S_1,S_2$
+\Statex \etiquetacaja{Entrada:} configuraciones $S_1,S_2$
 y un entero $L$ (potencia de $2$).
 
 \If{$L=1$}
@@ -745,13 +872,13 @@ exponencialmente grande: $\log L=n$.
 % =====================================================================
 \section{Demostración de que \PLANNING{} pertenece a $\PSPACE$}
 
-\textcolor{azulCambios}{
+
 Para demostrar que \PLANNING{} pertenece a $\PSPACE$,
 necesitamos justificar dos propiedades del procedimiento
 \Path: primero, que responde correctamente si existe
 un plan y, segundo, que utiliza una cantidad de
 memoria polinomial respecto al tamaño de la entrada.
-}
+
 
 \subsection{Correctitud}
 
@@ -857,9 +984,9 @@ de la recursión es $n+1$.
 El espacio total es
 $O\bigl(n(n+\log k)\bigr)$ bits,
 más la entrada (que se lee pero no se copia).
-\textcolor{azulCambios}{Como el tamaño de la entrada
+Como el tamaño de la entrada
 es al menos $n$ y al menos proporcional a $k$,
-esta cota es polinomial en el tamaño de la entrada.}
+esta cota es polinomial en el tamaño de la entrada.
 
 \subsection{Tiempo de ejecución}
 
@@ -920,7 +1047,7 @@ instancia y usa espacio polinomial.
 \section{Demostración de la $\PSPACE$-completitud de
 \PLANNING{}}\label{sec:completitud}
 
-{\color{azulCambios}
+
 En la sección anterior demostramos que
 $\PLANNING\in\PSPACE$. Sin embargo, para concluir
 que es $\PSPACE$-completo también debemos
@@ -929,7 +1056,7 @@ demostrar que es $\PSPACE$-difícil.
 Esto requiere mostrar que cualquier problema
 de $\PSPACE$ puede reducirse en tiempo polinomial
 a una instancia de \PLANNING{}.
-}
+
 
 \subsection{$\PSPACE$-dificultad y relación con $\QSAT$}
 
@@ -961,10 +1088,10 @@ de dureza codifica una máquina de Turing mediante
 operadores STRIPS
 (véase la descripción en Edelkamp et~al., 2026).
 
-\textcolor{azulCambios}{
+
 La dureza se demuestra con la reducción de la
 siguiente sección.
-}
+
 
 \subsection{Reducción desde máquinas de Turing de espacio polinomial}
 \label{sec:reduccion}
@@ -996,12 +1123,12 @@ antes de aceptar, $M$ borra la cinta
 la cabeza a la celda~$1$; esto no aumenta
 el espacio.
 
-\textcolor{azulCambios}{
+
 También sin pérdida de generalidad, $M$ nunca intenta
 moverse a la izquierda desde la celda~$1$ ni a la derecha
 desde la celda~$s$. Por eso basta definir operadores
 para las posiciones $i$ con $1\le i+D\le s$.
-}
+
 
 Así, la configuración aceptora es única,
 lo que permite expresarla como la meta
@@ -1155,7 +1282,7 @@ todo $A\in\PSPACE$.
 
 \subsection{Conclusión: $\PSPACE$-completitud}
 
-{\color{azulCambios}
+
 La reducción anterior demuestra que
 \PLANNING{} es $\PSPACE$-difícil, pues permite
 transformar cualquier problema de $\PSPACE$
@@ -1166,7 +1293,7 @@ Como también demostramos que
 $\PLANNING\in\PSPACE$, se cumplen las dos
 condiciones necesarias para establecer
 su $\PSPACE$-completitud.
-}
+
 
 \begin{teorema}[Bylander, 1994]
 $\PLANNING{}$ es $\PSPACE$-completo.
@@ -1337,7 +1464,7 @@ El ejemplo del libro: para coordinar una operación de ayuda en un desastre, qui
 
 
 
-{\color{azulCambios}
+
 \subsection{Vuelos con escalas y requisitos de visa}
 \label{sec:vuelos}
 
@@ -1454,7 +1581,7 @@ Este ejemplo ilustra cómo las condiciones cambian las
 acciones disponibles, pero no demuestra por sí mismo la
 $\PSPACE$-dificultad, que es una propiedad del problema
 general.
-}
+
 
 
 
@@ -1560,11 +1687,11 @@ recurren a heurísticas y a la estructura del dominio, no a garantías de peor c
 \begin{list}{}{\setlength{\leftmargin}{1.27cm}\setlength{\itemindent}{-1.27cm}\setlength{\labelwidth}{0pt}\setlength{\labelsep}{0pt}\setlength{\itemsep}{6pt}\setlength{\parsep}{0pt}}
 \sloppy
 
-\item \textcolor{azulCambios}{Bylander, T. (1994). The computational complexity of propositional STRIPS planning. \textit{Artificial Intelligence, 69}(1--2), 165--204.}
+\item Bylander, T. (1994). The computational complexity of propositional STRIPS planning. \textit{Artificial Intelligence, 69}(1--2), 165--204.
 
-\item \textcolor{azulCambios}{Culberson, J. (1997). \textit{Sokoban is PSPACE-complete} (Technical Report TR 97-02). Department of Computing Science, University of Alberta.}
+\item Culberson, J. (1997). \textit{Sokoban is PSPACE-complete} (Technical Report TR 97-02). Department of Computing Science, University of Alberta.
 
-\item \textcolor{azulCambios}{Edelkamp, S., Fink, J., Gregor, P., Jonsson, A., \& Nebel, B. (2026). \textit{Intermediate results on the complexity of STRIPS$_{1}^{1}$} [Preprint]. arXiv. https://arxiv.org/abs/2602.08708}
+\item Edelkamp, S., Fink, J., Gregor, P., Jonsson, A., \& Nebel, B. (2026). \textit{Intermediate results on the complexity of STRIPS$_{1}^{1}$} [Preprint]. arXiv. https://arxiv.org/abs/2602.08708
 
 \item Erol, K., Nau, D. S., \& Subrahmanian, V. S. (1995). Complexity, decidability and undecidability results for domain-independent planning. \textit{Artificial Intelligence, 76}(1--2), 75--88.
 
