@@ -4,5 +4,5 @@ services:
     image: presentacion-planning:latest
     container_name: presentacion-planning
     ports:
-      - "9090:90"   # http://IP-del-homelab:8080
+      - "9090:80"   # http://IP-del-homelab:9090 (nginx escucha en el 80 dentro del contenedor)
     restart: unless-stopped
