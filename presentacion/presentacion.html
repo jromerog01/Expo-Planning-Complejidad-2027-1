@@ -249,7 +249,6 @@
 <p><span class="formula mt-m"><span class="math inline">\(\mathsf{P} \subseteq \mathsf{NP} \subseteq \mathsf{PSPACE} \subseteq \mathsf{EXPTIME}\)</span></span></p>
 <div class="clean mt-m">
 <ul>
-<li><strong>El espacio se reutiliza; el tiempo no.</strong> Por ejemplo, al terminar una llamada recursiva basta guardar su resultado y borrar todos sus cálculos intermedios: esa memoria queda libre para la siguiente llamada.</li>
 <li><strong>Contiene a <span class="math inline">\(\mathsf{NP}\)</span> y <span class="math inline">\(\mathsf{co\text{-}NP}\)</span>.</strong> Un problema de <span class="math inline">\(\mathsf{NP}\)</span> se resuelve revisando todas las posibles soluciones, una por una, en el mismo espacio: si una no sirve, se borra y esa memoria se usa para la siguiente. Tarda mucho, pero nunca ocupa más memoria que la de revisar una sola. Para <span class="math inline">\(\mathsf{co\text{-}NP}\)</span> basta invertir la respuesta.</li>
 <li><strong>Está contenida en <span class="math inline">\(\mathsf{EXPTIME}\)</span></strong>, porque con espacio polinomial solo hay un número exponencial de configuraciones distintas. No se sabe si alguna contención es estricta.</li>
 </ul>
@@ -467,7 +466,7 @@
 <div class="clean mt-s">
 <ul>
 <li><strong>Escalas:</strong> solo existen ciertos vuelos. Ciudad de México <span class="math inline">\(\to\)</span> Los Ángeles <span class="math inline">\(\to\)</span> Madrid, Madrid <span class="math inline">\(\leftrightarrow\)</span> París y Madrid <span class="math inline">\(\to\)</span> Tokio.</li>
-<li><strong>Visas:</strong> el vuelo a Los Ángeles exige visa estadounidense, que se tramita en Ciudad de México; el vuelo a Tokio exige visa japonesa, que solo se tramita en París.</li>
+<li><strong>Visas:</strong> el vuelo a Los Ángeles exige visa estadounidense, que se tramita en Ciudad de México. El vuelo a Tokio exige visa japonesa, que solo se tramita en París.</li>
 </ul>
 </div>
 <p><span class="btn-arrow">Siguiente</span></p>
@@ -732,7 +731,7 @@
 <div class="card a3">
 <div class="grupo">
 <p><span class="kicker">Ejemplo · 4 focos</span></p>
-<p>Ahora hay <span class="math inline">\(4\)</span> focos y <span class="math inline">\(4\)</span> botones. El botón <span class="math inline">\(i\)</span> solo funciona si los focos <span class="math inline">\(1, \dots, i-1\)</span> están encendidos; enciende el foco <span class="math inline">\(i\)</span> y apaga los anteriores.</p>
+<p>Ahora hay <span class="math inline">\(4\)</span> focos y <span class="math inline">\(4\)</span> botones. El botón <span class="math inline">\(i\)</span> solo funciona si los focos <span class="math inline">\(1, \dots, i-1\)</span> están encendidos. Enciende el foco <span class="math inline">\(i\)</span> y apaga los anteriores.</p>
 </div>
 <div class="clean mt-m">
 <ul>
@@ -759,7 +758,7 @@
 <ul>
 <li><strong>Entrada:</strong> un estado inicial, un estado final y un conjunto de acciones, cada una con sus requisitos y su efecto.</li>
 <li><strong>Acción válida:</strong> solo puede aplicarse si sus requisitos se cumplen en el estado actual, y al aplicarla el estado cambia.</li>
-<li><strong>Respuesta:</strong> <em>sí</em>, si existe una secuencia de acciones válidas que llegue al estado final; <em>no</em>, en caso contrario.</li>
+<li><strong>Respuesta:</strong> <em>sí</em>, si existe una secuencia de acciones válidas que llegue al estado final, y <em>no</em> en caso contrario.</li>
 <li><strong>Dificultad:</strong> no basta con avanzar, porque ciertas acciones llevan a estados atascados, donde ya no queda ninguna acción válida.</li>
 </ul>
 </div>
@@ -962,96 +961,6 @@
 <li>El resultado es el estado nuevo, como en el ejemplo del botón 2 de los focos.</li>
 </ul>
 </div>
-</div>
-<p><span class="btn-arrow">Siguiente</span></p>
-</div>
-</div>
-</section>
-<section id="grafica" class="slide level2">
-<h2>La gráfica implícita</h2>
-<div class="stage l-map">
-<div class="card media a1">
-<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewbox="0 0 740 210" role="img" aria-label="Grafica implícita de configuraciones con un camino de S0 a S*">
-  <line x1="55" y1="41" x2="73" y2="96" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="133" y1="39" x2="199" y2="45" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="254" y1="48" x2="323" y2="47" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="254" y1="48" x2="261" y2="111" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="323" y1="47" x2="392" y2="40" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="392" y1="40" x2="471" y2="55" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="392" y1="40" x2="408" y2="102" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="471" y1="55" x2="532" y2="42" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="471" y1="55" x2="530" y2="99" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="532" y1="42" x2="615" y2="57" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="532" y1="42" x2="530" y2="99" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="615" y1="57" x2="682" y2="46" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="615" y1="57" x2="616" y2="104" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="73" y1="96" x2="139" y2="101" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="73" y1="96" x2="59" y2="158" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="188" y1="97" x2="261" y2="111" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="188" y1="97" x2="191" y2="163" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="261" y1="111" x2="342" y2="158" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="327" y1="107" x2="408" y2="102" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="327" y1="107" x2="342" y2="158" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="327" y1="107" x2="418" y2="154" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="408" y1="102" x2="475" y2="96" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="408" y1="102" x2="471" y2="167" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="475" y1="96" x2="530" y2="99" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="475" y1="96" x2="471" y2="167" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="530" y1="99" x2="616" y2="104" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="616" y1="104" x2="675" y2="107" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="675" y1="107" x2="687" y2="163" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="342" y1="158" x2="418" y2="154" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="418" y1="154" x2="471" y2="167" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="471" y1="167" x2="532" y2="162" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="532" y1="162" x2="598" y2="165" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <line x1="598" y1="165" x2="687" y2="163" stroke="#fff" stroke-opacity=".75" stroke-width="2"></line>
-  <path d="M73 96 L133 39 L199 45 L261 111 L342 158 L418 154 L475 96 L532 42 L616 104 L675 107" fill="none" stroke="#1f4a7d" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></path>
-  <circle cx="55" cy="41" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="133" cy="39" r="9" fill="#1f4a7d" stroke="#fff" stroke-width="3"></circle>
-  <circle cx="199" cy="45" r="9" fill="#1f4a7d" stroke="#fff" stroke-width="3"></circle>
-  <circle cx="254" cy="48" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="323" cy="47" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="392" cy="40" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="471" cy="55" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="532" cy="42" r="9" fill="#1f4a7d" stroke="#fff" stroke-width="3"></circle>
-  <circle cx="615" cy="57" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="682" cy="46" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="139" cy="101" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="188" cy="97" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="261" cy="111" r="9" fill="#1f4a7d" stroke="#fff" stroke-width="3"></circle>
-  <circle cx="327" cy="107" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="408" cy="102" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="475" cy="96" r="9" fill="#1f4a7d" stroke="#fff" stroke-width="3"></circle>
-  <circle cx="530" cy="99" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="616" cy="104" r="9" fill="#1f4a7d" stroke="#fff" stroke-width="3"></circle>
-  <circle cx="59" cy="158" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="137" cy="166" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="191" cy="163" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="267" cy="170" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="342" cy="158" r="9" fill="#1f4a7d" stroke="#fff" stroke-width="3"></circle>
-  <circle cx="418" cy="154" r="9" fill="#1f4a7d" stroke="#fff" stroke-width="3"></circle>
-  <circle cx="471" cy="167" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="532" cy="162" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="598" cy="165" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <circle cx="687" cy="163" r="7" fill="#fff" fill-opacity=".95"></circle>
-  <rect class="glass" x="41" y="74" width="64" height="44" rx="14"></rect><foreignobject x="-187.0" y="78.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(S_0\)</div></foreignobject>
-  <rect x="643" y="85" width="64" height="44" rx="14" fill="url(#g-ink)" filter="url(#ds)"></rect><foreignobject x="415.0" y="89.1" width="520" height="36.1"><div xmlns="http://www.w3.org/1999/xhtml" class="fo t-white" style="font-size:19px;font-weight:700;justify-content:center;height:36.1px">\(S^*\)</div></foreignobject>
-</svg>
-
-</div>
-<div class="card blue a2">
-<p><span class="kicker">Planning como camino</span></p>
-<div class="title-slot sm">
-
-</div>
-</div>
-<div class="card a3">
-<p><span class="h-card">Cada estado es un nodo y cada operador aplicable es una flecha entre dos estados.</span></p>
-<div class="clean mt-s">
-<ul>
-<li><strong>Implícita:</strong> la gráfica representa las <span class="math inline">\(2^n\)</span> combinaciones posibles de hechos, pero no necesitamos construirla explícitamente: podemos calcular las transiciones utilizando los operadores.</li>
-<li><strong>Pregunta:</strong> ¿existe un camino de <span class="math inline">\(S_0\)</span> a <span class="math inline">\(S^*\)</span>, es decir, una secuencia de operadores, cada uno aplicable?</li>
-</ul>
 </div>
 <p><span class="btn-arrow">Siguiente</span></p>
 </div>
@@ -1614,9 +1523,10 @@
 <div class="pasos">
 <ol type="1">
 <li>Sea <span class="math inline">\(N(L)\)</span> el número de llamadas que genera <span class="math inline">\(\textsf{Path}(S_1, S_2, L).\)</span> Con <span class="math inline">\(L = 1\)</span> no hay llamadas internas: <span class="math inline">\(N(1) = 1.\)</span></li>
-<li>Si <span class="math inline">\(L &gt; 1\)</span>, el ciclo recorre <span class="math inline">\(2^n\)</span> estados <span class="math inline">\(S'\)</span> y hace a lo más <span class="math inline">\(2\)</span> llamadas con <span class="math inline">\(L/2\)</span> por cada uno: <span class="math inline">\(N(L) \le 1 + 2^{n+1}\, N(L/2).\)</span></li>
-<li>Con <span class="math inline">\(a = 2^{n+1}\)</span> y <span class="math inline">\(L = 2^j\)</span>, al desenrollar: <span class="math inline">\(N(2^j) \le 1 + a + \cdots + a^j \le 2a^j\)</span>, porque <span class="math inline">\(a \ge 2.\)</span> Para <span class="math inline">\(j = n\)</span> resulta <span class="math inline">\(N(2^n) \le 2^{n(n+1)+1}.\)</span></li>
-<li>Cada llamada cuesta tiempo polinomial, así que el tiempo total es <span class="math inline">\(2^{O(n^2)}\)</span>: exponencial, pero con espacio polinomial.</li>
+<li>Si <span class="math inline">\(L &gt; 1\)</span>: <span class="math inline">\(N(L) \le 1 + 2^{n+1}\, N(L/2).\)</span> El <span class="math inline">\(1\)</span> es la llamada actual, y <span class="math inline">\(2^{n+1} = 2^n \cdot 2\)</span> sale de probar <span class="math inline">\(2^n\)</span> estados intermedios <span class="math inline">\(S'\)</span> con dos llamadas recursivas por cada uno.</li>
+<li>Con <span class="math inline">\(a = 2^{n+1}\)</span> y <span class="math inline">\(L = 2^j\)</span>, al desarrollar sumamos las llamadas de cada nivel del árbol: <span class="math inline">\(N(2^j) \le 1 + a + a^2 + \cdots + a^j.\)</span> Como <span class="math inline">\(a \ge 2\)</span>, esta suma geométrica cumple <span class="math inline">\(N(2^j) \le 2a^j.\)</span></li>
+<li>Con <span class="math inline">\(j = n\)</span>: <span class="math inline">\(N(2^n) \le 2\,(2^{n+1})^n = 2 \cdot 2^{n(n+1)} = 2^{n(n+1)+1}\)</span>, una cota superior del número de llamadas.</li>
+<li>Cada llamada hace trabajo polinomial en el tamaño de la instancia, así que <span class="math inline">\(T(n) = 2^{O(n^2)}\)</span>: exponencial, pero con espacio polinomial.</li>
 </ol>
 </div>
 <p><span class="cite">Es lo opuesto a la programación dinámica: se borra todo y se recalcula. Kleinberg y Tardos (2005, p.&nbsp;543).</span></p>
@@ -1774,17 +1684,17 @@
 <div class="grupo">
 <div class="pasos">
 <ol type="1">
-<li><strong>Un marco</strong> guarda <span class="math inline">\(S_1\)</span>, <span class="math inline">\(S_2\)</span>, <span class="math inline">\(S'\)</span> y el contador (<span class="math inline">\(n\)</span> bits cada uno), el exponente <span class="math inline">\(j\)</span> con <span class="math inline">\(L = 2^j\)</span> (<span class="math inline">\(O(\log n)\)</span> bits) y los bits <span class="math inline">\(x\)</span> y <span class="math inline">\(y.\)</span></li>
-<li>Revisar si un operador lleva de <span class="math inline">\(S_1\)</span> a <span class="math inline">\(S_2\)</span> recorre la entrada (<span class="math inline">\(k\)</span> operadores) con <span class="math inline">\(O(n + \log k)\)</span> bits más: <strong>cada marco usa <span class="math inline">\(O(n + \log k)\)</span> bits.</strong></li>
-<li><strong>Una llamada activa por nivel:</strong> al terminar, se borra su trabajo y solo queda su bit.</li>
-<li><strong>Profundidad:</strong> <span class="math inline">\(L\)</span> baja de <span class="math inline">\(2^n\)</span> a <span class="math inline">\(1\)</span> dividiéndose entre <span class="math inline">\(2\)</span>: hay <span class="math inline">\(n + 1\)</span> marcos a la vez.</li>
-<li><strong>Total:</strong> <span class="math inline">\((n + 1) \cdot O(n + \log k) = O\big(n(n + \log k)\big)\)</span> bits, más la entrada, que solo se lee. Como esta mide al menos <span class="math inline">\(n\)</span> y es proporcional a <span class="math inline">\(k\)</span>, es polinomial en su tamaño. <span class="math inline">\(\blacksquare\)</span></li>
+<li><strong>Un marco</strong> guarda <span class="math inline">\(S_1\)</span>, <span class="math inline">\(S_2\)</span>, <span class="math inline">\(S'\)</span> y el contador que enumera los <span class="math inline">\(2^n\)</span> estados de <span class="math inline">\(0\)</span> a <span class="math inline">\(2^n - 1\)</span> (<span class="math inline">\(n\)</span> bits cada uno), el exponente <span class="math inline">\(j\)</span> con <span class="math inline">\(L = 2^j\)</span> (<span class="math inline">\(O(\log n)\)</span> bits), los bits <span class="math inline">\(x\)</span> y <span class="math inline">\(y\)</span> (<span class="math inline">\(O(1)\)</span>) y el índice del operador que se revisa (<span class="math inline">\(O(\log k)\)</span> bits: basta su posición, la entrada se consulta sin copiarla).</li>
+<li><strong>Suma:</strong> <span class="math inline">\(4n + O(\log n) + O(\log k) + O(1)\)</span>. Como <span class="math inline">\(\log n\)</span> crece más lento que <span class="math inline">\(n\)</span>, <strong>cada marco usa <span class="math inline">\(O(n + \log k)\)</span> bits.</strong></li>
+<li><strong>Profundidad:</strong> <span class="math inline">\(L\)</span> se divide entre <span class="math inline">\(2\)</span> en cada nivel, <span class="math inline">\(2^n \to 2^{n-1} \to \cdots \to 1\)</span>: hay <span class="math inline">\(n + 1\)</span> niveles. Por ejemplo, con <span class="math inline">\(n = 3\)</span>: <span class="math inline">\(8 \to 4 \to 2 \to 1\)</span>, cuatro niveles.</li>
+<li><strong>Una llamada activa por nivel:</strong> el árbol tiene un número exponencial de llamadas, pero las ramas se ejecutan una tras otra y la memoria de una rama terminada se reutiliza. La pila mide <span class="math inline">\(O(n).\)</span></li>
+<li><strong>Total:</strong> <span class="math inline">\((n + 1) \cdot O(n + \log k) = O\big(n(n + \log k)\big) = O(n^2 + n \log k)\)</span> bits. La entrada mide al menos <span class="math inline">\(n\)</span> e incluye los <span class="math inline">\(k\)</span> operadores, así que es polinomial en su tamaño. <span class="math inline">\(\blacksquare\)</span></li>
 </ol>
 </div>
 </div>
 <div class="conclusion">
 <p><span class="dir">Conclusión: <span class="math inline">\(\textsf{Planning} \in \mathsf{PSPACE}\)</span></span></p>
-<p>Si hay plan, hay uno de a lo más <span class="math inline">\(2^n - 1\)</span> pasos (Teorema 9.7), así que basta decidir <span class="math inline">\(\textsf{Path}(S_0, S^*, 2^n).\)</span> Por la correctitud, Path decide la instancia; por este análisis, usa espacio polinomial. <span class="math inline">\(\blacksquare\)</span></p>
+<p>Si hay plan, hay uno de a lo más <span class="math inline">\(2^n - 1\)</span> pasos (Teorema 9.7), así que basta decidir <span class="math inline">\(\textsf{Path}(S_0, S^*, 2^n).\)</span> Por la correctitud, Path decide la instancia y, por este análisis, usa espacio polinomial. <span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <p><span class="cite">Equivale a <span class="math inline">\(S(L) \le p + S(\lceil L/2 \rceil)\)</span>, que da <span class="math inline">\(O(\log L \cdot p).\)</span> Kleinberg y Tardos (2005, pp.&nbsp;542–543).</span></p>
 <p><span class="btn-arrow">Siguiente</span></p>
@@ -1834,7 +1744,7 @@
 <div class="title-slot md">
 
 </div>
-<p>El libro sugiere reducir desde QSAT sin desarrollarlo; aquí usamos una reducción directa desde máquinas de Turing.</p>
+<p>El libro sugiere reducir desde QSAT sin desarrollarlo. Aquí usamos una reducción directa desde máquinas de Turing.</p>
 <p><span class="btn-arrow">Siguiente</span></p>
 </div>
 </div>
@@ -2005,7 +1915,7 @@
 
 </div>
 <div class="lead">
-<p>Path es correcto y usa espacio polinomial; con la dureza, da la completitud.</p>
+<p>Path es correcto y usa espacio polinomial. Con la dureza, da la completitud.</p>
 </div>
 <p><span class="btn-arrow">Siguiente</span></p>
 </div>
@@ -2037,7 +1947,7 @@
 </div>
 <div class="card a2">
 <div class="strip">
-<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewbox="0 0 740 210" role="img" aria-label="Grafica de configuraciones del contador de 2 bits">
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewbox="0 0 740 210" role="img" aria-label="Gráfica de configuraciones del contador de 2 bits">
   <g font-size="15" font-weight="700" fill="#1f4a7d" text-anchor="middle">
     <path class="edge" d="M168 112 H236"></path><foreignobject x="-58.0" y="80.3" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:15px;font-weight:700;justify-content:center;height:28.5px;color:#1f4a7d">\(O_1\)</div></foreignobject>
     <path class="edge" d="M352 112 H420"></path><foreignobject x="126.0" y="80.3" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:15px;font-weight:700;justify-content:center;height:28.5px;color:#1f4a7d">\(O_2\)</div></foreignobject>
@@ -2058,7 +1968,7 @@
 
 </div>
 <div class="txt">
-<p><span class="h-card">La grafica que el algoritmo nunca construye</span></p>
+<p><span class="h-card">La gráfica que el algoritmo nunca construye</span></p>
 <p>Plan mínimo de <span class="math inline">\(3\)</span> pasos: <span class="math inline">\(\varnothing \to \{c_1\} \to \{c_2\} \to \{c_1, c_2\}.\)</span></p>
 </div>
 </div>
@@ -2199,8 +2109,8 @@
 <p><span class="stat"><span class="math inline">\(2^{O(n)}\)</span></span></p>
 <div class="clean">
 <ul>
-<li>Construye la grafica y aplica BFS o DFS.</li>
-<li>Es el más rápido: polinomial en el tamaño de la grafica.</li>
+<li>Construye la gráfica y aplica BFS o DFS.</li>
+<li>Es el más rápido: polinomial en el tamaño de la gráfica.</li>
 <li>Inviable en memoria para <span class="math inline">\(n\)</span> grande.</li>
 </ul>
 </div>
@@ -2232,7 +2142,7 @@
 <div class="title-slot md">
 
 </div>
-<p>Explorar la grafica es rápido pero exige memoria exponencial; Path ahorra memoria a costa de tiempo; en la práctica se usan heurísticas y la estructura de cada dominio.</p>
+<p>Explorar la gráfica es rápido pero exige memoria exponencial. Path ahorra memoria a costa de tiempo, y en la práctica se usan heurísticas y la estructura de cada dominio.</p>
 <p><span class="btn-arrow">Siguiente</span></p>
 </div>
 </div>
@@ -2516,8 +2426,8 @@
 <p><span class="proof-title"><em>Demostración</em>. </span><span class="kicker">Cada operador es indispensable</span></p>
 <div class="clean">
 <ul>
-<li><span class="math inline">\(c_5\)</span> solo la agrega <span class="math inline">\(O_7\)</span>; <span class="math inline">\(O_7\)</span> exige <span class="math inline">\(c_8\)</span>, que solo agrega <span class="math inline">\(O_5\)</span>; <span class="math inline">\(O_5\)</span> exige <span class="math inline">\(c_4\)</span>, que solo agrega <span class="math inline">\(O_4.\)</span></li>
-<li><span class="math inline">\(O_4\)</span> exige <span class="math inline">\(c_3\)</span>. Antes de <span class="math inline">\(O_4\)</span> solo <span class="math inline">\(O_3\)</span> puede agregarla (a <span class="math inline">\(O_6\)</span> le falta <span class="math inline">\(c_4\)</span>); <span class="math inline">\(O_3\)</span> exige <span class="math inline">\(c_2\)</span>, que solo agrega <span class="math inline">\(O_2\)</span>, que exige <span class="math inline">\(c_7\)</span>, que solo agrega <span class="math inline">\(O_1.\)</span></li>
+<li><span class="math inline">\(c_5\)</span> solo la agrega <span class="math inline">\(O_7\)</span>. <span class="math inline">\(O_7\)</span> exige <span class="math inline">\(c_8\)</span>, que solo agrega <span class="math inline">\(O_5\)</span>, y <span class="math inline">\(O_5\)</span> exige <span class="math inline">\(c_4\)</span>, que solo agrega <span class="math inline">\(O_4.\)</span></li>
+<li><span class="math inline">\(O_4\)</span> exige <span class="math inline">\(c_3\)</span>. Antes de <span class="math inline">\(O_4\)</span> solo <span class="math inline">\(O_3\)</span> puede agregarla (a <span class="math inline">\(O_6\)</span> le falta <span class="math inline">\(c_4\)</span>). <span class="math inline">\(O_3\)</span> exige <span class="math inline">\(c_2\)</span>, que solo agrega <span class="math inline">\(O_2\)</span>, que exige <span class="math inline">\(c_7\)</span>, que solo agrega <span class="math inline">\(O_1.\)</span></li>
 <li><span class="math inline">\(O_4\)</span> borra <span class="math inline">\(c_3\)</span> y <span class="math inline">\(O_7\)</span> la necesita después. <span class="math inline">\(O_3\)</span> no se repite (<span class="math inline">\(c_1\)</span> nadie la agrega y <span class="math inline">\(O_2\)</span> la borra), así que <span class="math inline">\(c_3\)</span> vuelve por <span class="math inline">\(O_6.\)</span></li>
 </ul>
 </div>

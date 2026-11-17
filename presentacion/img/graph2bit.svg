@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 740 210" role="img" aria-label="Grafica de configuraciones del contador de 2 bits">
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 740 210" role="img" aria-label="Gráfica de configuraciones del contador de 2 bits">
   <g font-size="15" font-weight="700" fill="#1f4a7d" text-anchor="middle">
     <path class="edge" d="M168 112 H236" /><foreignObject x="-58.0" y="80.3" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:15px;font-weight:700;justify-content:center;height:28.5px;color:#1f4a7d">\(O_1\)</div></foreignObject>
     <path class="edge" d="M352 112 H420" /><foreignObject x="126.0" y="80.3" width="520" height="28.5"><div xmlns="http://www.w3.org/1999/xhtml" class="fo" style="font-size:15px;font-weight:700;justify-content:center;height:28.5px;color:#1f4a7d">\(O_2\)</div></foreignObject>

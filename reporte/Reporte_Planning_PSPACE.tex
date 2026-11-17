@@ -320,7 +320,7 @@
 \section{Introducción}
 
 Gran parte del estudio de la eficiencia algorítmica gira en torno
-al tiempo como recurso; así, la distinción entre $\Pclass$ y $\NP$
+al tiempo como recurso. Así, la distinción entre $\Pclass$ y $\NP$
 descansa en esa noción. Sin embargo, la memoria es otro recurso
 fundamental, y al tratarla como recurso principal aparece una clase
 de problemas que parecen ser incluso más difíciles que $\NP$ y
@@ -343,7 +343,7 @@ del viajero y, con ello, las acciones que tiene disponibles
 Lo que hace especial a \PLANNING{} es que
 \emph{los planes pueden ser exponencialmente largos}, de modo que
 ni siquiera es posible escribir una solución completa en espacio
-polinomial; aun así, la pregunta de si existe un plan se puede
+polinomial. Aun así, la pregunta de si existe un plan se puede
 responder usando solo espacio polinomial.
 
 Nuestro objetivo es presentar \PLANNING{} de forma autocontenida,
@@ -383,9 +383,9 @@ polinomial, así que
 
 Pero $\PSPACE$ es mucho más amplia. Por ejemplo, un algoritmo
 que cuenta de $0$ a $2^{n}-1$ en base $2$ solo necesita un
-contador de $n$ bits (como el odómetro de un automóvil);
-este se ejecuta en tiempo exponencial pero usa espacio $O(n)$.
-La clave de aquí es que \emph{``el espacio se puede reutilizar,
+contador de $n$ bits (como el odómetro de un automóvil).
+Este se ejecuta en tiempo exponencial pero usa espacio $O(n)$.
+La clave aquí es que \emph{``el espacio se puede reutilizar,
 mientras que el tiempo, por definición, no''}
 (Kleinberg \& Tardos, 2005, pp.~531--532).
 
@@ -399,7 +399,7 @@ polinomial.
 Se recorren todas las asignaciones con un contador de $n$ bits:
 cuando el contador vale $q$, la asignación hace $x_i$ igual al
 $i$-ésimo bit de $q$. Para cada asignación se evalúa la fórmula
-en espacio polinomial; si la satisface, se detiene, y si no,
+en espacio polinomial. Si la satisface, se detiene, y si no,
 se borra el trabajo intermedio y se reutiliza ese espacio
 para la siguiente asignación.
 \end{proof}
@@ -422,8 +422,8 @@ $\coNP\subseteq\PSPACE$. Además,
 $\PSPACE\subseteq\EXPTIME$, porque un algoritmo en espacio
 polinomial solo puede visitar un número exponencial de
 configuraciones distintas (Sipser, 2013, cap.~8).
-La Figura~\ref{fig:jerarquia} resume las contenciones;
-no se sabe demostrar que sean estrictas.
+La Figura~\ref{fig:jerarquia} resume las contenciones,
+aunque no se sabe demostrar que sean estrictas.
 
 % ---------- Figura original: relaciones entre clases ----------
 \begin{figure}[ht]
@@ -526,7 +526,7 @@ en $A_i$ ni en $D_i$
 El libro no precisa qué ocurre si una condición está a la vez
 en $A_i$ y en $D_i$. Aquí se adopta la convención
 $S'=(S\setminus D_i)\cup A_i$ (primero se elimina y luego
-se agrega); en las construcciones de este reporte las listas
+se agrega). En las construcciones de este reporte las listas
 $A_i$ y $D_i$ siempre se toman disjuntas, de modo que
 la convención no importa.
 \end{observacion}
@@ -534,8 +534,8 @@ la convención no importa.
 \begin{ejemplo}[Rompecabezas de quince]
 Según el libro, se modela con una condición por cada posible
 ubicación de cada ficha y un operador por cada movimiento
-de una ficha entre dos ubicaciones adyacentes;
-el prerrequisito es que una ubicación contenga a la ficha
+de una ficha entre dos ubicaciones adyacentes.
+El prerrequisito es que una ubicación contenga a la ficha
 y la otra al hueco
 (Kleinberg \& Tardos, 2005, p.~534).
 
@@ -576,7 +576,7 @@ condiciones de $S^{*}$ y ninguna otra)?
 
 
 El tamaño de la entrada es polinomial en $n$, $k$
-y la longitud de las listas; en particular,
+y la longitud de las listas. En particular,
 es al menos $n$.
 
 
@@ -596,10 +596,10 @@ dicho plan, sin necesidad de construirlo o almacenarlo
 completo.
 
 
-\begin{observacion}[Una grafica implícito]
+\begin{observacion}[Una gráfica implícita]
 
 Se puede representar una instancia de \PLANNING{}
-mediante una grafica dirigido $\mathcal{G}$, donde cada nodo
+mediante una gráfica dirigida $\mathcal{G}$, donde cada nodo
 representa una de las $2^{n}$ configuraciones posibles
 y existe una arista de $S$ a $S'$ si algún operador
 permite pasar de una configuración a otra en un solo paso.
@@ -610,7 +610,7 @@ hasta $S^{*}$}
 (Kleinberg \& Tardos, 2005, p.~539).
 
 Aunque $\mathcal{G}$ puede tener un número exponencial
-de nodos, está descrito de forma compacta mediante
+de nodos, está descrita de forma compacta mediante
 $n$ condiciones y $k$ operadores.
 
 
@@ -621,7 +621,7 @@ a partir de los operadores.
 
 
 
-Por lo tanto, construir explícitamente la grafica completa
+Por lo tanto, construir explícitamente la gráfica completa
 puede requerir espacio exponencial, lo que motiva la
 búsqueda de un algoritmo capaz de decidir si existe
 un camino utilizando únicamente espacio polinomial.
@@ -666,10 +666,10 @@ de $n$ bits desde todos ceros hasta todos unos.
 $O_1,\dots,O_n$.
 
 \item $O_1$ no tiene prerrequisitos ni lista de
-eliminación; solo agrega $c_1$.
+eliminación, solo agrega $c_1$.
 
 \item Para $i>1$, $O_i$ requiere $c_j$ para todo
-$j<i$; al invocarse agrega $c_i$ y elimina
+$j<i$. Al invocarse agrega $c_i$ y elimina
 $c_j$ para todo $j<i$.
 
 \item $S_0=\vacio$ y $S^{*}=\{c_1,\dots,c_n\}$.
@@ -685,9 +685,9 @@ secuencia así tiene al menos $2^{i}-1$ pasos.}
 Para $i=1$ es claro. Para $i>1$ hay una solución:
 (1) por inducción se logran
 $\{c_{i-1},\dots,c_1\}$ con
-$O_1,\dots,O_{i-1}$;
+$O_1,\dots,O_{i-1}$,
 (2) se invoca $O_i$, que agrega $c_i$ y elimina
-todos los demás;
+todos los demás,
 (3) por inducción se logran de nuevo
 $\{c_{i-1},\dots,c_1\}$, y $c_i$ se conserva.
 
@@ -733,9 +733,9 @@ $2^{n}-1$ pasos.
 \end{teorema}
 
 \begin{proof}
-La grafica $\mathcal{G}$ tiene $2^{n}$ nodos.
+La gráfica $\mathcal{G}$ tiene $2^{n}$ nodos.
 Si hay un camino de $S_0$ a $S^{*}$, el más corto
-no visita ningún nodo más de una vez; por tanto,
+no visita ningún nodo más de una vez. Por tanto,
 tiene a lo más $2^{n}-1$ aristas.
 \end{proof}
 
@@ -766,7 +766,7 @@ polinomial.
 Un primer algoritmo construye $\mathcal{G}$ y aplica
 búsqueda en profundidad (DFS) o en amplitud (BFS)
 desde $S_0$. Esto toma espacio exponencial solo
-para construir la grafica.
+para construir la gráfica.
 
 Se podría simular DFS o BFS sin construir
 $\mathcal{G}$, pero tampoco es viable: DFS debe
@@ -832,11 +832,11 @@ y un entero $L$ (potencia de $2$).
     $S'$ con un contador de $n$ bits.
     \ForAll{$S'$}
         \State $x \gets
-        \Path(S_1,S',\lceil L/2\rceil)$;
+        \Path(S_1,S',\lceil L/2\rceil)$,
         borrar todo el trabajo intermedio salvo $x$.
 
         \State $y \gets
-        \Path(S',S_2,\lceil L/2\rceil)$;
+        \Path(S',S_2,\lceil L/2\rceil)$,
         borrar todo el trabajo intermedio salvo $y$.
 
         \If{$x=$ ``sí'' y $y=$ ``sí''}
@@ -850,13 +850,13 @@ y un entero $L$ (potencia de $2$).
 
 \begin{observacion}[Adaptaciones menores]
 (1) El libro escribe el caso base solo con la condición
-``hay un operador que convierte $S_1$ en $S_2$'';
-aquí se agrega ``$S_1=S_2$'' para que $\Path$
+``hay un operador que convierte $S_1$ en $S_2$''.
+Aquí se agrega ``$S_1=S_2$'' para que $\Path$
 signifique literalmente ``a lo más $L$ pasos''
 (permite la secuencia vacía).
 
-(2) El pseudocódigo calcula siempre $x$ y $y$;
-si $x=$ ``no'' se puede omitir el cálculo de $y$
+(2) El pseudocódigo calcula siempre $x$ y $y$.
+Si $x=$ ``no'' se puede omitir el cálculo de $y$
 sin afectar la correctitud ni el espacio.
 El ejemplo de la sección~\ref{sec:ejemplo}
 usa esta optimización.
@@ -911,7 +911,7 @@ $L'-\lceil L'/2\rceil\le\lceil L/2\rceil$.
 Por hipótesis de inducción,
 $\Path(S_1,S',\lceil L/2\rceil)$ y
 $\Path(S',S_2,\lceil L/2\rceil)$ devuelven
-``sí''; como el ciclo prueba todas las
+``sí''. Como el ciclo prueba todas las
 configuraciones, en algún momento llega a
 este $S'$ y el procedimiento devuelve ``sí''.
 
@@ -1021,7 +1021,7 @@ exponencial, pero con espacio polinomial.
 
 Esto es lo opuesto a la programación dinámica,
 cuyo principio es guardar todo el trabajo
-intermedio para no recalcularlo; aquí se tira
+intermedio para no recalcularlo. Aquí se tira
 todo y se recalcula
 (Kleinberg \& Tardos, 2005, p.~543).
 
@@ -1068,8 +1068,8 @@ la prueba (Kleinberg \& Tardos, 2005, p.~544).
 $\QSAT$ pregunta si
 $\exists x_1\,\forall x_2\cdots\exists x_n\;
 \Phi(x_1,\dots,x_n)$ es verdadera, con $\Phi$
-una conjunción de cláusulas de tres términos;
-su $\PSPACE$-completitud se debe a Stockmeyer
+una conjunción de cláusulas de tres términos.
+Su $\PSPACE$-completitud se debe a Stockmeyer
 y Meyer (1973)
 (Kleinberg \& Tardos, 2005, p.~543).
 
@@ -1083,7 +1083,7 @@ hay otra decisión, y así sucesivamente
 La completitud de \PLANNING{} fue establecida por
 Bylander (1994), quien muestra que decidir la
 existencia de un plan en STRIPS proposicional es
-$\PSPACE$-completo en general; su demostración
+$\PSPACE$-completo en general. Su demostración
 de dureza codifica una máquina de Turing mediante
 operadores STRIPS
 (véase la descripción en Edelkamp et~al., 2026).
@@ -1098,7 +1098,7 @@ siguiente sección.
 
 Esta sección es un esbozo propio, que sigue la técnica
 estándar de simular un cómputo con condiciones
-y operadores; la prueba original y sus variantes
+y operadores. La prueba original y sus variantes
 están en Bylander (1994).
 
 \subsubsection{Idea}
@@ -1120,7 +1120,7 @@ solo si existe un plan.
 Sin pérdida de generalidad se supone que,
 antes de aceptar, $M$ borra la cinta
 (la llena de blancos $\sqcup$) y regresa
-la cabeza a la celda~$1$; esto no aumenta
+la cabeza a la celda~$1$. Esto no aumenta
 el espacio.
 
 
@@ -1140,9 +1140,9 @@ lo que permite expresarla como la meta
 
 \item \textbf{Condiciones.}
 $\cond{Q}_q$ para cada estado $q\in Q$
-(``la máquina está en el estado $q$'');
+(``la máquina está en el estado $q$''),
 $\cond{H}_i$ para $1\le i\le s$
-(``la cabeza está en la celda $i$'');
+(``la cabeza está en la celda $i$''),
 y $\cond{S}_{i,a}$ para $1\le i\le s$
 y $a\in\Gamma$
 (``la celda $i$ contiene a $a$'').
@@ -1173,7 +1173,7 @@ D_{\mathrm{el}}=
 Si alguna condición aparece a la vez en $A$
 y en la lista de eliminación
 (por ejemplo, si $q'=q$ o $b=a$),
-se quita de ambas listas; así quedan
+se quita de ambas listas. Así quedan
 disjuntas y la condición sigue cumpliéndose
 porque estaba en $P$.
 
@@ -1311,13 +1311,13 @@ Se usa la instancia del contador de $n=2$ bits del Teorema~\ref{teo:96}. Todos l
 \item Condiciones $c_1,c_2$ ($n=2$, así que $L=2^{2}=4$) y $2^{2}=4$ configuraciones.
 \item $O_1$: $P_1=\vacio$, $A_1=\{c_1\}$, $D_1=\vacio$.
 \item $O_2$: $P_2=\{c_1\}$, $A_2=\{c_2\}$, $D_2=\{c_1\}$.
-\item $S_0=\vacio$ y $S^{*}=\{c_1,c_2\}$; se escribe $M=\{c_1,c_2\}$ para la meta.
+\item $S_0=\vacio$ y $S^{*}=\{c_1,c_2\}$. Se escribe $M=\{c_1,c_2\}$ para la meta.
 \end{itemize}
 Se espera un plan de $2^{2}-1=3$ pasos. La pregunta es si $\Path(\vacio,M,4)$ devuelve ``sí''.
 
-\subsection{La grafica implícita $\mathcal{G}$}
+\subsection{La gráfica implícita $\mathcal{G}$}
 
-El algoritmo \emph{nunca construye} esta grafica; se muestra solo para seguir su razonamiento.
+El algoritmo \emph{nunca construye} esta gráfica. Se muestra solo para seguir su razonamiento.
 
 \begin{figure}[ht]
 \centering
@@ -1334,7 +1334,7 @@ El algoritmo \emph{nunca construye} esta grafica; se muestra solo para seguir su
  \draw[->] (c1) to[out=70,in=110,looseness=6] node[above] {$O_1$} (c1);
  \draw[->] (c12) to[out=250,in=290,looseness=6] node[below] {$O_1$} (c12);
 \end{tikzpicture}
-\caption{Grafica de configuraciones del contador de $2$ bits. El plan de $3$ pasos es $\vacio\xrightarrow{O_1}\{c_1\}\xrightarrow{O_2}\{c_2\}\xrightarrow{O_1}\{c_1,c_2\}$.}
+\caption{Gráfica de configuraciones del contador de $2$ bits. El plan de $3$ pasos es $\vacio\xrightarrow{O_1}\{c_1\}\xrightarrow{O_2}\{c_2\}\xrightarrow{O_1}\{c_1,c_2\}$.}
 \end{figure}
 
 El operador $O_2$ no es aplicable en $\vacio$ ni en $\{c_2\}$ (falta $c_1$). El contador de $n=2$ bits enumera las configuraciones en este orden: $\vacio,\{c_1\},\{c_2\},\{c_1,c_2\}$ (el bit $i$ del contador indica si $c_i$ pertenece).
@@ -1395,8 +1395,8 @@ En total hubo $20$ llamadas a $\Path$ con la optimización de omitir $y$ cuando 
 
 En el punto más profundo de la ejecución, la pila contiene tres marcos, no más:
 \begin{enumerate}[leftmargin=2em,itemsep=1pt]
-\item $\Path(\vacio,M,4)$, con $S'=\{c_1\}$;
-\item $\Path(\{c_1\},M,2)$, con $S''=\{c_2\}$;
+\item $\Path(\vacio,M,4)$, con $S'=\{c_1\}$,
+\item $\Path(\{c_1\},M,2)$, con $S''=\{c_2\}$,
 \item $\Path(\{c_2\},M,1)$.
 \end{enumerate}
 Cuando termina una llamada se libera su marco y solo sobrevive un bit. En ningún momento se guardó el plan completo, que sería lo que exige tanto espacio en un enfoque con DFS o BFS.
@@ -1434,21 +1434,21 @@ Para $n=60$ el plan mínimo tendría $2^{60}-1\approx1.15\times10^{18}$ pasos, p
 Enfoque & Espacio & Tiempo & Comentario\\
 \midrule
 BFS/DFS sobre $\mathcal{G}$ & $2^{O(n)}$ & $2^{O(n)}$ (poly en $|\mathcal{G}|$) & Es el más rápido, pero inviable en memoria para $n$ grande.\\
-$\Path$ (Savitch) & polinomial, $O(n(n+\log k))$ bits & $2^{O(n^{2})}$ & Prueba que \PLANNING{} $\in\PSPACE$; no se usa en la práctica.\\
-Planificadores prácticos & depende del dominio & sin garantía en el peor caso & Heurísticas y codificaciones; resuelven muchas instancias grandes.\\
+$\Path$ (Savitch) & polinomial, $O(n(n+\log k))$ bits & $2^{O(n^{2})}$ & Prueba que \PLANNING{} $\in\PSPACE$. No se usa en la práctica.\\
+Planificadores prácticos & depende del dominio & sin garantía en el peor caso & Heurísticas y codificaciones. Resuelven muchas instancias grandes.\\
 \bottomrule
 \end{tabular}
 \caption{Comparación de enfoques.}
 \end{table}
 
 \subsection{Búsqueda explícita en $\mathcal{G}$}
-Construir $\mathcal{G}$ y recorrerlo con BFS o DFS toma tiempo y espacio $2^{O(n)}$ (por polinomios). Es el enfoque ingenuo de la sección~\ref{sec:enfoquesexp}.
+Construir $\mathcal{G}$ y recorrerla con BFS o DFS toma tiempo y espacio $2^{O(n)}$ (por polinomios). Es el enfoque ingenuo de la sección~\ref{sec:enfoquesexp}.
 
 \subsection{Savitch: espacio polinomial a costa de tiempo}
 El procedimiento $\Path$ de la sección~\ref{sec:path} es el enfoque teórico. Es un ejemplo de que la memoria puede reutilizarse de maneras que el tiempo no permite.
 
 \subsection{Planificadores prácticos}
-Los planificadores modernos no atacan el peor caso. Entre los enfoques más influyentes están la búsqueda heurística guiada por relajaciones del problema (el sistema FF; Hoffmann \& Nebel, 2001), los planificadores de búsqueda con heurísticas más elaboradas (Fast Downward; Helmert, 2006) y la planeación como satisfacibilidad, que codifica la existencia de un plan de longitud acotada como una fórmula SAT (Kautz \& Selman, 1992).
+Los planificadores modernos no atacan el peor caso. Entre los enfoques más influyentes están la búsqueda heurística guiada por relajaciones del problema (el sistema FF, Hoffmann \& Nebel, 2001), los planificadores de búsqueda con heurísticas más elaboradas (Fast Downward, Helmert, 2006) y la planeación como satisfacibilidad, que codifica la existencia de un plan de longitud acotada como una fórmula SAT (Kautz \& Selman, 1992).
 Una introducción completa a las técnicas de planeación automática es Ghallab et~al. (2004). Que el peor caso sea $\PSPACE$-completo explica por qué estos sistemas dependen de heurísticas y de la estructura de cada dominio, y por qué no pueden garantizar eficiencia para toda instancia.
 
 % =====================================================================
@@ -1456,7 +1456,7 @@ Una introducción completa a las técnicas de planeación automática es Ghallab
 
 
 \subsection{Logística y operaciones de socorro}
-El ejemplo del libro: para coordinar una operación de ayuda en un desastre, quizá se necesiten veinte ambulancias en un lugar de alta montaña; para ello se requiere antes enviar diez quitanieves, lo cual exige combustible y tripulaciones, pero si el combustible se usa para los quitanieves puede no alcanzar para las ambulancias, etcétera
+El ejemplo del libro: para coordinar una operación de ayuda en un desastre, quizá se necesiten veinte ambulancias en un lugar de alta montaña. Para ello se requiere antes enviar diez quitanieves, lo cual exige combustible y tripulaciones, pero si el combustible se usa para los quitanieves puede no alcanzar para las ambulancias, etcétera
 (Kleinberg \& Tardos, 2005, p.~533). Las técnicas de planeación automática se han usado a gran escala también en operaciones militares.
 
 
@@ -1479,7 +1479,7 @@ condiciones y los operadores.
 Los vuelos disponibles son Ciudad de México $\to$ Los Ángeles
 $\to$ Madrid, Madrid $\leftrightarrow$ París y
 Madrid $\to$ Tokio. El vuelo a Los Ángeles exige visa
-estadounidense, que se tramita en Ciudad de México; el vuelo
+estadounidense, que se tramita en Ciudad de México. El vuelo
 a Tokio exige visa japonesa, que solo se tramita en París.
 Todo vuelo y trámite requiere pasaporte, y los documentos
 se conservan durante el viaje.
@@ -1546,7 +1546,7 @@ necesarias y las rutas obligan a hacer esos cinco vuelos.
 El viajero está en Madrid tanto en $S_3$ como en $S_6$,
 pero son estados distintos: en $S_3$ aún no tiene visa
 japonesa y $O_7$ no es aplicable. Por eso el recorrido
-Madrid--París--Madrid no es una vuelta inútil, y la grafica
+Madrid--París--Madrid no es una vuelta inútil, y la gráfica
 de planeación distingue ambos estados aunque correspondan
 a la misma ciudad.
 
@@ -1572,7 +1572,7 @@ Cada llamada con $L=2$ se resuelve con dos llamadas de
 $L=1$, que verifican un operador del plan o, en el tramo
 $\Path(S_0,S_1,2)$, la igualdad $S_0=S_0$. Como \Path{}
 pregunta por \emph{a lo más} $L$ pasos, el plan de siete
-acciones cabe en $L=8$; en el algoritmo general se usaría
+acciones cabe en $L=8$. En el algoritmo general se usaría
 $L=2^{8}$. La pila nunca tiene más de cuatro marcos
 ($L=8,4,2,1$) y de cada mitad resuelta solo se conserva
 un bit.
@@ -1602,7 +1602,7 @@ Meta: & \pasillo{-}{-}{R}{B}
 \end{center}
 
 \paragraph{Paso 1: condiciones.} Para cada celda $c$: $\mathsf{R@}c$ (el robot está en $c$), $\mathsf{B@}c$ (hay una caja en $c$) y $\mathsf{F@}c$ (la celda $c$ está libre). La condición $\mathsf{F@}c$ es positiva porque el modelo no admite negaciones.
-Hay $n=12$ condiciones y por tanto $2^{12}$ configuraciones posibles (la mayoría físicamente absurdas; el modelo no lo sabe).
+Hay $n=12$ condiciones y por tanto $2^{12}$ configuraciones posibles (la mayoría físicamente absurdas, aunque el modelo no lo sabe).
 
 \paragraph{Paso 2: operadores.}
 \begin{center}
@@ -1644,7 +1644,7 @@ El rompecabezas de quince y el cubo de Rubik se usan en inteligencia artificial 
 
 \subsection{Misiones espaciales}
 La planeación automática se ha usado para controlar naves. El \emph{Remote Agent}, de la NASA, integra planeación y calendarización con restricciones temporales, ejecución robusta y reconfiguración basada en modelos, y fue concebido como controlador a bordo de la misión Deep Space~1 (Muscettola et~al., 1998).
-Cabe aclarar que su formalismo es más rico que el STRIPS proposicional de este reporte; se menciona como ejemplo del tipo de problema al que se aplican las técnicas de planeación.
+Cabe aclarar que su formalismo es más rico que el STRIPS proposicional de este reporte. Se menciona como ejemplo del tipo de problema al que se aplican las técnicas de planeación.
 
 % =====================================================================
 \section{Casos especiales y variantes}
@@ -1658,23 +1658,23 @@ Bylander (1994) estudió qué ocurre al restringir los operadores:
 \item En general, decidir si existe un plan es $\PSPACE$-completo.
 \item Con solo literales básicos, sigue siendo $\PSPACE$-completo aun si cada operador tiene a lo más dos prerrequisitos y dos postcondiciones.
 \item Con fórmulas de Horn definidas, es $\PSPACE$-completo aun con cero prerrequisitos y una postcondición.
-\item Un caso tratable: cada operador con prerrequisitos positivos y una sola postcondición (solo literales); el mundo de bloques, ligeramente modificado, es un subproblema.
+\item Un caso tratable: cada operador con prerrequisitos positivos y una sola postcondición (solo literales). El mundo de bloques, ligeramente modificado, es un subproblema.
 \end{itemize}
 Según el propio autor, se requieren restricciones extremadamente severas para garantizar tiempo polinomial o incluso $\NP$-completitud, lo cual no es alentador para la planeación independiente del dominio.
 
 \subsection{Planeación de primer orden}
-Cuando los operadores se describen con predicados y variables (en lugar de proposiciones), la decidibilidad y la complejidad dependen de detalles como si se permiten símbolos de función, listas de eliminación o precondiciones negativas;
+Cuando los operadores se describen con predicados y variables (en lugar de proposiciones), la decidibilidad y la complejidad dependen de detalles como si se permiten símbolos de función, listas de eliminación o precondiciones negativas.
 Erol et~al. (1995) establecen condiciones bajo las cuales la planeación es decidible o indecidible y cómo varía la complejidad en los casos decidibles.
 
 \subsection{Cuantificadores y juegos}
 $\QSAT$ y los juegos de dos jugadores, como \emph{Competitive Facility Location}, comparten con \PLANNING{} el hecho de ser $\PSPACE$-completos y de resolverse en espacio polinomial reutilizando memoria. En $\QSAT$ la recurrencia es $S(n)\le S(n-1)+p(n)$ (se elimina una variable por nivel) y en \PLANNING{} es
-$S(L)\le S(L/2)+p$ (se divide la longitud entre dos); en ambos casos de cada subproblema solo se guarda un bit (Kleinberg \& Tardos, 2005, pp.~536--538, 542--543).
+$S(L)\le S(L/2)+p$ (se divide la longitud entre dos). En ambos casos de cada subproblema solo se guarda un bit (Kleinberg \& Tardos, 2005, pp.~536--538, 542--543).
 
 % =====================================================================
 \section{Conclusión}
 
-\PLANNING{} pregunta si existe una secuencia de operadores que lleve de una configuración inicial a una meta. Su grafica implícita tiene $2^{n}$ nodos y sus planes mínimos pueden medir $2^{n}-1$ pasos, por lo que el plan no es un certificado polinomial y \PLANNING{} no es obviamente de $\NP$.
-Sin embargo, el algoritmo de Savitch, basado en puntos medios y en reutilizar espacio, decide el problema en espacio $O(n(n+\log k))$ bits a costa de tiempo $2^{O(n^{2})}$; por tanto, $\PLANNING\in\PSPACE$. Mediante una reducción desde máquinas de Turing de espacio polinomial (Bylander, 1994),
+\PLANNING{} pregunta si existe una secuencia de operadores que lleve de una configuración inicial a una meta. Su gráfica implícita tiene $2^{n}$ nodos y sus planes mínimos pueden medir $2^{n}-1$ pasos, por lo que el plan no es un certificado polinomial y \PLANNING{} no es obviamente de $\NP$.
+Sin embargo, el algoritmo de Savitch, basado en puntos medios y en reutilizar espacio, decide el problema en espacio $O(n(n+\log k))$ bits a costa de tiempo $2^{O(n^{2})}$. Por tanto, $\PLANNING\in\PSPACE$. Mediante una reducción desde máquinas de Turing de espacio polinomial (Bylander, 1994),
 \PLANNING{} es además $\PSPACE$-difícil, así que es $\PSPACE$-completo.
 
 La lección general es que, para $\PSPACE$, la memoria es el recurso que se puede reciclar. Si \PLANNING{} tuviera un algoritmo de tiempo polinomial, entonces $\Pclass=\PSPACE$, lo que se considera muy improbable. En la práctica, las aplicaciones (logística, robótica de almacén, rompecabezas, misiones espaciales)

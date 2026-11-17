@@ -1,0 +1,7 @@
+# Solo se necesitan presentacion.html, presentacion_files/, img/,
+# presentacion.pdf y nginx.conf. Todo lo demás se deja fuera de la imagen.
+herramientas/
+assets/
+*.qmd
+*.scss
+**/node_modules
